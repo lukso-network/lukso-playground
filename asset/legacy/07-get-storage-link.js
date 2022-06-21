@@ -72,9 +72,25 @@ async function decodeAssetData(keyName, encodedData) {
   }
 }
 
+/*
+ * Create a fetchable storage link that
+ * was embeded into the decoded asset data
+ *
+ * @param decodedAssetMetadata as JSON
+ * @return string of asset data URL
+ */
+async function getMetaDataLink(decodedAssetMetadata) {
+  try {
+    // Generate IPFS link from decoded metadata
+    return IPFS_GATEWAY + decodedAssetMetadata.value.url.substring(7);
+  } catch (error) {
+    console.log("URL could not be fetched");
+  }
+}
+
 // Debug
 getAssetData(MetaDataKey, SAMPLE_ASSET_ADDRESS).then((encodedData) => {
-  decodeAssetData(MetaDataKey, encodedData).then((decodedData) =>
-    console.log(decodedData)
-  );
+  decodeAssetData(MetaDataKey, encodedData).then((decodedData) => {
+    getMetaDataLink(decodedData).then((dataURL) => console.log(dataURL));
+  });
 });
