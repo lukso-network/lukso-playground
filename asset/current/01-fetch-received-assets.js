@@ -33,7 +33,7 @@ async function fetchReceivedAssets(address) {
   }
 }
 
-// Step 1
+// Debug
 fetchReceivedAssets(SAMPLE_PROFILE_ADDRESS).then((profileData) =>
   console.log(JSON.stringify(profileData, undefined, 2))
 );
