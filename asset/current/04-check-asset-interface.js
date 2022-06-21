@@ -5,27 +5,27 @@ const {
   ERC725Y_INTERFACE_IDS,
 } = require("@erc725/erc725.js/build/main/src/lib/constants");
 
-// Sample Addresses
+// Sample addresses
 const SAMPLE_ASSET_ADDRESS = "0xfE85568Fea15A7ED3c56F7ca6544F2b96Aeb1774";
 
 // Setup Web3
 const web3 = new Web3("https://rpc.l14.lukso.network");
 
 /*
- * Check the ERC725Y interface of an asset's smart contract
+ * Check the ERC725Y interface of an asset
  *
- * @param assetAddress address of digital asset smart contract
- * @return boolean - true if the address supports ERC725Y, false if it doesn't
+ * @param assetAddress of the smart contract
+ * @return boolean isERC725Y
  */
 async function checkErc725YInterfaceId(assetAddress) {
-  // Create instance of the digital asset contract
-  const Contract = new web3.eth.Contract(LSP4.abi, assetAddress);
+  // Create an instance of the asset
+  const asset = new web3.eth.Contract(LSP4.abi, assetAddress);
 
-  let interfaceCheck = false;
+  let isERC725Y = false;
 
   // Check if the contract has a key-value store
   try {
-    interfaceCheck = await Contract.methods
+    isERC725Y = await asset.methods
       .supportsInterface(ERC725Y_INTERFACE_IDS["3.0"])
       .call();
   } catch (error) {
@@ -33,7 +33,7 @@ async function checkErc725YInterfaceId(assetAddress) {
     console.log("Address could not be checked for ERC725 interface");
   }
 
-  return interfaceCheck;
+  return isERC725Y;
 }
 
 // Debug

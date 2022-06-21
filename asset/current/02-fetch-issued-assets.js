@@ -4,23 +4,23 @@ const { ERC725 } = require("@erc725/erc725.js");
 require("isomorphic-fetch");
 const erc725schema = require("@erc725/erc725.js/schemas/LSP3UniversalProfileMetadata.json");
 
-// Sample Addresses
+// Sample addresses
 const SAMPLE_PROFILE_ADDRESS = "0x0Ac71c67Fa5E4c9d4af4f99d7Ad6132936C2d6A3";
 
-// Network & Storage
+// Network and storage
 const RPC_ENDPOINT = "https://rpc.l14.lukso.network";
 const IPFS_GATEWAY = "https://2eff.lukso.dev/ipfs/";
 
-// Parameters for ERC725 Instance
+// Parameters for the ERC725 instance
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
 const config = { ipfsGateway: IPFS_GATEWAY };
 
 /*
- * Fetch the @param's Universal Profile's
- * issued assets
+ * Fetch the ever issued assets from
+ * the Universal Profile
  *
- * @param address of Universal Profile
- * @return string JSON or custom error
+ * @param address of the Universal Profile
+ * @return address[] of the issued assets or custom error
  */
 async function fetchIssuedAssets(address) {
   try {

@@ -4,14 +4,14 @@ const { ERC725 } = require("@erc725/erc725.js");
 const LSP4schema = require("@erc725/erc725.js/schemas/LSP4DigitalAsset.json");
 const LSP4 = require("@lukso/lsp-smart-contracts/artifacts/LSP4DigitalAssetMetadata.json");
 
-// Sample Addresses
+// Sample addresses
 const SAMPLE_ASSET_ADDRESS = "0xfE85568Fea15A7ED3c56F7ca6544F2b96Aeb1774";
 
-// Network & Storage
+// Network and storage
 const RPC_ENDPOINT = "https://rpc.l14.lukso.network";
 const IPFS_GATEWAY = "https://2eff.lukso.dev/ipfs/";
 
-// Parameters for ERC725 Instance
+// Parameters for the ERC725 instance
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
 const config = { ipfsGateway: IPFS_GATEWAY };
 
@@ -25,17 +25,17 @@ const MetaDataKey = LSP4schema[3].key;
 const CreatorsKey = LSP4schema[4].key;
 
 /*
- * Fetch the dataset of an asset
+ * Get the dataset of an asset
  *
- * @param key of asset property
- * @return string of encoded data
+ * @param key of the property to fetch
+ * @return string of the encoded data
  */
 async function getAssetData(key, address) {
   try {
-    // Instantiate Digital Asset smart contract
+    // Instantiate the asset
     const digitalAsset = new web3.eth.Contract(LSP4.abi, address);
 
-    // Fetch the encoded contract data
+    // Get the encoded data
     return await digitalAsset.methods["getData(bytes32)"](key).call();
   } catch (error) {
     return console.error("Data of assets address could not be loaded");
@@ -43,16 +43,16 @@ async function getAssetData(key, address) {
 }
 
 /*
- * Decode value from ERC725Y storage
- * based on it's key and phrase
+ * Decode the value from ERC725Y storage
+ * based on its key and phrase
  *
- * @param key of asset property
- * @param decodePhrase string of fetchable content
- * @return string of decoded data
+ * @param key of the asset property
+ * @param encodedData as string
+ * @return JSON of the decoded data
  */
 async function decodeAssetData(keyName, encodedData) {
   try {
-    // instance for the digital asset with erc725.js
+    // Instanciate the asset
     const digitalAsset = new ERC725(
       LSP4schema,
       SAMPLE_ASSET_ADDRESS,

@@ -38,11 +38,11 @@ async function fetchReceivedAssets(address) {
 }
 
 /*
- * Return array of blockchain addresses
- * of assets that are owned by the
- * Univeral Profile.
+ * Return an array of assets
+ * that are owned by the
+ * Universal Profile.
  *
- * @param owner Universal Profile address
+ * @param owner of the Universal Profile
  * @return address[] of owned assets
  */
 async function fetchOwnedAssets(owner) {
