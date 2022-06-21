@@ -1,0 +1,21 @@
+[
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_keys",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getData",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "values",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
