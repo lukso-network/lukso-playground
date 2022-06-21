@@ -12,6 +12,6 @@ Version 0.14.0
 
 ### IPFS Server
 
-(1) https://cloudflare-ipfs.com/ipfs/
-(2) https://2eff.lukso.dev/ipfs/
+- https://cloudflare-ipfs.com/ipfs/
+- https://2eff.lukso.dev/ipfs/
 
