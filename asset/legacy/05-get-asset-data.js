@@ -11,7 +11,7 @@ const ERC725MinimalABI = require("./erc725_legacy_minimal_abi.json");
 // Setup Web3
 const web3 = new Web3("https://rpc.l14.lukso.network");
 
-// Keys for asset properties
+// Data keys for asset properties
 const TokenNameKey = LSP4schema[1].key;
 const TokenSymbolKey = LSP4schema[2].key;
 const MetaDataKey = LSP4schema[3].key;
