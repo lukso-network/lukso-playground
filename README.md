@@ -18,12 +18,12 @@ Convenient and standalone code snippets to read blockchain data
 - `convenience:` **Utility [Web3](https://web3js.readthedocs.io/en/v1.7.4/) functions**
     - validate blockchain address
     - create EOA
-- `create-up:` **Create a [Universal Profile](https://docs.lukso.tech/standards/universal-profile/introduction)**
+- `create-up:` **Create a [Universal Profile](https://docs.lukso.tech/standards/universal-profile/introduction) on the blockchain**
     - create profile
 - `extract-data:` **Extract [LSP2](https://docs.lukso.tech/standards/generic-standards/lsp2-json-schema) from JSON datasets**
     - extract asset data
     - extract profile data
-- `fetch-assets:` **Read an [LSP7](https://docs.lukso.tech/standards/nft-2.0/LSP7-Digital-Asset) or [LSP8](https://docs.lukso.tech/standards/nft-2.0/LSP8-Identifiable-Digital-Asset) assets from the blockchain**
+- `fetch-assets:` **Read [LSP7](https://docs.lukso.tech/standards/nft-2.0/LSP7-Digital-Asset) or [LSP8](https://docs.lukso.tech/standards/nft-2.0/LSP8-Identifiable-Digital-Asset) assets from the blockchain**
     - fetch universal receiver
     - fetch received assets
     - fetch issued assets
@@ -33,7 +33,7 @@ Convenient and standalone code snippets to read blockchain data
     - get asset decoded data
     - get asset storage link
     - fetch assets storage
-- `fetch-profile:` **Read a [Universal Profiles](https://docs.lukso.tech/standards/universal-profile/introduction) from the blockchain**
+- `fetch-profile:` **Read [Universal Profiles](https://docs.lukso.tech/standards/universal-profile/introduction) from the blockchain**
     - read profile data
     - read profile metadata
 
