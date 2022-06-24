@@ -1,0 +1,25 @@
+{
+  "name": "lukso-playground",
+  "version": "1.0.0",
+  "description": "Convenient and standalone code snippets to read blockchain data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fhildeb/lukso-playground.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fhildeb/lukso-playground/issues"
+  },
+  "homepage": "https://github.com/fhildeb/lukso-playground#readme",
+  "dependencies": {
+    "@erc725/erc725.js": "^0.14.2",
+    "@lukso/lsp-smart-contracts": "^0.6.1",
+    "isomorphic-fetch": "^3.0.0",
+    "web3": "^1.7.4"
+  }
+}
