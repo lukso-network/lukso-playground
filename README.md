@@ -34,7 +34,7 @@ Convenient and standalone code snippets to read blockchain data
     - read profile data
     - read profile metadata
 
-### ERC725.js
+### Used ERC725.js Build
 
 Version 0.14.0
 
