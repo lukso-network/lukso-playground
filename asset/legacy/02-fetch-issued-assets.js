@@ -26,9 +26,8 @@ const config = { ipfsGateway: IPFS_GATEWAY };
 async function fetchIssuedAssets(address) {
   try {
     const profile = new ERC725(ERC725LegacySchema, address, provider, config);
-    return await (
-      await profile.getData("LSP3IssuedAssets[]")
-    ).value;
+    const result = await profile.getData("LSP3IssuedAssets[]");
+    return result.value;
   } catch (error) {
     return console.log("Issued assets could not be fetched");
   }
