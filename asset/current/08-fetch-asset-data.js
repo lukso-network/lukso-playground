@@ -45,7 +45,7 @@ async function getAssetData(key, address) {
 
 /*
  * Decode the value from ERC725Y storage
- * based on its key and phrase
+ * based on its data key and phrase
  *
  * @param data key of the asset property to fetch
  * @param encodedData as string
