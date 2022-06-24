@@ -24,9 +24,8 @@ const config = { ipfsGateway: IPFS_GATEWAY };
 async function fetchUniversalReceiver(address) {
   try {
     const profile = new ERC725(erc725schema, address, provider, config);
-    return await (
-      await profile.fetchData("LSP1UniversalReceiverDelegate")
-    ).value;
+    const result = await profile.fetchData("LSP1UniversalReceiverDelegate");
+    return result.value;
   } catch (error) {
     return console.log("This is not an ERC725 Contract");
   }
