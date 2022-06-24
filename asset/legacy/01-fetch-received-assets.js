@@ -28,7 +28,7 @@ const web3 = new Web3("https://rpc.l14.lukso.network");
  * @param address of the Universal Profile
  * @return address[] of received assets or custom error
  */
-async function fetchUniversalReceiver(address) {
+async function fetchUniversalReceiverAddress(address) {
   try {
     const profile = new ERC725(erc725schema, address, provider, config);
     const result = await profile.fetchData("LSP1UniversalReceiverDelegate");
@@ -71,8 +71,10 @@ async function fetchReceivedAssets(receiverAddress) {
 }
 
 // Debug
-fetchUniversalReceiver(SAMPLE_PROFILE_ADDRESS).then((receiverAddress) => {
-  fetchReceivedAssets(receiverAddress).then((receivedAssets) =>
-    console.log(receivedAssets)
-  );
-});
+fetchUniversalReceiverAddress(SAMPLE_PROFILE_ADDRESS).then(
+  (receiverAddress) => {
+    fetchReceivedAssets(receiverAddress).then((receivedAssets) =>
+      console.log(receivedAssets)
+    );
+  }
+);

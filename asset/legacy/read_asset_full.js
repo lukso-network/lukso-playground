@@ -40,7 +40,7 @@ const CreatorsKey = LSP4schema[4].key;
  * @param address of the Universal Profile
  * @return address[] of received assets or custom error
  */
-async function fetchUniversalReceiver(address) {
+async function fetchUniversalReceiverAddress(address) {
   try {
     const profile = new ERC725(erc725schema, address, provider, config);
     const result = await profile.fetchData("LSP1UniversalReceiverDelegate");
@@ -109,7 +109,7 @@ async function fetchIssuedAssets(address) {
  * @return address[] of owned assets
  */
 async function fetchOwnedAssets(owner) {
-  const receiverAddress = await fetchUniversalReceiver(owner);
+  const receiverAddress = await fetchUniversalReceiverAddress(owner);
   const digitalAssets = await fetchReceivedAssets(receiverAddress);
   const ownedAssets = [];
 
@@ -230,16 +230,18 @@ async function fetchAssetData(dataURL) {
 }
 
 // Step 1.1
-fetchUniversalReceiver(SAMPLE_PROFILE_ADDRESS).then((receiverAddress) =>
+fetchUniversalReceiverAddress(SAMPLE_PROFILE_ADDRESS).then((receiverAddress) =>
   console.log(receiverAddress)
 );
 
 // Step 1.2
-fetchUniversalReceiver(SAMPLE_PROFILE_ADDRESS).then((receiverAddress) => {
-  fetchReceivedAssets(receiverAddress).then((receivedAssets) =>
-    console.log(receivedAssets)
-  );
-});
+fetchUniversalReceiverAddress(SAMPLE_PROFILE_ADDRESS).then(
+  (receiverAddress) => {
+    fetchReceivedAssets(receiverAddress).then((receivedAssets) =>
+      console.log(receivedAssets)
+    );
+  }
+);
 
 // Step 2
 fetchIssuedAssets(SAMPLE_PROFILE_ADDRESS).then((issuedAssets) =>

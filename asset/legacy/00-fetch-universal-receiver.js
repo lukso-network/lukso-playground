@@ -21,7 +21,7 @@ const config = { ipfsGateway: IPFS_GATEWAY };
  * @param address of the Universal Profile
  * @return address[] of received assets or custom error
  */
-async function fetchUniversalReceiver(address) {
+async function fetchUniversalReceiverAddress(address) {
   try {
     const profile = new ERC725(erc725schema, address, provider, config);
     const result = await profile.fetchData("LSP1UniversalReceiverDelegate");
@@ -32,6 +32,6 @@ async function fetchUniversalReceiver(address) {
 }
 
 // Debug
-fetchUniversalReceiver(SAMPLE_PROFILE_ADDRESS).then((receiverAddress) =>
+fetchUniversalReceiverAddress(SAMPLE_PROFILE_ADDRESS).then((receiverAddress) =>
   console.log(receiverAddress)
 );
