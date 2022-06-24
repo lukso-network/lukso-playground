@@ -81,7 +81,7 @@ async function decodeAssetData(keyName, encodedData) {
 async function getMetaDataLink(decodedAssetMetadata) {
   try {
     // Generate IPFS link from decoded metadata
-    return IPFS_GATEWAY + decodedAssetMetadata.value.url.substring(7);
+    return decodedAssetMetadata.value.url.replace("ipfs://", IPFS_GATEWAY);
   } catch (error) {
     console.log("URL could not be fetched");
   }

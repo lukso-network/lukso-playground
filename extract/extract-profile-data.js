@@ -23,7 +23,6 @@ let tags = [];
 let firstTag;
 
 // Fetchable picture information
-let baseURL = "https://ipfs.lukso.network/ipfs/";
 let backgroundImageLinks = [];
 let fullSizeBackgroundImg;
 let profileImageLinks = [];
@@ -85,13 +84,13 @@ async function fetchPictureData(address) {
     for (let i in backgroundImagesIPFS) {
       backgroundImageLinks.push([
         i,
-        baseURL + backgroundImagesIPFS[i].url.substring(7),
+        backgroundImagesIPFS[i].url.replace("ipfs://", IPFS_GATEWAY),
       ]);
     }
     for (let i in profileImagesIPFS) {
       profileImageLinks.push([
         i,
-        baseURL + profileImagesIPFS[i].url.substring(7),
+        profileImagesIPFS[i].url.replace("ipfs://", IPFS_GATEWAY),
       ]);
     }
     fullSizeBackgroundImg = backgroundImageLinks[0][1];
