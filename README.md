@@ -15,7 +15,7 @@ Convenient and standalone code snippets to read blockchain data
 
 ### Folders
 
-- `convenience:` **Utility Web3 functions**
+- `convenience:` **Utility [Web3](https://web3js.readthedocs.io/en/v1.7.4/) functions**
     - validate blockchain address
 - `extract-data:` **Extract [LSP2](https://docs.lukso.tech/standards/generic-standards/lsp2-json-schema) from JSON datasets**
     - extract asset data
