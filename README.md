@@ -15,7 +15,12 @@ Convenient and standalone code snippets to read blockchain data
 
 ### Folders
 
-- `assets:` **Reading [LSP7](https://docs.lukso.tech/standards/nft-2.0/LSP7-Digital-Asset) and [LSP8](https://docs.lukso.tech/standards/nft-2.0/LSP8-Identifiable-Digital-Asset) assets from the blockchain**
+- `convenience:` **Utility Web3 functions**
+    - validate blockchain address
+- `extract-data:` **Extract [LSP2](https://docs.lukso.tech/standards/generic-standards/lsp2-json-schema) from JSON datasets**
+    - extract asset data
+    - extract profile data
+- `fetch-assets:` **Reading [LSP7](https://docs.lukso.tech/standards/nft-2.0/LSP7-Digital-Asset) and [LSP8](https://docs.lukso.tech/standards/nft-2.0/LSP8-Identifiable-Digital-Asset) assets from the blockchain**
     - fetch universal receiver
     - fetch received assets
     - fetch issued assets
@@ -25,12 +30,7 @@ Convenient and standalone code snippets to read blockchain data
     - get asset decoded data
     - get asset storage link
     - fetch assets storage
-- `convenience:` **Utility Web3 functions**
-    - validate blockchain address
-- `extract:` **Extract [LSP2](https://docs.lukso.tech/standards/generic-standards/lsp2-json-schema) from JSON datasets**
-    - extract asset data
-    - extract profile data
-- `profile:` **Reading [Universal Profiles](https://docs.lukso.tech/standards/universal-profile/introduction) from the blockchain**
+- `fetch-profile:` **Reading [Universal Profiles](https://docs.lukso.tech/standards/universal-profile/introduction) from the blockchain**
     - read profile data
     - read profile metadata
 
