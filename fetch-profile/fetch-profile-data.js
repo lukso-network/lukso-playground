@@ -14,21 +14,6 @@ const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
 const config = { ipfsGateway: IPFS_GATEWAY };
 
 /*
- * Try fetching the @param's Universal Profile
- *
- * @param address of Universal Profile
- * @return string JSON or custom error
- */
-async function fetchProfile(address) {
-  try {
-    const profile = new ERC725(erc725schema, address, provider, config);
-    return await profile.fetchData();
-  } catch (error) {
-    return console.log("This is not an ERC725 Contract");
-  }
-}
-
-/*
  * Fetch the @param's Universal Profile's
  * LSP3 data
  *
@@ -44,12 +29,7 @@ async function fetchProfileData(address) {
   }
 }
 
-// Step 1
-fetchProfile(SAMPLE_PROFILE_ADDRESS).then((profileData) =>
-  console.log(JSON.stringify(profileData, undefined, 2))
-);
-
-// Step 2
+// Debug
 fetchProfileData(SAMPLE_PROFILE_ADDRESS).then((profileData) =>
   console.log(JSON.stringify(profileData, undefined, 2))
 );

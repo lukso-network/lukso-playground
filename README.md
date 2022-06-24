@@ -1,10 +1,29 @@
+```
+project
+│   README.md
+│   file001.txt    
+│
+└───folder1
+│   │   file011.txt
+│   │   file012.txt
+│   │
+│   └───subfolder1
+│       │   file111.txt
+│       │   file112.txt
+│       │   ...
+│   
+└───folder2
+    │   file021.txt
+    │   file022.txt
+```
+
 # lukso-playground
  
-Convenient and standalone code snippets to read blockchain data
+Convenient and standalone code snippets to interact with [LSP](https://docs.lukso.tech/standards/standards-roadmap) standards.
 
 ## Last Playground Check
 
-21th June 2022
+24th June 2022
 
 ## Contents
 
@@ -15,27 +34,44 @@ Convenient and standalone code snippets to read blockchain data
 
 ### Folders
 
-- `convenience:` **Utility [Web3](https://web3js.readthedocs.io/en/v1.7.4/) functions**
-    - validate blockchain address
-    - create EOA
-- `create-up:` **Create a [Universal Profile](https://docs.lukso.tech/standards/universal-profile/introduction) on the blockchain**
-    - create profile
-- `extract-data:` **Extract [LSP2](https://docs.lukso.tech/standards/generic-standards/lsp2-json-schema) from JSON datasets**
-    - extract asset data
-    - extract profile data
-- `fetch-assets:` **Read [LSP7](https://docs.lukso.tech/standards/nft-2.0/LSP7-Digital-Asset) or [LSP8](https://docs.lukso.tech/standards/nft-2.0/LSP8-Identifiable-Digital-Asset) assets from the blockchain**
-    - fetch universal receiver
-    - fetch received assets
-    - fetch issued assets
-    - fetch owned assets
-    - check asset interface
-    - get asset encoded data
-    - get asset decoded data
-    - get asset storage link
-    - fetch assets storage
-- `fetch-profile:` **Read [Universal Profiles](https://docs.lukso.tech/standards/universal-profile/introduction) from the blockchain**
-    - read profile data
-    - read profile metadata
+```
+project
+│
+└───convenience                                     // Utility Functions
+│   │   Check Blockchain Addresses
+│   │   Create Externally Owned Account
+│   
+└───create-asset                                    // Create UP
+│   │   Create Universal Profile
+|
+└───create-profile                                  // Create LSP7 & LSP8
+│   │   Work in Progress
+|
+└───extract-data                                    // Extract LSP JSON
+│   │   Extract Data from Asset JSON
+│   │   Extract Data from Profile JSON
+|
+└───fetch-asset                                     // Fetch LSP7 & LSP8
+│   │
+│   └───current/legacy
+│       │   Fetch Universal Receiver
+│       │   Fetch Received Assets
+│       │   Fetch Issued Assets
+│       │   Fetch Owned Assets
+│       │   Check Asset Interface
+│       │   Get the Assets Encoded Data
+│       │   Get the Assets Decoded Data
+│       │   Get the Assets Storage Link
+│       │   Fetch the Assets Storage
+│       │   Complete Asset Guide
+|
+└───fetch profile                                   // Fetch UP
+    │   Fetch Universal Receiver
+    │   Read Profile Data
+    │   Read Profile Metadata
+    │   Complete Profile Guide
+
+```
 
 ### Used ERC725.js Build
 
@@ -45,3 +81,10 @@ Version 0.14.0
 
 - https://cloudflare-ipfs.com/ipfs/
 - https://2eff.lukso.dev/ipfs/
+
+### Run locally
+
+```
+npm install
+node [FILENAME].js
+```
