@@ -65,7 +65,20 @@ Version 0.14.0
 
 ### Run locally
 
+Clone this repository and install its dependencies.
+
 ```
+git clone https://github.com/fhildeb/lukso-playground.git
+cd lukso-playground
 npm install
+```
+
+Run the JavaScript code of one file within the terminal.
+
+```
 node [FILENAME].js
 ```
+
+### Run in browser
+
+Open this project on [StackBlitz](https://stackblitz.com/github/fhildeb/lukso-playground) and start coding right away.
