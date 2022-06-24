@@ -17,6 +17,9 @@ Convenient and standalone code snippets to read blockchain data
 
 - `convenience:` **Utility [Web3](https://web3js.readthedocs.io/en/v1.7.4/) functions**
     - validate blockchain address
+    - create EOA
+-- `create-up:` **Creating** a [Universal Profile](https://docs.lukso.tech/standards/universal-profile/introduction)
+    - create profile
 - `extract-data:` **Extract [LSP2](https://docs.lukso.tech/standards/generic-standards/lsp2-json-schema) from JSON datasets**
     - extract asset data
     - extract profile data
