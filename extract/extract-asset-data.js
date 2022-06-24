@@ -33,7 +33,7 @@ let assetDescription;
 /*
  * Get the dataset of an asset
  *
- * @param key of the property to fetch
+ * @param data key of the property to fetch
  * @return string of the encoded data
  */
 async function getAssetData(key, address) {
@@ -52,7 +52,7 @@ async function getAssetData(key, address) {
  * Decode the value from ERC725Y storage
  * based on its key and phrase
  *
- * @param key of the asset property
+ * @param data key of the asset property to fetch
  * @param encodedData as string
  * @return JSON of the decoded data
  */

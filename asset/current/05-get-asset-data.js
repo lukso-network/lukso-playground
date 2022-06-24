@@ -18,7 +18,7 @@ const CreatorsKey = LSP4schema[4].key;
 /*
  * Get the dataset of an asset
  *
- * @param key of the property to fetch
+ * @param data key of the property to fetch
  * @return string of the encoded data
  */
 async function getAssetData(key, address) {
