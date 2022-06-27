@@ -47,10 +47,13 @@ project
 │       │   Complete Asset Guide
 |
 └───fetch profile                                   // Fetch UP
-    │   Fetch Universal Receiver
-    │   Read Profile Data
-    │   Read Profile Metadata
-    │   Complete Profile Guide
+|   │   Fetch Universal Receiver
+|   │   Read Profile Data
+|   │   Read Profile Metadata
+|   │   Complete Profile Guide
+|    
+└───update profile                                 // Update UP
+    │   Complete Update Guide
 
 ```
 
