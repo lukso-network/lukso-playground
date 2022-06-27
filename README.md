@@ -22,11 +22,11 @@ project
 │   │   Check Blockchain Addresses
 │   │   Create Externally Owned Account
 │   
-└───create-asset                                    // Create UP
-│   │   Create Universal Profile
+└───create-asset                                    // Create LSP7 & LSP8
+│   │   Work in Progress ...
 |
-└───create-profile                                  // Create LSP7 & LSP8
-│   │   Work in Progress
+└───create-profile                                  // Create UP
+│   │   Create Universal Profile
 |
 └───extract-data                                    // Extract LSP JSON
 │   │   Extract Data from Asset JSON
