@@ -52,10 +52,13 @@ project
 |   │   Read Profile Metadata
 |   │   Complete Profile Guide
 |    
+└───permissions                                     // Key Manager
+|   │   Set UP Permissions to Address
+|    
 └───transfer LYX                                    // Value Transfer
 |   │   Complete Transfer Guide
 |
-└───update profile                                 // Update UP
+└───update profile                                  // Update UP
     │   Complete Update Guide
 
 ```

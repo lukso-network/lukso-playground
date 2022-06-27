@@ -28,6 +28,6 @@ const transferLYXPayload = await myUP.methods
 
 // 3. execute the LYX transfer via the Key Manager
 await myKM.execute(transferLYXPayload).send({
-  from: wallet.address,
+  from: "<my-wallet-address>",
   gasLimit: 300_00,
 });
