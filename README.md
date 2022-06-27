@@ -2,6 +2,10 @@
  
 Convenient and standalone code snippets to interact with [LSP](https://docs.lukso.tech/standards/standards-roadmap) standards.
 
+## Foundation
+
+Most snippets were elaborated from [LUKSO Tech Docs](https://docs.lukso.tech/) and work completely autonomously.
+
 ## Last Playground Check
 
 27th June 2022

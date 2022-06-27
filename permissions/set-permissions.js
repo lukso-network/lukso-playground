@@ -4,14 +4,14 @@ const { ADDRESSES, PERMISSIONS, PERMISSIONS_ARRAY } = require("./constants");
 const UniversalProfile = require("@lukso/lsp-smart-contracts/build/artifacts/UniversalProfile.json");
 const KeyManager = require("@lukso/lsp-smart-contracts/build/artifacts/KeyManager.json");
 
+const myUniversalProfileAddress = "0x...";
+const myKeyManagerAddress = "0x...";
+
 const universalProfile = new web3.eth.Contract(
   UniversalProfile.abi,
-  "<my-UniversalProfile-address>"
+  myUniversalProfileAddress
 );
-const keyManager = new web3.eth.Contract(
-  KeyManager.abi,
-  "<my-KeyManager-Address>"
-);
+const keyManager = new web3.eth.Contract(KeyManager.abi, myKeyManagerAddress);
 
 // EOA address of an exemplary person
 let bobAddress = "0x...";
@@ -33,7 +33,7 @@ async function setPermission() {
   ).encodeABI();
 
   keyManager.execute(payload).send({
-    // EOA address thats set to control the UP
+    // Connected wallet with EOA address that is set to control the UP
     from: "<my-wallet-address>",
     gasLimit: 300_000,
   });
