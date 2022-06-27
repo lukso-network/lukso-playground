@@ -52,6 +52,9 @@ project
 |   │   Read Profile Metadata
 |   │   Complete Profile Guide
 |    
+└───transfer LYX                                    // Value Transfer
+|   │   Complete Transfer Guide
+|
 └───update profile                                 // Update UP
     │   Complete Update Guide
 
