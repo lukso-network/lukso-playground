@@ -4,7 +4,7 @@ Convenient and standalone code snippets to interact with [LSP](https://docs.luks
 
 ## Last Playground Check
 
-24th June 2022
+27th June 2022
 
 ## Contents
 
