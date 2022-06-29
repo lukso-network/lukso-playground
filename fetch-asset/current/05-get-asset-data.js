@@ -4,10 +4,10 @@ const LSP4schema = require("@erc725/erc725.js/schemas/LSP4DigitalAsset.json");
 const LSP4 = require("@lukso/lsp-smart-contracts/artifacts/LSP4DigitalAssetMetadata.json");
 
 // Sample addresses
-const SAMPLE_ASSET_ADDRESS = "0xfE85568Fea15A7ED3c56F7ca6544F2b96Aeb1774";
+const SAMPLE_ASSET_ADDRESS = "0x923F49Bac508E4Ec063ac097E00b4a3cAc68a353";
 
 // Setup Web3
-const web3 = new Web3("https://rpc.l14.lukso.network");
+const web3 = new Web3("https://rpc.l16.lukso.network");
 
 // Data keys for asset properties
 const TokenNameKey = LSP4schema[1].key;

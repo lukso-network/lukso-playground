@@ -13,9 +13,9 @@ Most snippets were elaborated from [LUKSO Tech Docs](https://docs.lukso.tech/) a
 ## Contents
 
 ### Tags
-- `legacy:` Working with legacy profiles on [universalprofile.cloud](https://universalprofile.cloud/)
-- `current:` Latest standard that will be deployed to mainnet
-- `none:` using latest version of erc725.js
+- `legacy:` Legacy LSP standards on L14 ([universalprofile.cloud](https://universalprofile.cloud/))
+- `current:` Latest LSP standards on L16
+- `none:` using latest standards and version of erc725.js
 
 ### Folders
 
