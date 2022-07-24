@@ -81,7 +81,7 @@ Version 0.14.0
 Clone this repository and install its dependencies.
 
 ```
-git clone https://github.com/fhildeb/lukso-playground.git
+git clone https://github.com/lukso-network/lukso-playground.git
 cd lukso-playground
 npm install
 ```
@@ -94,4 +94,4 @@ node [FILENAME].js
 
 ### Run in browser
 
-Open this project on [StackBlitz](https://stackblitz.com/github/fhildeb/lukso-playground) and start coding right away.
+Open this project on [StackBlitz](https://stackblitz.com/github/lukso-network/lukso-playground) and start coding right away.
