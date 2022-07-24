@@ -94,4 +94,4 @@ node [FILENAME].js
 
 ### Run in browser
 
-Open this project on [StackBlitz](https://stackblitz.com/github/fhildeb/lukso-playground) and start coding right away.
+Open this project on [StackBlitz](https://stackblitz.com/github/lukso-network/lukso-playground) and start coding right away.
