@@ -81,7 +81,7 @@ Version 0.14.0
 Clone this repository and install its dependencies.
 
 ```
-git clone https://github.com/lukso-network/lukso-playground
+git clone https://github.com/lukso-network/lukso-playground.git
 cd lukso-playground
 npm install
 ```
