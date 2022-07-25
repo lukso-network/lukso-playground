@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fhildeb/lukso-playground.git"
+    "url": "git+https://github.com/lukso-network/lukso-playground.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fhildeb/lukso-playground/issues"
+    "url": "https://github.com/lukso-network/lukso-playground/issues"
   },
-  "homepage": "https://github.com/fhildeb/lukso-playground#readme",
+  "homepage": "https://github.com/lukso-network/lukso-playground#readme",
   "dependencies": {
     "@erc725/erc725.js": "^0.14.2",
     "@lukso/lsp-smart-contracts": "^0.6.1",
