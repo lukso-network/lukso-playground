@@ -10,20 +10,18 @@ const {
   ERC725Y_INTERFACE_IDS,
 } = require("@erc725/erc725.js/build/main/src/lib/constants");
 
-// Sample addresses
-const SAMPLE_PROFILE_ADDRESS = "0xa907c1904c22DFd37FF56c1f3c3d795682539196";
-const SAMPLE_ASSET_ADDRESS = "0x923F49Bac508E4Ec063ac097E00b4a3cAc68a353";
-
-// Network and storage
+// Static variables
 const RPC_ENDPOINT = "https://rpc.l16.lukso.network";
 const IPFS_GATEWAY = "https://2eff.lukso.dev/ipfs/";
+const SAMPLE_PROFILE_ADDRESS = "0xa907c1904c22DFd37FF56c1f3c3d795682539196";
+const SAMPLE_ASSET_ADDRESS = "0x923F49Bac508E4Ec063ac097E00b4a3cAc68a353";
 
 // Parameters for the ERC725 instance
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
 const config = { ipfsGateway: IPFS_GATEWAY };
 
 // Setup Web3
-const web3 = new Web3("https://rpc.l16.lukso.network");
+const web3 = new Web3(RPC_ENDPOINT);
 
 // Data keys for asset properties
 const TokenNameKey = LSP4schema[1].key;

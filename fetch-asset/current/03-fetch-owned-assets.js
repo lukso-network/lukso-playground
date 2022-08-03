@@ -5,19 +5,17 @@ require("isomorphic-fetch");
 const erc725schema = require("@erc725/erc725.js/schemas/LSP3UniversalProfileMetadata.json");
 const LSP8 = require("@lukso/lsp-smart-contracts/artifacts/LSP8IdentifiableDigitalAsset.json");
 
-// Sample Addresses
-const SAMPLE_PROFILE_ADDRESS = "0xa907c1904c22DFd37FF56c1f3c3d795682539196";
-
-// Network & Storage
+// Static variables
 const RPC_ENDPOINT = "https://rpc.l16.lukso.network";
-const IPFS_GATEWAY = "https://cloudflare-ipfs.com/ipfs/";
+const IPFS_GATEWAY = "https://2eff.lukso.dev/ipfs/";
+const SAMPLE_PROFILE_ADDRESS = "0xa907c1904c22DFd37FF56c1f3c3d795682539196";
 
 // Parameters for ERC725 Instance
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
 const config = { ipfsGateway: IPFS_GATEWAY };
 
 // Setup Web3
-const web3 = new Web3("https://rpc.l16.lukso.network");
+const web3 = new Web3(RPC_ENDPOINT);
 
 /*
  * Fetch the @param's Universal Profile's
