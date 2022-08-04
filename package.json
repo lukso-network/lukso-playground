@@ -18,6 +18,7 @@
   "homepage": "https://github.com/lukso-network/lukso-playground#readme",
   "dependencies": {
     "@erc725/erc725.js": "^0.14.2",
+    "@lukso/lsp-factory.js": "^2.3.3",
     "@lukso/lsp-smart-contracts": "^0.6.1",
     "isomorphic-fetch": "^3.0.0",
     "web3": "^1.7.4"
