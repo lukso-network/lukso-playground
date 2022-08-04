@@ -1,13 +1,17 @@
+// Imports
 const Web3 = require("web3");
 const UniversalProfile = require("@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json");
 const KeyManager = require("@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json");
 
-const web3 = new Web3("https://rpc.l14.lukso.network");
+// Static variables
+const RPC_ENDPOINT = "https://rpc.l16.lukso.network";
+const UNIVERSAL_PROFILE_ADDRESS = "0x...";
 
-const myUPAddress = "0x...";
+// Setup Web3
+const web3 = new Web3(RPC_ENDPOINT);
 
 // 1. instantiate your contracts
-const myUP = new web3.eth.Contract(UniversalProfile.abi, myUPAddress);
+const myUP = new web3.eth.Contract(UniversalProfile.abi, UNIVERSAL_PROFILE_ADDRESS);
 
 // the KeyManager is the owner of the Universal Profile
 // so get the address of the KeyManager by calling the owner() function

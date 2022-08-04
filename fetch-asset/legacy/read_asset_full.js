@@ -2,17 +2,14 @@
 const { ERC725 } = require("@erc725/erc725.js");
 const erc725schema = require("@erc725/erc725.js/schemas/LSP3UniversalProfileMetadata.json");
 const LSP4Schema = require("@erc725/erc725.js/schemas/LSP4DigitalAsset.json");
-
 const Web3 = require("web3");
 require("isomorphic-fetch");
 
-// Sample address
-const SAMPLE_PROFILE_ADDRESS = "0x0C03fBa782b07bCf810DEb3b7f0595024A444F4e";
-const SAMPLE_ASSET_ADDRESS = "0xc444009d38d3046bb0cF81Fa2Cd295ce46A67C78";
-
-// Network and storage
+// Static variables
 const RPC_ENDPOINT = "https://rpc.l14.lukso.network";
 const IPFS_GATEWAY = "https://2eff.lukso.dev/ipfs/";
+const SAMPLE_PROFILE_ADDRESS = "0x0C03fBa782b07bCf810DEb3b7f0595024A444F4e";
+const SAMPLE_ASSET_ADDRESS = "0xc444009d38d3046bb0cF81Fa2Cd295ce46A67C78";
 
 // Legacy ABIs and schemas
 const LSP1MinimalABI = require("./lsp1_legacy_minimal_abi.json");
