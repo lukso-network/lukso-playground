@@ -1,24 +1,26 @@
+// Imports
 const Web3 = require("web3");
 const { ERC725 } = require("@erc725/erc725.js");
 const { LSPFactory } = require("@lukso/lsp-factory.js");
-
 const UniversalProfile = require("@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json");
 const KeyManager = require("@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json");
 
-// Constants
+// Static variables
+const RPC_ENDPOINT = "https://rpc.l16.lukso.network";
+const IPFS_GATEWAY = "https://2eff.lukso.dev/ipfs/";
+const CHAIN_ID = 2828;
 const PRIVATE_KEY = "0x..."; // from ../convenience/create-eoa.js
-const profileAddress = "0x...";
+const UNIVERSAL_PROFILE_ADDRESS = "0x...";
+
+// Setup Web3
+const web3 = new Web3(RPC_ENDPOINT);
 
 // Step 1 - Create a new LSP3Profile JSON file
 const jsonFile = require("./sample-metadata.json");
 
-// RPC Provider
-const provider = "https://rpc.l14.lukso.network";
-const web3 = new Web3(provider);
-
-const lspFactory = new LSPFactory(provider, {
+const lspFactory = new LSPFactory(RPC_ENDPOINT, {
   deployKey: PRIVATE_KEY,
-  chainId: 2828, // Chain ID L16
+  chainId: CHAIN_ID,
 });
 
 async function editProfileInfo() {
@@ -40,8 +42,8 @@ async function editProfileInfo() {
     },
   ];
 
-  const erc725 = new ERC725(schema, profileAddress, web3.currentProvider, {
-    ipfsGateway: "https://2eff.lukso.dev/ipfs/",
+  const erc725 = new ERC725(schema, UNIVERSAL_PROFILE_ADDRESS, web3.currentProvider, {
+    ipfsGateway: IPFS_GATEWAY,
   });
 
   // Step 3.2 - Encode the LSP3Profile data (to be written on our UP)
@@ -62,7 +64,7 @@ async function editProfileInfo() {
   // Step 4.2 - Create instances of our Contracts
   const universalProfileContract = new web3.eth.Contract(
     UniversalProfile.abi,
-    profileAddress
+    UNIVERSAL_PROFILE_ADDRESS
   );
 
   const keyManagerAddress = await universalProfileContract.methods
