@@ -8,7 +8,7 @@ const SAMPLE_PROFILE_ADDRESS = "0xa907c1904c22DFd37FF56c1f3c3d795682539196";
 
 // Network and storage
 const RPC_ENDPOINT = "https://rpc.l16.lukso.network";
-const IPFS_GATEWAY = "https://cloudflare-ipfs.com/ipfs/";
+const IPFS_GATEWAY = "https://2eff.lukso.dev/ipfs/";
 
 // Parameters for the ERC725 instance
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
@@ -27,7 +27,7 @@ async function fetchUniversalReceiverAddress(address) {
     const result = await profile.fetchData("LSP1UniversalReceiverDelegate");
     return result.value;
   } catch (error) {
-    return console.log("This is not an ERC725 Contract");
+    return console.log("This is not an ERC725 Contract: ", error);
   }
 }
 

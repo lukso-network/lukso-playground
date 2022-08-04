@@ -34,7 +34,7 @@ async function fetchUniversalReceiverAddress(address) {
     const result = await profile.fetchData("LSP1UniversalReceiverDelegate");
     return result.value;
   } catch (error) {
-    return console.log("Universal Receiver could not be fetched");
+    return console.log("Universal Receiver could not be fetched: ", error);
   }
 }
 
@@ -58,7 +58,10 @@ async function fetchReceivedAssets(receiverAddress) {
     // Fetch all raw values
     rawValues = await universalReceiver.methods.getAllRawValues().call();
   } catch (error) {
-    return console.log("Data from universal receiver could not be loaded");
+    return console.log(
+      "Data from universal receiver could not be loaded: ",
+      error
+    );
   }
 
   const receivedAssets = [];

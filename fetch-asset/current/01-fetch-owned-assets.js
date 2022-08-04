@@ -29,7 +29,7 @@ async function fetchOwnedAssets(address) {
     const result = await profile.fetchData("LSP5ReceivedAssets[]");
     return result.value;
   } catch (error) {
-    return console.log("This is not an ERC725 Contract");
+    return console.log("This is not an ERC725 Contract: ", error);
   }
 }
 

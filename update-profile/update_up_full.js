@@ -5,8 +5,6 @@ const { LSPFactory } = require("@lukso/lsp-factory.js");
 const UniversalProfile = require("@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json");
 const KeyManager = require("@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json");
 
-const web3 = new Web3("https://rpc.l14.lukso.network");
-
 // Constants
 const PRIVATE_KEY = "0x..."; // from ../convenience/create-eoa.js
 const profileAddress = "0x...";
@@ -14,11 +12,13 @@ const profileAddress = "0x...";
 // Step 1 - Create a new LSP3Profile JSON file
 const jsonFile = require("./sample-metadata.json");
 
-const provider = "https://rpc.l14.lukso.network"; // RPC provider url
+// RPC Provider
+const provider = "https://rpc.l14.lukso.network";
+const web3 = new Web3(provider);
 
 const lspFactory = new LSPFactory(provider, {
   deployKey: PRIVATE_KEY,
-  chainId: 22, // Chain Id of the network you want to deploy to
+  chainId: 2828, // Chain ID L16
 });
 
 async function editProfileInfo() {
@@ -41,7 +41,7 @@ async function editProfileInfo() {
   ];
 
   const erc725 = new ERC725(schema, profileAddress, web3.currentProvider, {
-    ipfsGateway: "https://cloudflare-ipfs.com/ipfs/",
+    ipfsGateway: "https://2eff.lukso.dev/ipfs/",
   });
 
   // Step 3.2 - Encode the LSP3Profile data (to be written on our UP)

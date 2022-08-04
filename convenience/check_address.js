@@ -1,6 +1,6 @@
-// Import and Network Setup
+// Import and Setup
 const Web3 = require("web3");
-const web3 = new Web3("https://rpc.l14.lukso.network");
+const web3 = new Web3();
 
 // Static address
 const SAMPLE_PROFILE_ADDRESS = "0x0C03fBa782b07bCf810DEb3b7f0595024A444F4e";

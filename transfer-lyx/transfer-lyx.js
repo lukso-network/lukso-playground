@@ -2,7 +2,7 @@ const Web3 = require("web3");
 const UniversalProfile = require("@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json");
 const KeyManager = require("@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json");
 
-const web3 = new Web3("https://rpc.l14.lukso.network");
+const web3 = new Web3("https://rpc.l16.lukso.network");
 
 const myUPAddress = "0x...";
 

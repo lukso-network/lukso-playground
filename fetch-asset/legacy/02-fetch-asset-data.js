@@ -33,7 +33,7 @@ async function fetchAssetData(address) {
     // Fetch the encoded data
     return await digitalAsset.fetchData("LSP4Metadata");
   } catch (error) {
-    return console.log("Data of assets address could not be fetched");
+    return console.log("Data of assets address could not be fetched: ", error);
   }
 }
 
