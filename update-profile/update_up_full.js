@@ -8,6 +8,7 @@ const KeyManager = require("@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.
 // Static variables
 const RPC_ENDPOINT = "https://rpc.l16.lukso.network";
 const IPFS_GATEWAY = "https://2eff.lukso.dev/ipfs/";
+const CHAIN_ID = 2828;
 const PRIVATE_KEY = "0x..."; // from ../convenience/create-eoa.js
 const UNIVERSAL_PROFILE_ADDRESS = "0x...";
 
@@ -19,7 +20,7 @@ const jsonFile = require("./sample-metadata.json");
 
 const lspFactory = new LSPFactory(RPC_ENDPOINT, {
   deployKey: PRIVATE_KEY,
-  chainId: CHAIN_ID, // Chain Id of the network you want to deploy to
+  chainId: CHAIN_ID,
 });
 
 async function editProfileInfo() {

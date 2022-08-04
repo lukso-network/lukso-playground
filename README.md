@@ -1,5 +1,5 @@
 # lukso-playground
- 
+
 Convenient and standalone code snippets to interact with [LSP](https://docs.lukso.tech/standards/standards-roadmap) standards.
 
 ## Foundation
@@ -13,6 +13,7 @@ Most snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and wo
 ## Contents
 
 ### Tags
+
 - `legacy:` Legacy LSP standards on L14 ([universalprofile.cloud](https://universalprofile.cloud/))
 - `current:` Latest LSP standards on L16
 - `none:` using latest standards and version of erc725.js
@@ -25,7 +26,7 @@ project
 └───convenience                                     // Utility Functions
 │   │   Check Blockchain Addresses
 │   │   Create Externally Owned Account
-│   
+│
 └───create-asset                                    // Create LSP7 & LSP8
 │   │   Work in Progress ...
 |
@@ -55,10 +56,10 @@ project
 |   │   Read Profile Data
 |   │   Read Profile Metadata
 |   │   Complete Profile Guide
-|    
+|
 └───permissions                                     // Key Manager
 |   │   Set UP Permissions to Address
-|    
+|
 └───transfer LYX                                    // Value Transfer
 |   │   Complete Transfer Guide
 |
@@ -73,8 +74,7 @@ Version 0.14.0
 
 ### IPFS Server
 
-- https://cloudflare-ipfs.com/ipfs/
-- https://2eff.lukso.dev/ipfs/
+`https://2eff.lukso.dev/ipfs/` (current L14 & L16)
 
 ### Run locally
 

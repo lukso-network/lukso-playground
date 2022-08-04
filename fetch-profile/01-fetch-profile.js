@@ -25,7 +25,7 @@ async function fetchProfileData(address) {
     const profile = new ERC725(erc725schema, address, provider, config);
     return await profile.fetchData();
   } catch (error) {
-    return console.log("This is not an ERC725 Contract");
+    return console.log("This is not an ERC725 Contract: ", error);
   }
 }
 

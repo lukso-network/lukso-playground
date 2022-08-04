@@ -19,7 +19,7 @@ const config = { ipfsGateway: IPFS_GATEWAY };
  * @param address of the asset
  * @return string of the encoded data
  */
-async function getAssetData(address) {
+async function fetchAssetData(address) {
   try {
     const digitalAsset = new ERC725(LSP4Schema, address, provider, config);
     return await digitalAsset.fetchData("LSP4Metadata");
@@ -29,6 +29,6 @@ async function getAssetData(address) {
 }
 
 // Debug
-getAssetData(SAMPLE_ASSET_ADDRESS).then((assetData) =>
+fetchAssetData(SAMPLE_ASSET_ADDRESS).then((assetData) =>
   console.log(JSON.stringify(assetData, undefined, 2))
 );
