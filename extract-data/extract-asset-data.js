@@ -17,7 +17,7 @@ const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
 const config = { ipfsGateway: IPFS_GATEWAY };
 
 // Setup Web3
-const web3 = new Web3("https://rpc.l14.lukso.network");
+const web3 = new Web3(RPC_ENDPOINT);
 
 // Data keys for asset properties
 const TokenNameKey = LSP4schema[1].key;
