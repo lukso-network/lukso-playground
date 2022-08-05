@@ -1,5 +1,6 @@
 require("@nomiclabs/hardhat-waffle");
 require('dotenv').config();
+require('hardhat-deploy')
 
 const { LUKSO_PVT_KEY } = process.env;
 
@@ -28,5 +29,8 @@ module.exports = {
       live: true,
       chainId: 2828,
     },
+  },
+  namedAccounts: {
+    owner: 0,
   }
 };
