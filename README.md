@@ -8,7 +8,7 @@ Most snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and wo
 
 ## Last Playground Check
 
-27th June 2022
+5th August 2022
 
 ## Contents
 
@@ -40,15 +40,8 @@ project
 └───fetch-asset                                     // Fetch LSP7 & LSP8
 │   │
 │   └───current/legacy
-│       │   Fetch Universal Receiver
-│       │   Fetch Received Assets
-│       │   Fetch Issued Assets
 │       │   Fetch Owned Assets
-│       │   Check Asset Interface
-│       │   Get the Assets Encoded Data
-│       │   Get the Assets Decoded Data
-│       │   Get the Assets Storage Link
-│       │   Fetch the Assets Storage
+│       │   Fetch Asset Data
 │       │   Complete Asset Guide
 |
 └───fetch profile                                   // Fetch UP
@@ -56,6 +49,11 @@ project
 |   │   Read Profile Data
 |   │   Read Profile Metadata
 |   │   Complete Profile Guide
+|
+└───hardhat deploy                                  // SC Deployment Setup for L16
+|   │   Sample Contract
+|   │   Scripts
+|   │   Test
 |
 └───permissions                                     // Key Manager
 |   │   Set UP Permissions to Address
