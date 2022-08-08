@@ -31,7 +31,7 @@ const transferLYXPayload = await myUP.methods
   .encodeABI();
 
 // 3. execute the LYX transfer via the Key Manager
-await myKM.execute(transferLYXPayload).send({
+await myKM.methods.execute(transferLYXPayload).send({
   // Connected wallet with EOA address that can send funds from UP
   from: "<my-wallet-address>",
   gasLimit: 300_000,
