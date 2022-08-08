@@ -34,5 +34,5 @@ const transferLYXPayload = await myUP.methods
 await myKM.execute(transferLYXPayload).send({
   // Connected wallet with EOA address that can send funds from UP
   from: "<my-wallet-address>",
-  gasLimit: 300_00,
+  gasLimit: 300_000,
 });
