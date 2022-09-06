@@ -8,7 +8,7 @@ Most snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and wo
 
 ## Last Playground Check
 
-5th August 2022
+6th September 2022
 
 ## Contents
 
@@ -28,10 +28,13 @@ project
 │   │   Create Externally Owned Account
 │
 └───create-asset                                    // Create LSP7 & LSP8
-│   │   Work in Progress ...
+│   │   WIP
 |
 └───create-profile                                  // Create UP
 │   │   Create Universal Profile
+|
+└───create-vault                                    // Create UP
+│   │   WIP
 |
 └───extract-data                                    // Extract LSP JSON
 │   │   Extract Data from Asset JSON
@@ -44,24 +47,26 @@ project
 │       │   Fetch Asset Data
 │       │   Complete Asset Guide
 |
-└───fetch profile                                   // Fetch UP
+└───fetch-profile                                   // Fetch UP
 |   │   Fetch Universal Receiver
 |   │   Read Profile Data
 |   │   Read Profile Metadata
 |   │   Complete Profile Guide
 |
-└───hardhat deploy                                  // SC Deployment Setup for L16
+└───hardhat-deploy                                  // SC Deployment Setup for L16
 |   │   Sample Contract
 |   │   Scripts
 |   │   Test
 |
-└───permissions                                     // Key Manager
+└───key-manager                                     // Permission Management
+|   │   Manage 3rd party permissions (WIP)
+|   │   Get controller key (WIP)
 |   │   Set UP Permissions to Address
 |
-└───transfer LYX                                    // Value Transfer
+└───transfer-lyx                                    // Value Transfer
 |   │   Complete Transfer Guide
 |
-└───update profile                                  // Update UP
+└───update-profile                                  // Update UP
     │   Complete Update Guide
 
 ```
