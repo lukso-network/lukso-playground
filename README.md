@@ -8,7 +8,7 @@ Most snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and wo
 
 ## Last Playground Check
 
-6th September 2022
+7th September 2023
 
 ## Contents
 
@@ -53,10 +53,13 @@ project
 |   │   Read Profile Metadata
 |   │   Complete Profile Guide
 |
-└───hardhat-deploy                                  // SC Deployment Setup for L16
-|   │   Sample Contract
-|   │   Scripts
-|   │   Test
+└───hardhat-deploy                                  // SC Deployment Setup
+|   |
+|   └───current/legacy
+|       │   Sample Contract
+|       │   Scripts
+|       │   Deploy scripts
+|       │   Test
 |
 └───key-manager                                     // Permission Management
 |   │   Manage 3rd party permissions (WIP)

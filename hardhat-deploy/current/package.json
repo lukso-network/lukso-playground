@@ -1,0 +1,15 @@
+{
+  "name": "hardhat-project",
+  "scripts": {
+    "build": "hardhat compile --force --show-stack-traces"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "dotenv": "^16.3.1",
+    "hardhat": "^2.17.2",
+    "prettier": "^3.0.3"
+  },
+  "dependencies": {
+    "@lukso/lsp-smart-contracts": "^0.11.0-rc.1"
+  }
+}
