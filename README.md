@@ -8,7 +8,7 @@ Most snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and wo
 
 ## Last Playground Check
 
-7th September 2023
+16th October 2023
 
 ## Contents
 
@@ -41,11 +41,9 @@ project
 │   └── Extract Data from Profile JSON
 │
 ├── fetch-asset                                     // Fetch LSP7 & LSP8
-│   │
-│   ├── current/legacy
-│   │   ├── Fetch Owned Assets
-│   │   ├── Fetch Asset Data
-│   │   └── Complete Asset Guide
+│   ├── Fetch Owned Assets
+│   ├── Fetch Asset Data
+│   └── Complete Asset Guide
 │
 ├── fetch-profile                                   // Fetch UP
 │   ├── Fetch Universal Receiver
@@ -54,12 +52,8 @@ project
 │   └── Complete Profile Guide
 │
 ├── hardhat-deploy                                  // SC Deployment Setup
-│   │
-│   ├── current/legacy
-│   │   ├── Sample Contract
-│   │   ├── Scripts
-│   │   ├── Deploy scripts
-│   │   └── Test
+│   ├── Sample Contract
+│   └── Scripts
 │
 ├── key-manager                                     // Permission Management
 │   ├── Manage 3rd party permissions (WIP)
@@ -71,7 +65,6 @@ project
 │
 └── update-profile                                  // Update UP
     └── Complete Update Guide
-
 ```
 
 ### Used ERC725.js Build
