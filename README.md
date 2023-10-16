@@ -23,54 +23,54 @@ Most snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and wo
 ```
 project
 │
-└───convenience                                     // Utility Functions
-│   │   Check Blockchain Addresses
-│   │   Create Externally Owned Account
+├── convenience                                     // Utility Functions
+│   ├── Check Blockchain Addresses
+│   └── Create Externally Owned Account
 │
-└───create-asset                                    // Create LSP7 & LSP8
-│   │   WIP
-|
-└───create-profile                                  // Create UP
-│   │   Create Universal Profile
-|
-└───create-vault                                    // Create UP
-│   │   WIP
-|
-└───extract-data                                    // Extract LSP JSON
-│   │   Extract Data from Asset JSON
-│   │   Extract Data from Profile JSON
-|
-└───fetch-asset                                     // Fetch LSP7 & LSP8
+├── create-asset                                    // Create LSP7 & LSP8
+│   └── WIP
+│
+├── create-profile                                  // Create UP
+│   └── Create Universal Profile
+│
+├── create-vault                                    // Create UP
+│   └── WIP
+│
+├── extract-data                                    // Extract LSP JSON
+│   ├── Extract Data from Asset JSON
+│   └── Extract Data from Profile JSON
+│
+├── fetch-asset                                     // Fetch LSP7 & LSP8
 │   │
-│   └───current/legacy
-│       │   Fetch Owned Assets
-│       │   Fetch Asset Data
-│       │   Complete Asset Guide
-|
-└───fetch-profile                                   // Fetch UP
-|   │   Fetch Universal Receiver
-|   │   Read Profile Data
-|   │   Read Profile Metadata
-|   │   Complete Profile Guide
-|
-└───hardhat-deploy                                  // SC Deployment Setup
-|   |
-|   └───current/legacy
-|       │   Sample Contract
-|       │   Scripts
-|       │   Deploy scripts
-|       │   Test
-|
-└───key-manager                                     // Permission Management
-|   │   Manage 3rd party permissions (WIP)
-|   │   Get controller key (WIP)
-|   │   Set UP Permissions to Address
-|
-└───transfer-lyx                                    // Value Transfer
-|   │   Complete Transfer Guide
-|
-└───update-profile                                  // Update UP
-    │   Complete Update Guide
+│   ├── current/legacy
+│   │   ├── Fetch Owned Assets
+│   │   ├── Fetch Asset Data
+│   │   └── Complete Asset Guide
+│
+├── fetch-profile                                   // Fetch UP
+│   ├── Fetch Universal Receiver
+│   ├── Read Profile Data
+│   ├── Read Profile Metadata
+│   └── Complete Profile Guide
+│
+├── hardhat-deploy                                  // SC Deployment Setup
+│   │
+│   ├── current/legacy
+│   │   ├── Sample Contract
+│   │   ├── Scripts
+│   │   ├── Deploy scripts
+│   │   └── Test
+│
+├── key-manager                                     // Permission Management
+│   ├── Manage 3rd party permissions (WIP)
+│   ├── Get controller key (WIP)
+│   └── Set UP Permissions to Address
+│
+├── transfer-lyx                                    // Value Transfer
+│   └── Complete Transfer Guide
+│
+└── update-profile                                  // Update UP
+    └── Complete Update Guide
 
 ```
 
