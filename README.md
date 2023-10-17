@@ -4,21 +4,17 @@ Convenient and standalone code snippets to interact with [LSP](https://docs.luks
 
 ## Foundation
 
-Most snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and work completely autonomously.
+Snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and work completely autonomously.
 
 ## Last Playground Check
 
 16th October 2023
 
+### IPFS Server
+
+`https://ipfs-proxy.lukso-account.workers.dev/ipfs/` (LUKSO Testnet)
+
 ## Contents
-
-### Tags
-
-- `legacy:` Legacy LSP standards on L14 ([universalprofile.cloud](https://universalprofile.cloud/))
-- `current:` Latest LSP standards on L16
-- `none:` using latest standards and version of erc725.js
-
-### Folders
 
 ```
 project
@@ -67,15 +63,13 @@ project
     └── Complete Update Guide
 ```
 
-### Used ERC725.js Build
+### LUKSO Developer Libraries
 
-Version 0.19.0
+- `@erc725/erc725.js`: 0.19.0
+- `@lukso/lsp-factory.js`: 3.1.1
+- `@lukso/lsp-smart-contracts`: 0.11.1
 
-### IPFS Server
-
-`https://ipfs-proxy.lukso-account.workers.dev/ipfs/` (LUKSO Testnet)
-
-### Run locally
+## Deplyment
 
 Clone this repository and install its dependencies.
 
@@ -84,6 +78,8 @@ git clone https://github.com/lukso-network/lukso-playground.git
 cd lukso-playground
 npm install
 ```
+
+### Run locally
 
 Run the JavaScript code of one file within the terminal.
 
