@@ -1,7 +1,7 @@
 // Imports
-const Web3 = require('web3');
-const UniversalProfile = require('@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json');
-const KeyManager = require('@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json');
+import Web3 from 'web3';
+import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
+import KeyManager from '@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json';
 
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';

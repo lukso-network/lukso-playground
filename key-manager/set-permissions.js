@@ -1,8 +1,7 @@
 // see file above constants.js
-const { ADDRESSES, PERMISSIONS, PERMISSIONS_ARRAY } = require('./constants');
-
-const UniversalProfile = require('@lukso/lsp-smart-contracts/build/artifacts/UniversalProfile.json');
-const KeyManager = require('@lukso/lsp-smart-contracts/build/artifacts/KeyManager.json');
+import { ADDRESSES, PERMISSIONS, PERMISSIONS_ARRAY } from './constants';
+import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
+import KeyManager from '@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json';
 
 const myUniversalProfileAddress = '0x...';
 const myKeyManagerAddress = '0x...';

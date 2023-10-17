@@ -1,7 +1,7 @@
 // Import and Network Setup
-const Web3 = require('web3');
-const { ERC725 } = require('@erc725/erc725.js');
-require('isomorphic-fetch'); // To enable you to use fetch() in Node.js code
+import Web3 from 'web3';
+import { ERC725 } from '@erc725/erc725.js';
+import 'isomorphic-fetch'; // To enable you to use fetch() in Node.js code
 
 // Our static variables
 const SAMPLE_PROFILE_ADDRESS = '0x6979474Ecb890a8EFE37daB2b9b66b32127237f7';

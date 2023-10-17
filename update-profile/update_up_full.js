@@ -1,9 +1,9 @@
 // Imports
-const Web3 = require('web3');
-const { ERC725 } = require('@erc725/erc725.js');
-const { LSPFactory } = require('@lukso/lsp-factory.js');
-const UniversalProfile = require('@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json');
-const KeyManager = require('@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json');
+import Web3 from 'web3';
+import { ERC725 } from '@erc725/erc725.js';
+import { LSPFactory } from '@lukso/lsp-factory.js';
+import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
+import KeyManager from '@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json';
 
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
@@ -16,7 +16,7 @@ const UNIVERSAL_PROFILE_ADDRESS = '0x...';
 const web3 = new Web3(RPC_ENDPOINT);
 
 // Step 1 - Create a new LSP3Profile JSON file
-const jsonFile = require('./sample-metadata.json');
+import jsonFile from './sample-metadata.json';
 
 const lspFactory = new LSPFactory(RPC_ENDPOINT, {
   deployKey: PRIVATE_KEY,

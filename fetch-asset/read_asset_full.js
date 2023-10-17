@@ -1,9 +1,9 @@
 // Imports
-const Web3 = require('web3');
-const { ERC725 } = require('@erc725/erc725.js');
-require('isomorphic-fetch');
-const erc725schema = require('@erc725/erc725.js/schemas/LSP3UniversalProfileMetadata.json');
-const LSP4Schema = require('@erc725/erc725.js/schemas/LSP4DigitalAsset.json');
+import Web3 from 'web3';
+import { ERC725 } from '@erc725/erc725.js';
+import 'isomorphic-fetch';
+import erc725schema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json';
+import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';

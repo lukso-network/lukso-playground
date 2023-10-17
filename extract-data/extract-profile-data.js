@@ -1,7 +1,7 @@
 // Imports
-const Web3 = require('web3');
-const { ERC725 } = require('@erc725/erc725.js');
-require('isomorphic-fetch');
+import Web3 from 'web3';
+import { ERC725 } from '@erc725/erc725.js';
+import 'isomorphic-fetch';
 
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
@@ -9,7 +9,7 @@ const IPFS_GATEWAY = 'https://ipfs-proxy.lukso-account.workers.dev/ipfs/';
 const SAMPLE_PROFILE_ADDRESS = '0x6979474Ecb890a8EFE37daB2b9b66b32127237f7';
 
 // Parameters for ERC725 Instance
-const erc725schema = require('@erc725/erc725.js/schemas/LSP3UniversalProfileMetadata.json');
+import erc725schema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json';
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
 const config = { ipfsGateway: IPFS_GATEWAY };
 

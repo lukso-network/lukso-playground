@@ -1,7 +1,7 @@
 // Imports
-const Web3 = require('web3');
-const { ERC725 } = require('@erc725/erc725.js');
-const erc725schema = require('@erc725/erc725.js/schemas/LSP3UniversalProfileMetadata.json');
+import Web3 from 'web3';
+import { ERC725 } from '@erc725/erc725.js';
+import erc725schema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json';
 
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';

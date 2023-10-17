@@ -1,6 +1,6 @@
 // Imports
-const { LSPFactory } = require('@lukso/lsp-factory.js');
-const Web3 = require('web3');
+import { LSPFactory } from '@lukso/lsp-factory.js';
+import Web3 from 'web3';
 
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';

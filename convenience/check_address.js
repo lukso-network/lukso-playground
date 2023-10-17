@@ -1,5 +1,5 @@
 // Imports
-const Web3 = require('web3');
+import Web3 from 'web3';
 
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
