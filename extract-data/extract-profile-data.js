@@ -1,15 +1,15 @@
 // Imports
-const Web3 = require("web3");
-const { ERC725 } = require("@erc725/erc725.js");
-require("isomorphic-fetch");
+const Web3 = require('web3');
+const { ERC725 } = require('@erc725/erc725.js');
+require('isomorphic-fetch');
 
 // Static variables
-const RPC_ENDPOINT = "https://rpc.l16.lukso.network";
-const IPFS_GATEWAY = "https://2eff.lukso.dev/ipfs/";
-const SAMPLE_PROFILE_ADDRESS = "0xa907c1904c22DFd37FF56c1f3c3d795682539196";
+const RPC_ENDPOINT = 'https://rpc.l16.lukso.network';
+const IPFS_GATEWAY = 'https://2eff.lukso.dev/ipfs/';
+const SAMPLE_PROFILE_ADDRESS = '0xa907c1904c22DFd37FF56c1f3c3d795682539196';
 
 // Parameters for ERC725 Instance
-const erc725schema = require("@erc725/erc725.js/schemas/LSP3UniversalProfileMetadata.json");
+const erc725schema = require('@erc725/erc725.js/schemas/LSP3UniversalProfileMetadata.json');
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
 const config = { ipfsGateway: IPFS_GATEWAY };
 
@@ -38,9 +38,9 @@ let fullSizeProfileImg;
 async function fetchProfileData(address) {
   try {
     const profile = new ERC725(erc725schema, address, provider, config);
-    return await profile.fetchData("LSP3Profile");
+    return await profile.fetchData('LSP3Profile');
   } catch (error) {
-    return console.log("This is not an ERC725 Contract: ", error);
+    return console.log('This is not an ERC725 Contract: ', error);
   }
 }
 
@@ -60,13 +60,13 @@ async function fetchProfileMetadata(address) {
   firstTag = tags[0];
 
   // Debug
-  console.log("Name: " + name);
-  console.log("Description: " + description + "\n");
-  console.log("Links: " + JSON.stringify(links, undefined, 2) + "\n");
-  console.log("Title of first Link: " + firstLinkTitle);
-  console.log("URL of first Link: " + firstLinkURL + "\n");
-  console.log("Tags: " + JSON.stringify(tags, undefined, 2) + "\n");
-  console.log("First Tag: " + firstTag + "\n");
+  console.log('Name: ' + name);
+  console.log('Description: ' + description + '\n');
+  console.log('Links: ' + JSON.stringify(links, undefined, 2) + '\n');
+  console.log('Title of first Link: ' + firstLinkTitle);
+  console.log('URL of first Link: ' + firstLinkURL + '\n');
+  console.log('Tags: ' + JSON.stringify(tags, undefined, 2) + '\n');
+  console.log('First Tag: ' + firstTag + '\n');
 }
 
 /* Fetch picture information from the JSON dataset of
@@ -84,33 +84,33 @@ async function fetchPictureData(address) {
     for (let i in backgroundImagesIPFS) {
       backgroundImageLinks.push([
         i,
-        backgroundImagesIPFS[i].url.replace("ipfs://", IPFS_GATEWAY),
+        backgroundImagesIPFS[i].url.replace('ipfs://', IPFS_GATEWAY),
       ]);
     }
     for (let i in profileImagesIPFS) {
       profileImageLinks.push([
         i,
-        profileImagesIPFS[i].url.replace("ipfs://", IPFS_GATEWAY),
+        profileImagesIPFS[i].url.replace('ipfs://', IPFS_GATEWAY),
       ]);
     }
     fullSizeBackgroundImg = backgroundImageLinks[0][1];
     fullSizeProfileImg = profileImageLinks[0][1];
 
     // Debug
-    console.log("Fullsize Background Image: " + fullSizeBackgroundImg + "\n");
-    console.log("Fullsize Background Image: " + fullSizeProfileImg + "\n");
+    console.log('Fullsize Background Image: ' + fullSizeBackgroundImg + '\n');
+    console.log('Fullsize Background Image: ' + fullSizeProfileImg + '\n');
     console.log(
-      "Background Image Links: " +
+      'Background Image Links: ' +
         JSON.stringify(backgroundImageLinks, undefined, 2) +
-        "\n"
+        '\n',
     );
     console.log(
-      "Background Image Links: " +
+      'Background Image Links: ' +
         JSON.stringify(profileImageLinks, undefined, 2) +
-        "\n"
+        '\n',
     );
   } catch (error) {
-    return console.log("Could not fetch images: ", error);
+    return console.log('Could not fetch images: ', error);
   }
 }
 

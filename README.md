@@ -14,9 +14,9 @@ Most snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and wo
 
 ### Tags
 
--   `legacy:` Legacy LSP standards on L14 ([universalprofile.cloud](https://universalprofile.cloud/))
--   `current:` Latest LSP standards on L16
--   `none:` using latest standards and version of erc725.js
+- `legacy:` Legacy LSP standards on L14 ([universalprofile.cloud](https://universalprofile.cloud/))
+- `current:` Latest LSP standards on L16
+- `none:` using latest standards and version of erc725.js
 
 ### Folders
 

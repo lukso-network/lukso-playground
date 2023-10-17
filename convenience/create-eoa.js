@@ -1,8 +1,8 @@
 // Imports
-const Web3 = require("web3");
+const Web3 = require('web3');
 
 // Static variables
-const RPC_ENDPOINT = "https://rpc.l16.lukso.network";
+const RPC_ENDPOINT = 'https://rpc.l16.lukso.network';
 
 // Setup Web3
 const web3 = new Web3(RPC_ENDPOINT);
