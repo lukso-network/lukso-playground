@@ -14,9 +14,9 @@ Most snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and wo
 
 ### Tags
 
-- `legacy:` Legacy LSP standards on L14 ([universalprofile.cloud](https://universalprofile.cloud/))
-- `current:` Latest LSP standards on L16
-- `none:` using latest standards and version of erc725.js
+-   `legacy:` Legacy LSP standards on L14 ([universalprofile.cloud](https://universalprofile.cloud/))
+-   `current:` Latest LSP standards on L16
+-   `none:` using latest standards and version of erc725.js
 
 ### Folders
 
@@ -69,11 +69,11 @@ project
 
 ### Used ERC725.js Build
 
-Version 0.14.0
+Version 0.19.0
 
 ### IPFS Server
 
-`https://2eff.lukso.dev/ipfs/` (current L14 & L16)
+`https://ipfs-proxy.lukso-account.workers.dev/ipfs/` (LUKSO Testnet)
 
 ### Run locally
 
