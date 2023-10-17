@@ -6,7 +6,7 @@ require('isomorphic-fetch'); // To enable you to use fetch() in Node.js code
 // Our static variables
 const SAMPLE_PROFILE_ADDRESS = '0x6979474Ecb890a8EFE37daB2b9b66b32127237f7';
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
-const IPFS_GATEWAY = 'https://2eff.lukso.dev/ipfs/';
+const IPFS_GATEWAY = 'https://ipfs-proxy.lukso-account.workers.dev/ipfs/';
 
 // Parameters for ERC725 Instance
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
