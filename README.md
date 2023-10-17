@@ -8,7 +8,7 @@ Snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and work co
 
 ## Last Playground Check
 
-16th October 2023
+17th October 2023
 
 ### IPFS Server
 
@@ -68,6 +68,8 @@ project
 - `@erc725/erc725.js`: 0.19.0
 - `@lukso/lsp-factory.js`: 3.1.1
 - `@lukso/lsp-smart-contracts`: 0.11.1
+
+> @erc725/erc725.js only supports web3 up to version @1.10.0
 
 ## Deplyment
 
