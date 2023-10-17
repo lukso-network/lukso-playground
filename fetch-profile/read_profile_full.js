@@ -4,8 +4,8 @@ const { ERC725 } = require('@erc725/erc725.js');
 require('isomorphic-fetch');
 
 // Our static variables
-const SAMPLE_PROFILE_ADDRESS = '0xa907c1904c22DFd37FF56c1f3c3d795682539196';
-const RPC_ENDPOINT = 'https://rpc.l16.lukso.network';
+const SAMPLE_PROFILE_ADDRESS = '0x6979474Ecb890a8EFE37daB2b9b66b32127237f7';
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
 const IPFS_GATEWAY = 'https://ipfs-proxy.lukso-account.workers.dev/ipfs/';
 
 // Parameters for ERC725 Instance

@@ -3,7 +3,7 @@ const { LSPFactory } = require('@lukso/lsp-factory.js');
 const Web3 = require('web3');
 
 // Static variables
-const RPC_ENDPOINT = 'https://rpc.l16.lukso.network';
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
 const CHAIN_ID = 2828;
 const PRIVATE_KEY = '0x...'; // add the private key of your EOA from ../convenience/create-eoa.js
 

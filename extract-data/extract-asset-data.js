@@ -5,9 +5,9 @@ require('isomorphic-fetch');
 const LSP4Schema = require('@erc725/erc725.js/schemas/LSP4DigitalAsset.json');
 
 // Static variables
-const RPC_ENDPOINT = 'https://rpc.l16.lukso.network';
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
 const IPFS_GATEWAY = 'https://ipfs-proxy.lukso-account.workers.dev/ipfs/';
-const SAMPLE_ASSET_ADDRESS = '0x923F49Bac508E4Ec063ac097E00b4a3cAc68a353';
+const SAMPLE_ASSET_ADDRESS = '0x6395b330F063F96579aA8F7b59f2584fb9b6c3a5';
 
 // Parameters for the ERC725 instance
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);

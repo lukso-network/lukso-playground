@@ -2,14 +2,13 @@
 const Web3 = require('web3');
 const { ERC725 } = require('@erc725/erc725.js');
 require('isomorphic-fetch');
-
 // Static variables
-const RPC_ENDPOINT = 'https://rpc.l16.lukso.network';
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
 const IPFS_GATEWAY = 'https://cloudflare-ipfs.com/ipfs/';
-const SAMPLE_PROFILE_ADDRESS = '0xa907c1904c22DFd37FF56c1f3c3d795682539196';
+const SAMPLE_PROFILE_ADDRESS = '0x6979474Ecb890a8EFE37daB2b9b66b32127237f7';
 
 // Parameters for ERC725 Instance
-const erc725schema = require('@erc725/erc725.js/schemas/LSP3UniversalProfileMetadata.json');
+const erc725schema = require('@erc725/erc725.js/schemas/LSP3ProfileMetadata.json');
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
 const config = { ipfsGateway: IPFS_GATEWAY };
 
