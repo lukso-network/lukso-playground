@@ -1,11 +1,11 @@
 // Imports
-const { LSPFactory } = require("@lukso/lsp-factory.js");
-const Web3 = require("web3");
+const { LSPFactory } = require('@lukso/lsp-factory.js');
+const Web3 = require('web3');
 
 // Static variables
-const RPC_ENDPOINT = "https://rpc.l16.lukso.network";
+const RPC_ENDPOINT = 'https://rpc.l16.lukso.network';
 const CHAIN_ID = 2828;
-const PRIVATE_KEY = "0x..."; // add the private key of your EOA from ../convenience/create-eoa.js
+const PRIVATE_KEY = '0x...'; // add the private key of your EOA from ../convenience/create-eoa.js
 
 // Setup Web3
 const web3 = new Web3(RPC_ENDPOINT);
@@ -24,20 +24,20 @@ async function createUniversalProfile() {
   const deployedContracts = await lspFactory.UniversalProfile.deploy({
     controllerAddresses: [myEOA.address], // our EOA that will be controlling the UP
     lsp3Profile: {
-      name: "My Universal Profile",
-      description: "My Cool Universal Profile",
-      tags: ["Public Profile"],
+      name: 'My Universal Profile',
+      description: 'My Cool Universal Profile',
+      tags: ['Public Profile'],
       links: [
         {
-          title: "My Website",
-          url: "https://my-website.com",
+          title: 'My Website',
+          url: 'https://my-website.com',
         },
       ],
     },
   });
 
   const myUPAddress = deployedContracts.LSP0ERC725Account.address;
-  console.log("my Universal Profile address: ", myUPAddress);
+  console.log('my Universal Profile address: ', myUPAddress);
 
   return deployedContracts;
 }

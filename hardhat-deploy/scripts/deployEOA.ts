@@ -1,10 +1,10 @@
-import { ethers } from "hardhat";
-import * as dotenv from "dotenv";
+import { ethers } from 'hardhat';
+import * as dotenv from 'dotenv';
 
 dotenv.config();
 
 async function main() {
-  const customToken = await ethers.deployContract("CustomToken");
+  const customToken = await ethers.deployContract('CustomToken');
 
   await customToken.waitForDeployment();
   const CustomTokenAddress = await customToken.getAddress();

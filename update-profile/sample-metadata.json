@@ -1,31 +1,31 @@
 {
-    "LSP3Profile": {
-      "name": "LUKSO Profile - Getting Started",
-      "description": "Congratulation! You have successfully edited your profile, and completed step 2 of the Getting Started guide 😃",
-      "links": [
-        {
-          "title": "Website",
-          "url": "https://mywebsite.me"
-        }
-      ],
-      "tags": ["Public Profile"],
-      "profileImage": [
-        {
-          "width": 640,
-          "height": 609,
-          "hashFunction": "keccak256(bytes)",
-          "hash": "0xe459e5769af85b09fb43bb8eaac561e196d58c0f5da3c5e150b6695898089402",
-          "url": "ipfs://QmPCz896rcZmq8F3FuUkJinRUmPgnZGjPvZL71nAaL7Fsx"
-        }
-      ],
-      "backgroundImage": [
-        {
-          "width": 1024,
-          "height": 576,
-          "hashFunction": "keccak256(bytes)",
-          "hash": "0x1c19780d377a7b01f7dcf16e0ebffd225e29d2235625009f67cf9d86a32a79e1",
-          "url": "ipfs://QmPMmEpKnmgACsWjhDUheF8TEKpspzQhAkjbY4EBbR4jgP"
-        }
-      ]
-    }
+  "LSP3Profile": {
+    "name": "LUKSO Profile - Getting Started",
+    "description": "Congratulation! You have successfully edited your profile, and completed step 2 of the Getting Started guide 😃",
+    "links": [
+      {
+        "title": "Website",
+        "url": "https://mywebsite.me"
+      }
+    ],
+    "tags": ["Public Profile"],
+    "profileImage": [
+      {
+        "width": 640,
+        "height": 609,
+        "hashFunction": "keccak256(bytes)",
+        "hash": "0xe459e5769af85b09fb43bb8eaac561e196d58c0f5da3c5e150b6695898089402",
+        "url": "ipfs://QmPCz896rcZmq8F3FuUkJinRUmPgnZGjPvZL71nAaL7Fsx"
+      }
+    ],
+    "backgroundImage": [
+      {
+        "width": 1024,
+        "height": 576,
+        "hashFunction": "keccak256(bytes)",
+        "hash": "0x1c19780d377a7b01f7dcf16e0ebffd225e29d2235625009f67cf9d86a32a79e1",
+        "url": "ipfs://QmPMmEpKnmgACsWjhDUheF8TEKpspzQhAkjbY4EBbR4jgP"
+      }
+    ]
   }
+}

@@ -17,11 +17,12 @@
   },
   "homepage": "https://github.com/lukso-network/lukso-playground#readme",
   "dependencies": {
-    "@erc725/erc725.js": "^0.14.2",
+    "@erc725/erc725.js": "^0.19.0",
     "@lukso/lsp-factory.js": "^2.3.3",
     "@lukso/lsp-smart-contracts": "^0.6.1",
     "hardhat-deploy": "^0.11.12",
     "isomorphic-fetch": "^3.0.0",
+    "prettier": "^3.0.3",
     "web3": "^1.7.4"
   }
 }

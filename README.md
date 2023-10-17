@@ -69,11 +69,11 @@ project
 
 ### Used ERC725.js Build
 
-Version 0.14.0
+Version 0.19.0
 
 ### IPFS Server
 
-`https://2eff.lukso.dev/ipfs/` (current L14 & L16)
+`https://ipfs-proxy.lukso-account.workers.dev/ipfs/` (LUKSO Testnet)
 
 ### Run locally
 
