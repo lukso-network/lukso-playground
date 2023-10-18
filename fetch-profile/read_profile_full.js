@@ -6,7 +6,7 @@ import 'isomorphic-fetch';
 // Our static variables
 const SAMPLE_PROFILE_ADDRESS = '0x6979474Ecb890a8EFE37daB2b9b66b32127237f7';
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
-const IPFS_GATEWAY = 'https://ipfs-proxy.lukso-account.workers.dev/ipfs/';
+const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
 
 // Parameters for ERC725 Instance
 import erc725schema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json';

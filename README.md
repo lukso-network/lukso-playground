@@ -8,11 +8,11 @@ Snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and work co
 
 ## Last Playground Check
 
-17th October 2023
+18th October 2023
 
 ### IPFS Server
 
-`https://ipfs-proxy.lukso-account.workers.dev/ipfs/` (LUKSO Testnet)
+`https://api.universalprofile.cloud/ipfs` (LUKSO Testnet)
 
 ## Contents
 
