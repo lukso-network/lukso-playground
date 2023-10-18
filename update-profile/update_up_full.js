@@ -7,7 +7,7 @@ import KeyManager from '@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json
 
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
-const IPFS_GATEWAY = 'https://ipfs-proxy.lukso-account.workers.dev/ipfs/';
+const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
 const CHAIN_ID = 2828;
 const PRIVATE_KEY = '0x...'; // from ../convenience/create-eoa.js
 const UNIVERSAL_PROFILE_ADDRESS = '0x...';
