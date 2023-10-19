@@ -45,22 +45,25 @@ project
 ├── hardhat-deploy                                  // SC Deployment Setup
 │   ├── Sample Contract
 │   └── Scripts
+|
+├── interface-detection                             // Verify SC Functionality
+|   └── ERC165 Interface Check
 │
 ├── key-manager                                     // Permission Management
 │   ├── Manage 3rd party permissions (WIP)
 │   ├── Get controller key (WIP)
 │   └── Set UP Permissions to Address
+|
+├── metadata-detection                              // Verify SC Storage
+|   ├── Universal Profile Storage
+|   ├── Digital Asset Storage
+|   └── Vault Storage
 │
 ├── transfer-lyx                                    // Value Transfer
 │   └── Complete Transfer Guide
 │
 └── update-profile                                  // Update UP
-│    └── Complete Update Guide
-│
-└── metadata-detection                              // Verify Standardized Storage
-    ├── Universal Profile Storage
-    ├── Digital Asset Storage
-    └── Vault Storage
+    └── Complete Update Guide
 ```
 
 ### LUKSO Developer Libraries
