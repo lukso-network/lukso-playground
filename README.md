@@ -8,7 +8,7 @@ Snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and work co
 
 ## Last Playground Check
 
-18th October 2023
+19th October 2023
 
 ### IPFS Server
 
@@ -23,14 +23,8 @@ project
 │   ├── Check Blockchain Addresses
 │   └── Create Externally Owned Account
 │
-├── create-asset                                    // Create LSP7 & LSP8
-│   └── WIP
-│
 ├── create-profile                                  // Create UP
 │   └── Create Universal Profile
-│
-├── create-vault                                    // Create UP
-│   └── WIP
 │
 ├── extract-data                                    // Extract LSP JSON
 │   ├── Extract Data from Asset JSON
@@ -41,11 +35,12 @@ project
 │   ├── Fetch Asset Data
 │   └── Complete Asset Guide
 │
-├── fetch-profile                                   // Fetch UP
-│   ├── Fetch Universal Receiver
-│   ├── Read Profile Data
-│   ├── Read Profile Metadata
-│   └── Complete Profile Guide
+├── get-profile-data                                // Receive Profile Info
+│   ├── Get the Data Keys
+│   ├── Fetch the Metadata
+│   ├── Fetch the Owned Assets
+│   ├── Fetch the Issued Assets
+│   └── Fetch the Universal Receiver
 │
 ├── hardhat-deploy                                  // SC Deployment Setup
 │   ├── Sample Contract
@@ -60,7 +55,12 @@ project
 │   └── Complete Transfer Guide
 │
 └── update-profile                                  // Update UP
-    └── Complete Update Guide
+│    └── Complete Update Guide
+│
+└── verify-lsp-support                              // Check Supported Standards
+    ├── Universal Profile Interface
+    ├── Digital Asset Interface
+    └── Vault Interface
 ```
 
 ### LUKSO Developer Libraries
