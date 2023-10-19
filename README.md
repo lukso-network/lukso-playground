@@ -57,10 +57,10 @@ project
 └── update-profile                                  // Update UP
 │    └── Complete Update Guide
 │
-└── verify-lsp-storage                              // Verify Standardized Storage
-    ├── Universal Profile Interface
-    ├── Digital Asset Interface
-    └── Vault Interface
+└── metadata-detection                              // Verify Standardized Storage
+    ├── Universal Profile Storage
+    ├── Digital Asset Storage
+    └── Vault Storage
 ```
 
 ### LUKSO Developer Libraries

@@ -1,9 +1,9 @@
 import { ERC725 } from '@erc725/erc725.js';
-import lsp3ProfileSchema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json' assert { type: 'json' };
+import lsp9VaultSchema from '@erc725/erc725.js/schemas/LSP9Vault.json' assert { type: 'json' };
 
 // Initatiate erc725.js
 const erc725js = new ERC725(
-  lsp3ProfileSchema,
+  lsp9VaultSchema,
   '0x9139def55c73c12bcda9c44f12326686e3948634',
   'https://rpc.testnet.lukso.gateway.fm',
   {
@@ -12,7 +12,7 @@ const erc725js = new ERC725(
 );
 
 // Fetch the supported storage standard
-let isLSP3 = await erc725js.fetchData('SupportedStandards:LSP3Profile');
+let isLSP9 = await erc725js.getData('SupportedStandards:LSP9Vault');
 
 // Verify if the standard is supported (value !== null)
-console.log(isLSP3);
+console.log(isLSP9);

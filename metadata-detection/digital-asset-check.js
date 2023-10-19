@@ -12,7 +12,7 @@ const erc725js = new ERC725(
 );
 
 // Fetch the supported storage standard
-let isLSP4 = await erc725js.fetchData('SupportedStandards:LSP4DigitalAsset');
+let isLSP4 = await erc725js.getData('SupportedStandards:LSP4DigitalAsset');
 
 // Verify if the standard is supported (value !== null)
 console.log(isLSP4);
