@@ -11,7 +11,7 @@ const erc725js = new ERC725(
   },
 );
 
-// Fetch the supported interface
+// Fetch the supported storage standard
 let isLSP9 = await erc725js.fetchData('SupportedStandards:LSP9Vault');
 
 // Verify if the standard is supported (value !== null)

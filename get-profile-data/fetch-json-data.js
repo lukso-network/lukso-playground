@@ -12,8 +12,8 @@ const erc725js = new ERC725(
 );
 
 // Download and verify the profile metadata JSON file
-let profileMetaData = await erc725js.fetchData('LSP3Profile');
-console.log(profileMetaData);
+// let profileMetaData = await erc725js.fetchData('LSP3Profile');
+// console.log(profileMetaData);
 
 // Fetch all of the profile's issued assets
 let issuedAssets = await erc725js.fetchData('LSP12IssuedAssets[]');

@@ -57,7 +57,7 @@ project
 └── update-profile                                  // Update UP
 │    └── Complete Update Guide
 │
-└── verify-lsp-support                              // Check Supported Standards
+└── verify-lsp-storage                              // Verify Standardized Storage
     ├── Universal Profile Interface
     ├── Digital Asset Interface
     └── Vault Interface
