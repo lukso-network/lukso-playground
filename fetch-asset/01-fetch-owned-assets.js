@@ -5,9 +5,9 @@ import Web3 from 'web3';
 import 'isomorphic-fetch';
 
 // Static variables
-const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
 const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
-const SAMPLE_PROFILE_ADDRESS = '0x6979474Ecb890a8EFE37daB2b9b66b32127237f7';
+const SAMPLE_PROFILE_ADDRESS = '0x9139def55c73c12bcda9c44f12326686e3948634';
 
 // Parameters for the ERC725 instance
 const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);

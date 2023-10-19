@@ -5,7 +5,7 @@ import Web3 from 'web3';
 import 'isomorphic-fetch';
 
 // Static variables
-const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
 const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
 const SAMPLE_ASSET_ADDRESS = '0x6395b330F063F96579aA8F7b59f2584fb9b6c3a5';
 

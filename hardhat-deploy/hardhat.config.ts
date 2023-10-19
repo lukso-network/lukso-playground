@@ -8,7 +8,7 @@ const config: HardhatUserConfig = {
   solidity: '0.8.19',
   networks: {
     luksoTestnet: {
-      url: 'https://rpc.testnet.lukso.network',
+      url: 'https://rpc.testnet.lukso.gateway.fm',
       chainId: 4201,
       accounts: [process.env.PRIVATE_KEY as string],
     },

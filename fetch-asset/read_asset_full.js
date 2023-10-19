@@ -6,9 +6,9 @@ import erc725schema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json';
 import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 
 // Static variables
-const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
 const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
-const SAMPLE_PROFILE_ADDRESS = '0x6979474Ecb890a8EFE37daB2b9b66b32127237f7';
+const SAMPLE_PROFILE_ADDRESS = '0x9139def55c73c12bcda9c44f12326686e3948634';
 const SAMPLE_ASSET_ADDRESS = '0x6395b330F063F96579aA8F7b59f2584fb9b6c3a5';
 
 // Parameters for the ERC725 instance

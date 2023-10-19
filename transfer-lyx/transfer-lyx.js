@@ -4,7 +4,7 @@ import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProf
 import KeyManager from '@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json';
 
 // Static variables
-const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
 const UNIVERSAL_PROFILE_ADDRESS = '0x...';
 
 // Setup Web3

@@ -2,8 +2,8 @@
 import Web3 from 'web3';
 
 // Static variables
-const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
-const SAMPLE_PROFILE_ADDRESS = '0x0C03fBa782b07bCf810DEb3b7f0595024A444F4e';
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
+const SAMPLE_PROFILE_ADDRESS = '0x9139def55c73c12bcda9c44f12326686e3948634';
 
 // Setup Web3
 const web3 = new Web3(RPC_ENDPOINT);
