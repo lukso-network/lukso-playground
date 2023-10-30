@@ -8,7 +8,7 @@ Snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and work co
 
 ## Last Playground Check
 
-24th October 2023
+30th October 2023
 
 ### IPFS Server
 
