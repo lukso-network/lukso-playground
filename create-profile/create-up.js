@@ -13,7 +13,7 @@ const web3 = new Web3(RPC_ENDPOINT);
 // Load our Externally Owned Account (EOA)
 const myEOA = web3.eth.accounts.privateKeyToAccount(PRIVATE_KEY);
 
-// Initialize the LSPFactory with the L14 RPC endpoint and your EOA's private key, which will deploy the UP smart contracts
+// Initialize the LSPFactory with the Testnet RPC endpoint and your controllers private key, which will deploy the UP smart contracts
 const lspFactory = new LSPFactory(RPC_ENDPOINT, {
   deployKey: PRIVATE_KEY,
   chainId: CHAIN_ID,
