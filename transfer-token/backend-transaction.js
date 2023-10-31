@@ -27,7 +27,10 @@ const tokenCalldata = myToken.methods
   )
   .encodeABI();
 
-// Execute the token transfer through the UP
+/**
+ * Call the execute function of the profile to send the LYX transaction
+ * Will forward to the LSP6 Key Manager to check permissions of the controller
+ */
 await myUniversalProfile.methods
   .execute(
     0, //operation of type CALL

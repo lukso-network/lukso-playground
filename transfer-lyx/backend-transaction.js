@@ -14,7 +14,10 @@ const myUniversalProfile = new web3.eth.Contract(
   '0x...', // address of the user's profile
 );
 
-// Call the execute function of the profile to send the LYX transaction
+/**
+ * Call the execute function of the profile to send the LYX transaction
+ * Will forward to the LSP6 Key Manager to check permissions of the controller
+ */
 await myUniversalProfile.methods
   .execute(
     0, // operation of type CALL
