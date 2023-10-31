@@ -9,5 +9,5 @@ const accounts = await web3.eth.getAccounts();
 await web3.eth.sendTransaction({
   from: accounts[0], // The Universal Profile address
   to: '0x...', // receiving address, can be a UP or EOA
-  value: '5000000000000000000', // 0.5 amount in LYX, in wei unit
+  value: web3.utils.toWei('0.5', 'ether'), // 0.5 amount in ETH, in wei unit
 });
