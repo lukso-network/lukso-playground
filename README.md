@@ -8,7 +8,7 @@ Snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and work co
 
 ## Last Playground Check
 
-30th October 2023
+301h October 2023
 
 ### IPFS Server
 
@@ -60,7 +60,8 @@ project
 |   └── Vault Storage
 │
 ├── transfer-lyx                                    // Value Transfer
-│   └── Complete Transfer Guide
+│   └── Regular transaction (Extension)
+│   └── Backend transaction (Smart Contract)
 │
 └── update-profile                                  // Update UP
     └── Complete Update Guide

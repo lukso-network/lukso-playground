@@ -1,5 +1,6 @@
+// Building the transaction for a service backend
 import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
-const Web3 = require('web3');
+import Web3 from 'web3';
 
 // Connect to the mainnet or testnet
 const provider = new Web3('https://rpc.testnet.lukso.gateway.fm');
