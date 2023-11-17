@@ -96,6 +96,7 @@ Run the JavaScript code of one file within the terminal.
 ```
 node [FILENAME].js
 ```
+Note: Requires node v.16.x.x
 
 ### Run in browser
 
