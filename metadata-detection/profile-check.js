@@ -6,9 +6,7 @@ const erc725js = new ERC725(
   lsp3ProfileSchema,
   '0x9139def55c73c12bcda9c44f12326686e3948634',
   'https://rpc.testnet.lukso.gateway.fm',
-  {
-    ipfsGateway: 'https://api.universalprofile.cloud/ipfs',
-  },
+  {},
 );
 
 // Fetch the supported storage standard
