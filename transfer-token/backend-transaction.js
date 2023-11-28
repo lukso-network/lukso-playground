@@ -1,8 +1,8 @@
 import Web3 from 'web3';
 
 // Import schemas and ABI
-import LSP7Mintable from '@lukso/lsp-smart-contracts/artifacts/LSP7Mintable.json';
-import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
+import LSP7Mintable from '@lukso/lsp-smart-contracts/artifacts/LSP7Mintable.json' assert { type: 'json' };
+import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json' assert { type: 'json' };
 
 // Connect to the mainnet or testnet
 const web3 = new Web3('https://rpc.testnet.lukso.gateway.fm');

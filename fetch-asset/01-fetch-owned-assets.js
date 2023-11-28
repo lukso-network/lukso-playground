@@ -1,6 +1,6 @@
 // Imports
 import { ERC725 } from '@erc725/erc725.js';
-import erc725schema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json';
+import erc725schema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json' assert { type: 'json' };
 import Web3 from 'web3';
 import 'isomorphic-fetch';
 

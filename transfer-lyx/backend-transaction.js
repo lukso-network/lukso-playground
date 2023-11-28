@@ -1,5 +1,5 @@
 // Building the transaction for a service backend
-import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
+import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json' assert { type: 'json' };
 import Web3 from 'web3';
 
 // Connect to the mainnet or testnet

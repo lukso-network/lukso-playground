@@ -2,7 +2,7 @@
 import Web3 from 'web3';
 import { ERC725 } from '@erc725/erc725.js';
 import 'isomorphic-fetch';
-import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
+import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json' assert { type: 'json' };
 
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';

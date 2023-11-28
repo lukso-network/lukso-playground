@@ -1,7 +1,7 @@
 import Web3 from 'web3';
 
 // Import schemas and ABI
-import LSP7Mintable from '@lukso/lsp-smart-contracts/artifacts/LSP7Mintable.json';
+import LSP7Mintable from '@lukso/lsp-smart-contracts/artifacts/LSP7Mintable.json' assert { type: 'json' };
 
 const web3 = new Web3(window.ethereum);
 
