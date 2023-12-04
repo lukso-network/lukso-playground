@@ -1,75 +1,27 @@
 # lukso-playground
 
-Convenient and standalone code snippets to interact with [LSP](https://docs.lukso.tech/standards/standards-roadmap) standards.
+Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standards/standards-roadmap) standards on LUKSO. Code examples are taken from the [Official LUKSO Tech Docs](https://docs.lukso.tech/) and are working as standalone scripts.
 
-## Foundation
+### IPFS Servers
 
-Snippets were taken from [LUKSO Tech Docs](https://docs.lukso.tech/) and work completely autonomously.
-
-## Last Playground Check
-
-24 November 2023
-
-### IPFS Server
-
-`https://api.universalprofile.cloud/ipfs` (LUKSO Testnet)
+- LUKSO Testnet
+  - `https://api.universalprofile.cloud/ipfs` (`Download`)
+  - `api.2eff.lukso.dev:443` (`Upload`)
 
 ## Contents
 
-```
-project
-│
-├── convenience                                     // Utility Functions
-│   ├── Check Blockchain Addresses
-│   └── Create Externally Owned Account
-│
-├── create-profile                                  // Create UP
-│   └── Create Universal Profile
-│
-├── extract-data                                    // Extract LSP JSON
-│   ├── Extract Data from Asset JSON
-│   └── Extract Data from Profile JSON
-│
-├── fetch-asset                                     // Fetch LSP7 & LSP8
-│   ├── Fetch Owned Assets
-│   ├── Fetch Asset Data
-│   └── Complete Asset Guide
-│
-├── get-profile-data                                // Receive Profile Info
-│   ├── Get the Data Keys
-│   ├── Fetch the Metadata
-│   ├── Fetch the Owned Assets
-│   ├── Fetch the Issued Assets
-│   └── Fetch the Universal Receiver
-│
-├── hardhat-deploy                                  // SC Deployment Setup
-│   ├── Sample Contract
-│   └── Scripts
-|
-├── interface-detection                             // Verify SC Functionality
-|   └── ERC165 Interface Check
-│
-├── key-manager                                     // Permission Management
-│   ├── Manage 3rd party permissions (WIP)
-│   ├── Get controller key (WIP)
-│   └── Set UP Permissions to Address
-|
-├── metadata-detection                              // Verify SC Storage
-|   ├── Universal Profile Storage
-|   ├── Digital Asset Storage
-|   └── Vault Storage
-│
-├── transfer-lyx                                    // Coin Transfer
-│   └── Regular transaction (Extension)
-│   └── Backend transaction (Smart Contract)
-|
-├── transfer-token                                  // Token Transfer
-│   └── Regular transaction (Extension)
-│   └── Backend transaction (Smart Contract)
-│
-└── update-profile                                  // Update UP
-    └── Complete Update Guide
-```
+- [`convenience`](./convenience): Address Checks and EOA creation
+- [`create-profile`](./create-profile): Universal Profile Creation
+- [`extract-data`](./extract-data): Extract LSP3 and LSP4 JSON Data
+- [`fetch-asset`](./fetch-asset): Asset-related Data Fetches and Operations
+- [`fetch-profile`](./fetch-profile): Asset-related Data Fetches and Operations
+- [`hardhat-deploy`](./hardhat-deploy): Smart Contract Deployment Setup and Scripts
+- [`interface-detection`](./interface-detection): Verify EIP165 Standard Compatibility
+- [`key-manager`](./key-manager): Permission Management of Controller Keys
+- [`metadata-detection`](./metadata-detection): Verify ERC725Y Storage Compatability
+- [`transfer-lyx`](./transfer-lyx): Coin Transfers for Backend and Exetnsion
+- [`transfer-token`](./transfer-token/): Token Transfers for Backend and Exetnsion
+- [`update-profile`](./update-profile/): Update Universal Profile Data
 
 ### LUKSO Developer Libraries
 
@@ -84,9 +36,11 @@ project
 Clone this repository and install its dependencies.
 
 ```
+
 git clone https://github.com/lukso-network/lukso-playground.git
 cd lukso-playground
 npm install
+
 ```
 
 ### Run locally
@@ -94,9 +48,15 @@ npm install
 Run the JavaScript code of one file within the terminal.
 
 ```
+
 node [FILENAME].js
+
 ```
 
 ### Run in browser
 
 Open this project on [StackBlitz](https://stackblitz.com/github/lukso-network/lukso-playground) and start coding right away.
+
+```
+
+```
