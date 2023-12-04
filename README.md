@@ -23,40 +23,32 @@ Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standard
 - [`transfer-token`](./transfer-token/): Token Transfers for Backend and Exetnsion
 - [`update-profile`](./update-profile/): Update Universal Profile Data
 
-### LUKSO Developer Libraries
+### LUKSO Libraries
 
 - `@erc725/erc725.js`: 0.19.0
 - `@lukso/lsp-factory.js`: 3.1.1
 - `@lukso/lsp-smart-contracts`: 0.11.1
 
-> @erc725/erc725.js only supports web3 up to version @1.10.0
-
-## Deplyment
+## Development
 
 Clone this repository and install its dependencies.
 
+```bash
+git clone https://github.com/lukso-network/lukso-playground.git
 ```
 
-git clone https://github.com/lukso-network/lukso-playground.git
-cd lukso-playground
-npm install
-
+```
+cd lukso-playground && npm i
 ```
 
 ### Run locally
 
 Run the JavaScript code of one file within the terminal.
 
-```
-
+```bash
 node [FILENAME].js
-
 ```
 
 ### Run in browser
 
 Open this project on [StackBlitz](https://stackblitz.com/github/lukso-network/lukso-playground) and start coding right away.
-
-```
-
-```

@@ -1,8 +1,8 @@
 // Imports
-import Web3 from 'web3';
+import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
+import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 import 'isomorphic-fetch';
-import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json' assert { type: 'json' };
 
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
@@ -10,7 +10,7 @@ const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
 const SAMPLE_ASSET_ADDRESS = '0x6395b330F063F96579aA8F7b59f2584fb9b6c3a5';
 
 // Parameters for the ERC725 instance
-const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
+const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
 const config = { ipfsGateway: IPFS_GATEWAY };
 
 // Fetchable Asset information
@@ -93,9 +93,10 @@ async function getAssetProperties(assetJSON) {
     console.log('Could not fetch all asset properties: ', error);
   }
 }
-// Debug
 
-fetchAssetData(SAMPLE_ASSET_ADDRESS).then((assetData) => {
+// Debug
+fetch(SAMPLE_ASSET_ADDRESS).then(async () => {
+  const assetData = await fetchAssetData(SAMPLE_ASSET_ADDRESS);
   console.log(JSON.stringify(assetData, undefined, 2));
   getAssetProperties(assetData);
 });

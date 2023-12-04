@@ -1,6 +1,7 @@
 // Imports
-import Web3 from 'web3';
+import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
+import erc725schema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json';
 import 'isomorphic-fetch';
 
 // Static variables
@@ -9,8 +10,7 @@ const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
 const SAMPLE_PROFILE_ADDRESS = '0x9139def55c73c12bcda9c44f12326686e3948634';
 
 // Parameters for ERC725 Instance
-import erc725schema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json' assert { type: 'json' };
-const provider = new Web3.providers.HttpProvider(RPC_ENDPOINT);
+const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
 const config = { ipfsGateway: IPFS_GATEWAY };
 
 // Fetchable metadata information
@@ -46,7 +46,7 @@ async function fetchProfileData(address) {
 
 /*
  * Fetch metadata information from the JSON dataset of
- * an Universal Profile
+ * a Universal Profile
  */
 async function fetchProfileMetadata(address) {
   const profileData = await fetchProfileData(address);

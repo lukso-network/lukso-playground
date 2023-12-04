@@ -1,14 +1,18 @@
-import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json' assert { type: 'json' };
+// Imports
+import { ethers } from 'ethers';
+import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
 import { INTERFACE_IDS } from '@lukso/lsp-smart-contracts/dist/constants.cjs.js';
-import Web3 from 'web3';
 
 // Connect to the LUKSO Testnet
-const web3 = new Web3('https://rpc.testnet.lukso.network');
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
+const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 
 // Create an instance of the Universal Profile
-const myUPContract = new web3.eth.Contract(
+const contractAddress = '0x9139def55c73c12bcda9c44f12326686e3948634';
+const myUPContract = new ethers.Contract(
+  contractAddress,
   UniversalProfile.abi,
-  '0x9139def55c73c12bcda9c44f12326686e3948634',
+  provider,
 );
 
 const LSP0_INTERFACE_ID = INTERFACE_IDS.LSP0ERC725Account;
@@ -31,7 +35,12 @@ INTERFACE_IDS.LSP20CallVerification         INTERFACE_IDS.LSP20CallVerifier
 INTERFACE_IDS.LSP25ExecuteRelayCall 
 */
 
-console.log(
-  // true or false
-  await myUPContract.methods.supportsInterface(LSP0_INTERFACE_ID).call(),
-);
+(async () => {
+  try {
+    const supportsInterface =
+      await myUPContract.supportsInterface(LSP0_INTERFACE_ID);
+    console.log(supportsInterface); // true or false
+  } catch (error) {
+    console.error('Error:', error);
+  }
+})();

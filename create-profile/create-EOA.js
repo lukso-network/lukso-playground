@@ -1,14 +1,30 @@
-import Web3 from 'web3';
+// Imports
+import { ethers } from 'ethers';
 
-const web3 = new Web3('https://rpc.testnet.lukso.network/');
+// Static variables
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network/';
 
-let account = web3.eth.accounts.create();
-console.log('My private key is: ' + account.privateKey);
-console.log('My address is: ' + account.address);
+// Setup ethers.js provider
+const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 
+// Create an Ethereum wallet
+const wallet = ethers.Wallet.createRandom();
+
+// Print the private key and address
+console.log('My private key is: ' + wallet.privateKey);
+console.log('My address is: ' + wallet.address);
+
+// Define and call the getBalance function
 async function getBalance() {
-  let balance = await web3.eth.getBalance(account.address);
-  console.log('My balance: ' + web3.utils.fromWei(balance, 'ether') + ' LYXt');
+  try {
+    // Get the balance
+    const balance = await provider.getBalance(wallet.address);
+
+    // Convert the balance to ether and log it
+    console.log('My balance: ' + ethers.utils.formatEther(balance) + ' LYXt');
+  } catch (error) {
+    console.error('Error fetching balance:', error);
+  }
 }
 
 getBalance();
