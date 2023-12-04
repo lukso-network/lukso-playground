@@ -48,6 +48,7 @@ Run the JavaScript code of one file within the terminal.
 ```bash
 node [FILENAME].js
 ```
+Note: Requires node<v19
 
 ### Run in browser
 
