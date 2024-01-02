@@ -4,9 +4,10 @@ Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standard
 
 ### IPFS Servers
 
-- LUKSO Testnet
-  - `https://api.universalprofile.cloud/ipfs` (`Download`)
-  - `api.2eff.lukso.dev:443` (`Upload`)
+IPFS Endpoints for LUKSO Testnet & Mainnet:
+
+- `https://api.universalprofile.cloud/ipfs` (`Download`)
+- `api.2eff.lukso.dev:443` (`Upload`)
 
 ## Contents
 
@@ -14,7 +15,7 @@ Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standard
 - [`create-profile`](./create-profile): Universal Profile Creation
 - [`extract-data`](./extract-data): Extract LSP3 and LSP4 JSON Data
 - [`fetch-asset`](./fetch-asset): Asset-related Data Fetches and Operations
-- [`fetch-profile`](./fetch-profile): Asset-related Data Fetches and Operations
+- [`fetch-profile`](./fetch-profile): Profile-related Data and Controller Fetches
 - [`hardhat-deploy`](./hardhat-deploy): Smart Contract Deployment Setup and Scripts
 - [`interface-detection`](./interface-detection): Verify EIP165 Standard Compatibility
 - [`key-manager`](./key-manager): Permission Management of Controller Keys
