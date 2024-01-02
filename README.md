@@ -26,9 +26,9 @@ IPFS Endpoints for LUKSO Testnet & Mainnet:
 
 ### LUKSO Libraries
 
-- `@erc725/erc725.js`: 0.19.0
+- `@erc725/erc725.js`: 0.22.0
 - `@lukso/lsp-factory.js`: 3.1.1
-- `@lukso/lsp-smart-contracts`: 0.11.1
+- `@lukso/lsp-smart-contracts`: 0.14.0
 
 ## Development
 
