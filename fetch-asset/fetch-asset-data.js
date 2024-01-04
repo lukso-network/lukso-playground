@@ -7,7 +7,7 @@ import 'isomorphic-fetch';
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
 const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
-const SAMPLE_ASSET_ADDRESS = '0x6395b330F063F96579aA8F7b59f2584fb9b6c3a5';
+const SAMPLE_ASSET_ADDRESS = '0x0514A829C832639Afcc02D257154A9DaAD8fa21B';
 
 // Parameters for the ERC725 instance
 const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
@@ -22,7 +22,7 @@ const config = { ipfsGateway: IPFS_GATEWAY };
 async function fetchAssetData(address) {
   try {
     const digitalAsset = new ERC725(LSP4Schema, address, provider, config);
-    return await digitalAsset.fetchData('LSP4Metadata');
+    return await digitalAsset.fetchData();
   } catch (error) {
     console.log('Could not fetch asset data: ', error);
   }
