@@ -36,14 +36,17 @@ console.log(tokenSymbol);
 let tokenName = await erc725js.fetchData('LSP4TokenName');
 console.log(tokenName);
 
-/*
- * Fetch creator-specific information
- *
- * Uncomment and exchange <address> with an address
- * of a creator you want to retrieve.
- */
-
-// let creatorInformation = await erc725js.fetchData(
-//   'LSP4CreatorsMap:<address>',
-// );
-// console.log(creatorInformation);
+// Fetch creator-specific information
+let creatorInformation = await erc725js.fetchData([
+  /*
+   * for dynamic keys, it is necessary
+   * to provide any second data key
+   */
+  'LSP4TokenName',
+  {
+    keyName: 'LSP4CreatorsMap:<address>',
+    // Sample creator address
+    dynamicKeyParts: '0x9139def55c73c12bcda9c44f12326686e3948634',
+  },
+]);
+console.log(creatorInformation);
