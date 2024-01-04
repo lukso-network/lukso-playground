@@ -4,10 +4,11 @@ Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standard
 
 ### IPFS Servers
 
-IPFS Endpoints for LUKSO Testnet & Mainnet:
+We highly recommend that developers fetch and store profile or asset data using **their own IPFS gateway** solutions like [Pinata](https://docs.pinata.cloud/docs/welcome-to-pinata) or [Infura](https://docs.infura.io/networks/ipfs). For development purposes, this repository uses the following RPC to fetch mainnet and testnet data:
 
-- `https://api.universalprofile.cloud/ipfs` (`Download`)
-- `api.2eff.lukso.dev:443` (`Upload`)
+- IPFS Gateway: `https://api.universalprofile.cloud/ipfs`
+
+> We do not provide an official gateway for uploading asset data.
 
 ## Contents
 
