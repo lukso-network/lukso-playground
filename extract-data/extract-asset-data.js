@@ -1,7 +1,7 @@
 // Imports
 import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
-import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
+import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json' assert { type: 'json' };
 import 'isomorphic-fetch';
 
 // Static variables

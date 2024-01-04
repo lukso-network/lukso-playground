@@ -2,8 +2,8 @@
 import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
 import { LSPFactory } from '@lukso/lsp-factory.js';
-import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
-import KeyManager from '@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json';
+import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json' assert { type: 'json' };
+import KeyManager from '@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json' assert { type: 'json' };
 
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';

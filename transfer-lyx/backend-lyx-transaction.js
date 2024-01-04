@@ -1,6 +1,6 @@
 // Imports
 import { ethers } from 'ethers';
-import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
+import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json' assert { type: 'json' };
 
 // Connect to the mainnet or testnet
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';

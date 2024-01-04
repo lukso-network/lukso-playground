@@ -1,6 +1,6 @@
 // Imports
 import { ethers } from 'ethers';
-import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
+import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json' assert { type: 'json' };
 import { INTERFACE_IDS } from '@lukso/lsp-smart-contracts/dist/constants.cjs.js';
 
 // Connect to the LUKSO Testnet

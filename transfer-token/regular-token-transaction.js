@@ -1,5 +1,5 @@
 import { ethers } from 'ethers';
-import LSP7Mintable from '@lukso/lsp-smart-contracts/artifacts/LSP7Mintable.json';
+import LSP7Mintable from '@lukso/lsp-smart-contracts/artifacts/LSP7Mintable.json' assert { type: 'json' };
 
 // Connect to Ethereum via MetaMask or similar
 const provider = new ethers.providers.Web3Provider(window.ethereum);

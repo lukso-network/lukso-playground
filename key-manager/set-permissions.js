@@ -1,7 +1,7 @@
 // Imports
 import { ethers } from 'ethers';
-import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
-import KeyManager from '@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json';
+import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json' assert { type: 'json' };
+import KeyManager from '@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json' assert { type: 'json' };
 import { ADDRESSES, PERMISSIONS, PERMISSIONS_ARRAY } from './constants';
 
 // Connect to the LUKSO Testnet
