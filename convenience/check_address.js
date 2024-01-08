@@ -6,7 +6,7 @@ const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
 const SAMPLE_PROFILE_ADDRESS = '0x9139def55c73c12bcda9c44f12326686e3948634';
 
 // Setup ethers.js
-const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
+const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
 
 /*
  * Check if input is a valid blockchain address

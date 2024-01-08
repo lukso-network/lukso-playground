@@ -8,7 +8,7 @@ dotenv.config();
 
 async function main() {
   // setup provider
-  const provider = new ethers.JsonRpcProvider(
+  const provider = new ethers.providers.JsonRpcProvider(
     'https://rpc.testnet.lukso.gateway.fm',
   );
   // setup signer (the browser extension controller)

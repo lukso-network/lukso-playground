@@ -5,7 +5,7 @@ import { ethers } from 'ethers';
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network/';
 
 // Setup ethers.js provider
-const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
+const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
 
 // Create an Ethereum wallet
 const wallet = ethers.Wallet.createRandom();

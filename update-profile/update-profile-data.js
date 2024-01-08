@@ -13,7 +13,7 @@ const PRIVATE_KEY = '0x...'; // Replace with your private key
 const UNIVERSAL_PROFILE_ADDRESS = '0x...'; // Replace with the Universal Profile address
 
 // Connect to the provider
-const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
+const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
 
 // Create a new LSP3Profile JSON file
 import jsonFile from './sample-metadata.json' assert { type: 'json' };

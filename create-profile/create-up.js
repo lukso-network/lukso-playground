@@ -8,7 +8,7 @@ const CHAIN_ID = 4201;
 const PRIVATE_KEY = '0x...'; // Add the private key of your EOA from ../convenience/create-eoa.js
 
 // Initialize ethers.js provider
-const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
+const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
 
 // Create a wallet using the private key
 const wallet = new ethers.Wallet(PRIVATE_KEY, provider);

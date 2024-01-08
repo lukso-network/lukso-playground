@@ -6,7 +6,7 @@ import { ADDRESSES, PERMISSIONS, PERMISSIONS_ARRAY } from './constants';
 
 // Connect to the LUKSO Testnet
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
-const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
+const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
 
 const myUniversalProfileAddress = '0x...';
 const myKeyManagerAddress = '0x...';
