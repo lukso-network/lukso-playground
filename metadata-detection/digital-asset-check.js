@@ -1,9 +1,9 @@
 import { ERC725 } from '@erc725/erc725.js';
-import lsp3ProfileSchema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json' assert { type: 'json' };
+import lsp4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json' assert { type: 'json' };
 
 // Initatiate erc725.js
 const erc725js = new ERC725(
-  lsp3ProfileSchema,
+  lsp4Schema,
   '0x6395b330F063F96579aA8F7b59f2584fb9b6c3a5',
   'https://rpc.testnet.lukso.gateway.fm',
   {},
