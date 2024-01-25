@@ -1,6 +1,6 @@
-# lukso-playground
+# 🤹 LUKSO Playground
 
-Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standards/standards-roadmap) standards on LUKSO. Code examples are taken from the [Official LUKSO Tech Docs](https://docs.lukso.tech/) and are working as standalone scripts.
+Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standards/standards-roadmap) standards on LUKSO. Code examples are taken from the [LUKSO Tech Docs](https://docs.lukso.tech/) and are working as standalone scripts.
 
 ### IPFS Servers
 
@@ -8,7 +8,7 @@ We highly recommend that developers fetch and store profile or asset data using 
 
 - IPFS Gateway: `https://api.universalprofile.cloud/ipfs`
 
-> We do not provide an official gateway for uploading asset data.
+> LUKSO does not provide an official gateway for uploading asset data.
 
 ## Contents
 
@@ -27,9 +27,9 @@ We highly recommend that developers fetch and store profile or asset data using 
 
 ### LUKSO Libraries
 
-- `@erc725/erc725.js`: 0.22.0
-- `@lukso/lsp-factory.js`: 3.1.1
-- `@lukso/lsp-smart-contracts`: 0.14.0
+- [`@erc725/erc725.js`](https://docs.lukso.tech/tools/erc725js/getting-started): 0.22.0
+- [`@lukso/lsp-factory.js`](https://docs.lukso.tech/tools/lsp-factoryjs/getting-started): 3.1.1
+- [`@lukso/lsp-smart-contracts`](https://docs.lukso.tech/tools/lsp-smart-contracts/getting-started): 0.14.0
 
 ## Development
 
@@ -37,9 +37,7 @@ Clone this repository and install its dependencies.
 
 ```bash
 git clone https://github.com/lukso-network/lukso-playground.git
-```
 
-```
 cd lukso-playground && npm i
 ```
 
