@@ -46,7 +46,7 @@ cd lukso-playground && npm i
 Run the Typescript code of one file within the terminal.
 
 ```bash
-ts-node [FILENAME].ts
+npx ts-node [FILENAME].ts
 ```
 
 > Requires NodeJS `version < 19.0.0`
