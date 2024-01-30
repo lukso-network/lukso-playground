@@ -43,10 +43,10 @@ cd lukso-playground && npm i
 
 ### Run locally
 
-Run the JavaScript code of one file within the terminal.
+Run the Typescript code of one file within the terminal.
 
 ```bash
-node [FILENAME].js
+ts-node [FILENAME].ts
 ```
 
 > Requires NodeJS `version < 19.0.0`
