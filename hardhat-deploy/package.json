@@ -7,9 +7,9 @@
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
     "dotenv": "^16.3.1",
     "hardhat": "^2.17.2",
-    "prettier": "^3.0.3"
+    "prettier": "^3.2.4"
   },
   "dependencies": {
-    "@lukso/lsp-smart-contracts": "^0.11.0-rc.1"
+    "@lukso/lsp-smart-contracts": "^0.14.0"
   }
 }
