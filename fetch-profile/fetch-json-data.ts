@@ -12,19 +12,19 @@ const erc725js = new ERC725(
 );
 
 // Download and verify the profile metadata JSON file
-let profileMetaData = await erc725js.fetchData('LSP3Profile');
+const profileMetaData = await erc725js.fetchData('LSP3Profile');
 console.log(JSON.stringify(profileMetaData, undefined, 2));
 
 // Fetch all of the profile's issued assets
-let issuedAssetsDataKey = await erc725js.fetchData('LSP12IssuedAssets[]');
+const issuedAssetsDataKey = await erc725js.fetchData('LSP12IssuedAssets[]');
 console.log(issuedAssetsDataKey);
 
 // Fetch all owned assets of the profile
-let receivedAssetsDataKey = await erc725js.fetchData('LSP5ReceivedAssets[]');
+const receivedAssetsDataKey = await erc725js.fetchData('LSP5ReceivedAssets[]');
 console.log(receivedAssetsDataKey);
 
 // Fetch the profile's universal receiver
-let universalReceiverDataKey = await erc725js.fetchData(
+const universalReceiverDataKey = await erc725js.fetchData(
   'LSP1UniversalReceiverDelegate',
 );
 console.log(universalReceiverDataKey);

@@ -12,5 +12,5 @@ const erc725js = new ERC725(
 );
 
 // Get all data keys from the asset smart contract
-let assetData = await erc725js.getData();
+const assetData = await erc725js.getData();
 console.log(assetData);

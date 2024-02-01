@@ -13,7 +13,7 @@ async function fetchJSONData() {
   );
 
   // Download and verify the asset metadata JSON file
-  let assetMetadata = await erc725js.fetchData('LSP4Metadata');
+  const assetMetadata = await erc725js.fetchData('LSP4Metadata');
 
   // Print simplified JSON
   console.log(assetMetadata);
@@ -22,23 +22,23 @@ async function fetchJSONData() {
   console.log(JSON.stringify(assetMetadata, null, 2));
 
   // Fetch all creators of the asset
-  let assetCreatorsList = await erc725js.fetchData('LSP4Creators[]');
+  const assetCreatorsList = await erc725js.fetchData('LSP4Creators[]');
   console.log(assetCreatorsList);
 
   // Fetch the asset's token type
-  let tokenType = await erc725js.fetchData('LSP4TokenType');
+  const tokenType = await erc725js.fetchData('LSP4TokenType');
   console.log(tokenType);
 
   // Fetch the asset's token symbol
-  let tokenSymbol = await erc725js.fetchData('LSP4TokenSymbol');
+  const tokenSymbol = await erc725js.fetchData('LSP4TokenSymbol');
   console.log(tokenSymbol);
 
   // Fetch the asset's token name
-  let tokenName = await erc725js.fetchData('LSP4TokenName');
+  const tokenName = await erc725js.fetchData('LSP4TokenName');
   console.log(tokenName);
 
   // Fetch creator-specific information
-  let creatorInformation = await erc725js.fetchData([
+  const creatorInformation = await erc725js.fetchData([
     /*
      * for dynamic keys, it is necessary
      * to provide any second data key
