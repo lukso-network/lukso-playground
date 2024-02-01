@@ -4,7 +4,7 @@ import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProf
 
 // Connect to the mainnet or testnet
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
-const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
+const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 
 // Get the controller key of the Universal Profile
 const controller = '0x...'; // Replace with the controller address
@@ -24,7 +24,7 @@ const myUniversalProfile = new ethers.Contract(
     const transaction = await myUniversalProfile.execute(
       0, // operation of type CALL
       '0x...', // recipient address including profiles and vaults
-      ethers.utils.parseEther('3'), // amount in LYX, converting to wei
+      ethers.parseEther('3'), // amount in LYX, converting to wei
       '0x...', // contract calldata, empty for regular transfer
       { gasLimit: 300000, from: controller }, // gas limit of the transaction and sender address
     );

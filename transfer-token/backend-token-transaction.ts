@@ -5,7 +5,7 @@ import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProf
 
 // Connect to the mainnet or testnet
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
-const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
+const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 
 // Get the controller key of the Universal Profile
 const controller = '0x...'; // Replace with the controller address

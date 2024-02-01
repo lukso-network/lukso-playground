@@ -1,5 +1,4 @@
 // Imports
-import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
 import erc725schema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json';
 import 'isomorphic-fetch';

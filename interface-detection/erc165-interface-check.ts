@@ -3,7 +3,7 @@ import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
 import lsp4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
-import { INTERFACE_IDS } from '@lukso/lsp-smart-contracts/dist/constants.cjs.js';
+import { INTERFACE_IDS } from '@lukso/lsp-smart-contracts';
 
 // Asset Example
 const myAsset = new ERC725(
@@ -24,7 +24,7 @@ const isLSP8 = await myAsset.supportsInterface(
 console.log(isLSP7, isLSP8); // true or false
 
 // Profile Example
-const provider = new ethers.providers.JsonRpcProvider(
+const provider = new ethers.JsonRpcProvider(
   'https://rpc.testnet.lukso.network',
 );
 
