@@ -1,8 +1,8 @@
 // Imports
 import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
-import lsp4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json' assert { type: 'json' };
-import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json' assert { type: 'json' };
+import lsp4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
+import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
 import { INTERFACE_IDS } from '@lukso/lsp-smart-contracts/dist/constants.cjs.js';
 
 // Asset Example

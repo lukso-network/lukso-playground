@@ -2,8 +2,8 @@
 import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
 import { LSPFactory } from '@lukso/lsp-factory.js';
-import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json' assert { type: 'json' };
-import KeyManager from '@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json' assert { type: 'json' };
+import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
+import KeyManager from '@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json';
 
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
@@ -16,12 +16,12 @@ const UNIVERSAL_PROFILE_ADDRESS = '0x...'; // Replace with the Universal Profile
 const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
 
 // Create a new LSP3Profile JSON file
-import jsonFile from './sample-metadata.json' assert { type: 'json' };
+import jsonFile from './sample-metadata.json';
 
 (async () => {
   try {
     // Upload our JSON file to IPFS
-    const lspFactory = new LSPFactory(provider, {
+    const lspFactory = new LSPFactory(RPC_ENDPOINT, {
       deployKey: PRIVATE_KEY,
       chainId: CHAIN_ID,
     });
@@ -47,15 +47,15 @@ import jsonFile from './sample-metadata.json' assert { type: 'json' };
     });
 
     // Encode the LSP3Profile data (to be written on our UP)
-    const encodedData = erc725.encodeData({
-      keyName: 'LSP3Profile',
-      value: {
-        hashFunction: 'keccak256(utf8)',
-        // Hash our LSP3 metadata JSON file
-        hash: ethers.utils.keccak256(JSON.stringify(jsonFile)),
-        url: lsp3ProfileIPFSUrl,
+    const encodedData = erc725.encodeData([
+      {
+        keyName: 'LSP3Profile',
+        value: {
+          json: jsonFile,
+          url: lsp3ProfileIPFSUrl,
+        },
       },
-    });
+    ]);
 
     // Load our EOA
     const wallet = new ethers.Wallet(PRIVATE_KEY, provider);

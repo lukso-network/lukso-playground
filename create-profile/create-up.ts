@@ -14,7 +14,7 @@ const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
 const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
 
 // Initialize the LSPFactory with your EOA's wallet, which will deploy the UP smart contracts
-const lspFactory = new LSPFactory(wallet, {
+const lspFactory = new LSPFactory(RPC_ENDPOINT, {
   chainId: CHAIN_ID,
 });
 

@@ -1,8 +1,9 @@
 // Imports
 import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
-import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json' assert { type: 'json' };
+import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 import 'isomorphic-fetch';
+import { FetchDataOutput } from '@erc725/erc725.js/build/main/src/types/decodeData.js';
 
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
@@ -10,13 +11,12 @@ const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
 const SAMPLE_ASSET_ADDRESS = '0x6395b330F063F96579aA8F7b59f2584fb9b6c3a5';
 
 // Parameters for the ERC725 instance
-const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
 const config = { ipfsGateway: IPFS_GATEWAY };
 
 // Fetchable Asset information
-let assetImageLinks = [];
+let assetImageLinks: any[] = [];
 let fullSizeAssetImage;
-let assetIconLinks = [];
+let assetIconLinks: any[] = [];
 let fullSizeIconImage;
 let assetDescription;
 
@@ -26,19 +26,26 @@ let assetDescription;
  * @param address of the asset
  * @return string of the encoded data
  */
-async function fetchAssetData(address) {
+async function fetchAssetData(address: string): Promise<FetchDataOutput> {
   try {
-    const digitalAsset = new ERC725(LSP4Schema, address, provider, config);
-    return await digitalAsset.fetchData('LSP4Metadata');
+    const digitalAsset = new ERC725(LSP4Schema, address, RPC_ENDPOINT, config);
+
+    const fetchedData = await digitalAsset.fetchData('LSP4Metadata');
+
+    if (!fetchedData || !fetchedData.value) {
+      throw new Error('Could not fetch profile data');
+    }
+
+    return fetchedData;
   } catch (error) {
-    console.log('Could not fetch asset data: ', error);
+    throw new Error(`Could not fetch asset data: ${error}`);
   }
 }
 
 /*
  * Read properties of an asset
  */
-async function getAssetProperties(assetJSON) {
+async function getAssetProperties(assetJSON: any) {
   let assetImageData = [];
   let iconImageData = [];
   try {

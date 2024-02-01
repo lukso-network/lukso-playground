@@ -1,24 +1,24 @@
 import { ERC725 } from '@erc725/erc725.js';
-import lsp4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json' assert { type: 'json' };
+import lsp3ProfileSchema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json';
 
 // Initatiate erc725.js
 const erc725js = new ERC725(
-  lsp4Schema,
-  '0x6395b330F063F96579aA8F7b59f2584fb9b6c3a5',
+  lsp3ProfileSchema,
+  '0x9139def55c73c12bcda9c44f12326686e3948634',
   'https://rpc.testnet.lukso.gateway.fm',
   {},
 );
 
 // Fetch the supported storage standard
-let isLSP4 = false;
+let isLSP3 = false;
 
 // Verify if the standard is supported (value !== null)
-const data = await erc725js.getData('SupportedStandards:LSP4DigitalAsset');
+const data = await erc725js.getData('SupportedStandards:LSP3Profile');
 if (data.value !== null) {
-  isLSP4 = true;
+  isLSP3 = true;
 }
 
-console.log(isLSP4);
+console.log(isLSP3);
 
 /*
 Supported schemas from erc725.js library:
