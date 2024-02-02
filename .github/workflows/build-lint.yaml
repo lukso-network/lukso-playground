@@ -29,5 +29,4 @@ jobs:
         run: bun run lint
 
       - name: 👷 Build contracts on Hardhat folders
-        run: |
-          cd hardhat-deploy && bun install ** bun run build
+        run: cd hardhat-deploy && bun install && bun run build
