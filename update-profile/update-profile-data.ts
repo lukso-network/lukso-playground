@@ -1,4 +1,3 @@
-// Imports
 import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
 import { LSPFactory } from '@lukso/lsp-factory.js';

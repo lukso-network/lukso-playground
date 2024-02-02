@@ -1,7 +1,7 @@
-// Imports
 import { ethers } from 'ethers';
 
 // Check if the Ethereum provider is available
+// @ts-expect-error This is for the browser
 const provider = new ethers.BrowserProvider(window.ethereum);
 
 try {

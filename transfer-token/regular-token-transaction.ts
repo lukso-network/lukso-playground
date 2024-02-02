@@ -2,6 +2,7 @@ import { ethers } from 'ethers';
 import LSP7Mintable from '@lukso/lsp-smart-contracts/artifacts/LSP7Mintable.json';
 
 // Connect to Ethereum via MetaMask or similar
+// @ts-expect-error This is for the browser
 const provider = new ethers.BrowserProvider(window.ethereum);
 
 try {

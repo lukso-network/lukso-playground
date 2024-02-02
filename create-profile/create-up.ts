@@ -1,10 +1,9 @@
-// Imports
 import { LSPFactory } from '@lukso/lsp-factory.js';
 import { ethers } from 'ethers';
 
-// Static variables
+// https://docs.lukso.tech/networks/testnet/parameters
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
-const CHAIN_ID = 4201;
+const CHAIN_ID = 4201; // LUKSO testnet
 const PRIVATE_KEY = '0x...'; // Add the private key of your EOA from ../convenience/create-eoa.js
 
 // Initialize ethers.js provider
