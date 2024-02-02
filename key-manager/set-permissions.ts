@@ -23,8 +23,8 @@ const universalProfile = new ethers.Contract(
 );
 
 // EOA address of an exemplary person
-let bobAddress = '0xcafecafecafecafecafecafecafecafecafecafe';
-let bobPermissions = PERMISSIONS.SETDATA;
+const bobAddress = '0xcafecafecafecafecafecafecafecafecafecafe';
+const bobPermissions = PERMISSIONS.SETDATA;
 
 // give the permission SETDATA to Bob
 async function setPermission() {

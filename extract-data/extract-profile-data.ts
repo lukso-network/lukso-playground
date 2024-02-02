@@ -22,9 +22,9 @@ let tags = [];
 let firstTag;
 
 // Fetchable picture information
-let backgroundImageLinks: any[] = [];
+const backgroundImageLinks: any[] = [];
 let fullSizeBackgroundImg;
-let profileImageLinks: any[] = [];
+const profileImageLinks: any[] = [];
 let fullSizeProfileImg;
 
 /*
@@ -96,17 +96,17 @@ async function fetchPictureData(address: string) {
     'LSP3Profile' in pictureData.value
   ) {
     // Read JSON
-    let backgroundImagesIPFS = pictureData.value.LSP3Profile.backgroundImage;
-    let profileImagesIPFS = pictureData.value.LSP3Profile.profileImage;
+    const backgroundImagesIPFS = pictureData.value.LSP3Profile.backgroundImage;
+    const profileImagesIPFS = pictureData.value.LSP3Profile.profileImage;
     try {
-      for (let i in backgroundImagesIPFS) {
+      for (const i in backgroundImagesIPFS) {
         backgroundImageLinks.push([
           i,
           backgroundImagesIPFS[i].url.replace('ipfs://', IPFS_GATEWAY),
         ]);
       }
 
-      for (let i in profileImagesIPFS) {
+      for (const i in profileImagesIPFS) {
         profileImageLinks.push([
           i,
           profileImagesIPFS[i].url.replace('ipfs://', IPFS_GATEWAY),

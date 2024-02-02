@@ -13,9 +13,9 @@ const SAMPLE_ASSET_ADDRESS = '0x6395b330F063F96579aA8F7b59f2584fb9b6c3a5';
 const config = { ipfsGateway: IPFS_GATEWAY };
 
 // Fetchable Asset information
-let assetImageLinks: any[] = [];
+const assetImageLinks: any[] = [];
 let fullSizeAssetImage;
-let assetIconLinks: any[] = [];
+const assetIconLinks: any[] = [];
 let fullSizeIconImage;
 let assetDescription;
 
@@ -50,7 +50,7 @@ async function getAssetProperties(assetJSON: any) {
   try {
     if (assetJSON.value.LSP4Metadata.images[0]) {
       assetImageData = assetJSON.value.LSP4Metadata.images;
-      for (let i in assetImageData) {
+      for (const i in assetImageData) {
         assetImageLinks.push([
           i,
           assetImageData[i].url.replace('ipfs://', IPFS_GATEWAY),
@@ -70,7 +70,7 @@ async function getAssetProperties(assetJSON: any) {
 
     if (assetJSON.value.LSP4Metadata.icon[0]) {
       iconImageData = assetJSON.value.LSP4Metadata.icon;
-      for (let i in iconImageData) {
+      for (const i in iconImageData) {
         assetIconLinks.push([
           i,
           iconImageData[i].url.replace('ipfs://', IPFS_GATEWAY),
