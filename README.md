@@ -56,5 +56,3 @@ bun file-path/script.ts
 ### Run in browser
 
 Open this project on [StackBlitz](https://stackblitz.com/github/lukso-network/lukso-playground) and start coding right away.
-
-test
