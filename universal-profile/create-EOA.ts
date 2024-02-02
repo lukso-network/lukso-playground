@@ -6,7 +6,7 @@ const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network/';
 // Setup ethers.js provider
 const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 
-// Create an Ethereum wallet
+// Create a wallet
 const wallet = ethers.Wallet.createRandom();
 
 // Print the private key and address

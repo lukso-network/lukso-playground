@@ -1,8 +1,8 @@
 import { ethers } from 'ethers';
 
-// Check if the Ethereum provider is available
+// Check if the LUKSO provider is available
 // @ts-expect-error This is for the browser
-const provider = new ethers.BrowserProvider(window.ethereum);
+const provider = new ethers.BrowserProvider(window.lukso);
 
 // https://docs.lukso.tech/learn/dapp-developer/transfer-lyx
 
