@@ -4,7 +4,7 @@ This project is used as a guide to show how to setup hardhat to work with LUKSO.
 
 ```bash
 npm i
-touch .env # provide the value for PRIVATE_KEY and UP_ADDR
+cp .env.example .env # provide the value for PRIVATE_KEY and UP_ADDR
 npm run build
 npx hardhat --network luksoTestnet run scripts/deployEOA.ts # deploy the customToken contract as an EOA
 npx hardhat --network luksoTestnet run scripts/deployUP.ts # deploy the customToken contract as a UP
