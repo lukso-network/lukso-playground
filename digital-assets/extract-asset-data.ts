@@ -1,12 +1,15 @@
 import { ERC725 } from '@erc725/erc725.js';
 import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
-import 'isomorphic-fetch';
 import { FetchDataOutput } from '@erc725/erc725.js/build/main/src/types/decodeData.js';
 
-// Static variables
-const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
+// https://docs.lukso.tech/networks/mainnet/parameters
+const RPC_ENDPOINT = 'https://rpc.lukso.gateway.fm';
 const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
-const SAMPLE_ASSET_ADDRESS = '0x6395b330F063F96579aA8F7b59f2584fb9b6c3a5';
+
+// 💡 Note: You can debug any smart contract by using the ERC725 Tools
+// 👉 https://erc725-inspect.lukso.tech/inspector?address=0x61b083f1fb63ba2F064990f01B233B547ED4F5Cb&network=mainnet
+const SAMPLE_ASSET_CONTRACT_ADDRESS =
+  '0x61b083f1fb63ba2F064990f01B233B547ED4F5Cb';
 
 // Parameters for the ERC725 instance
 const config = { ipfsGateway: IPFS_GATEWAY };
@@ -43,16 +46,18 @@ async function fetchAssetData(address: string): Promise<FetchDataOutput> {
 /*
  * Read properties of an asset
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function getAssetProperties(assetJSON: any) {
-  let assetImageData = [];
-  let iconImageData = [];
+  let assetImageData: any = [];
+  let iconImageData: any = [];
+
   try {
     if (assetJSON.value.LSP4Metadata.images[0]) {
       assetImageData = assetJSON.value.LSP4Metadata.images;
       for (const i in assetImageData) {
         assetImageLinks.push([
           i,
-          assetImageData[i].url.replace('ipfs://', IPFS_GATEWAY),
+          assetImageData[i][0].url.replace('ipfs://', IPFS_GATEWAY),
         ]);
       }
       console.log(
@@ -100,8 +105,12 @@ async function getAssetProperties(assetJSON: any) {
 }
 
 // Debug
-fetch(SAMPLE_ASSET_ADDRESS).then(async () => {
-  const assetData = await fetchAssetData(SAMPLE_ASSET_ADDRESS);
+
+const main = async () => {
+  const assetData = await fetchAssetData(SAMPLE_ASSET_CONTRACT_ADDRESS);
   console.log(JSON.stringify(assetData, undefined, 2));
-  getAssetProperties(assetData);
-});
+  // TODO: this does not work
+  // getAssetProperties(assetData);
+};
+
+main();

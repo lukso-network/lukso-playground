@@ -4,18 +4,20 @@ import lsp4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
 import { INTERFACE_IDS } from '@lukso/lsp-smart-contracts';
 
-// https://docs.lukso.tech/contracts/interface-ids
-// https://docs.lukso.tech/learn/dapp-developer/standard-detection
+// 📚 https://docs.lukso.tech/contracts/interface-ids
+// 📚 https://docs.lukso.tech/learn/dapp-developer/standard-detection
 
-// Asset Example
-const myAsset = new ERC725(
-  lsp4Schema,
-  '0x6395b330F063F96579aA8F7b59f2584fb9b6c3a5',
-  'https://rpc.testnet.lukso.gateway.fm',
-  {
-    ipfsGateway: 'https://api.universalprofile.cloud/ipfs',
-  },
-);
+// 💡 Note: You can debug any smart contract by using the ERC725 Tools
+// 👉 https://erc725-inspect.lukso.tech/inspector?address=0x61b083f1fb63ba2F064990f01B233B547ED4F5Cb&network=mainnet
+const SAMPLE_ASSET_CONTRACT_ADDRESS =
+  '0x61b083f1fb63ba2F064990f01B233B547ED4F5Cb';
+
+// https://docs.lukso.tech/networks/mainnet/parameters
+const RPC_URL = 'https://rpc.lukso.gateway.fm';
+
+const myAsset = new ERC725(lsp4Schema, SAMPLE_ASSET_CONTRACT_ADDRESS, RPC_URL, {
+  ipfsGateway: 'https://api.universalprofile.cloud/ipfs',
+});
 
 const isLSP7 = await myAsset.supportsInterface(INTERFACE_IDS.LSP7DigitalAsset);
 
@@ -23,39 +25,46 @@ const isLSP8 = await myAsset.supportsInterface(
   INTERFACE_IDS.LSP8IdentifiableDigitalAsset,
 );
 
-console.log(isLSP7, isLSP8); // true or false
+if (isLSP7) {
+  console.log(
+    `✅ The contract: ${SAMPLE_ASSET_CONTRACT_ADDRESS} supports the LSP7 interface ID`,
+  );
+}
+if (isLSP8) {
+  console.log(
+    `✅ The contract: ${SAMPLE_ASSET_CONTRACT_ADDRESS} supports the LSP8 interface ID`,
+  );
+}
 
-// Profile Example
-const provider = new ethers.JsonRpcProvider(
-  'https://rpc.testnet.lukso.network',
-);
+const provider = new ethers.JsonRpcProvider(RPC_URL);
+
+// 💡 Note: You can debug any smart contract by using the ERC725 Tools
+// 👉 https://erc725-inspect.lukso.tech/inspector?address=0xe65e927d0eccaaab6972170b489d3c1455955116&network=mainnet
+const universalProfileContractAddress =
+  '0xe65e927d0eccaaab6972170b489d3c1455955116';
 
 // Create an instance of the Universal Profile
-const myProfile = new ethers.Contract(
-  '0x9139def55c73c12bcda9c44f12326686e3948634',
+const myProfileContract = new ethers.Contract(
+  universalProfileContractAddress,
   UniversalProfile.abi,
   provider,
 );
 
-const isLSP0 = await myProfile.supportsInterface(
+const isLSP0 = await myProfileContract.supportsInterface(
   INTERFACE_IDS.LSP0ERC725Account,
 );
-console.log(isLSP0); // true or false
+
+if (isLSP0) {
+  console.log(
+    `✅ The contract: ${universalProfileContractAddress} supports the LSP0ERC725Account interface ID`,
+  );
+} else {
+  console.log(
+    `❌ The address: ${universalProfileContractAddress} does not supports the LSP0ERC725Account interface ID`,
+  );
+}
 
 /*
 Supported interfaces from lsp-smart-contracts library:
-
-INTERFACE_IDS.ERC165                        INTERFACE_IDS.ERC20
-INTERFACE_IDS.ERC223                        INTERFACE_IDS.ERC721
-INTERFACE_IDS.ERC721Metadata                INTERFACE_IDS.ERC725X
-INTERFACE_IDS.ERC725Y                       INTERFACE_IDS.ERC777
-INTERFACE_IDS.ERC1155         
-
-INTERFACE_IDS.LSP0ERC725Account             INTERFACE_IDS.LSP1UniversalReceiver
-INTERFACE_IDS.LSP6KeyManager                INTERFACE_IDS.LSP7DigitalAsset
-INTERFACE_IDS.LSP8IdentifiableDigitalAsset  INTERFACE_IDS.LSP9Vault
-INTERFACE_IDS.LSP11BasicSocialRecovery      INTERFACE_IDS.LSP14Ownable2Step
-INTERFACE_IDS.LSP17Extendable               INTERFACE_IDS.LSP17Extension
-INTERFACE_IDS.LSP20CallVerification         INTERFACE_IDS.LSP20CallVerifier
-INTERFACE_IDS.LSP25ExecuteRelayCall 
+https://docs.lukso.tech/tools/lsp-smart-contracts/constants
 */
