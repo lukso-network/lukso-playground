@@ -1,9 +1,9 @@
 import { ethers } from 'ethers';
 import LSP7Mintable from '@lukso/lsp-smart-contracts/artifacts/LSP7Mintable.json';
 
-// Connect to Ethereum via MetaMask or similar
+// Connect to LUKSO via Browser Extension
 // @ts-expect-error This is for the browser
-const provider = new ethers.BrowserProvider(window.ethereum);
+const provider = new ethers.BrowserProvider(window.lukso);
 
 try {
   // Request user's permission to connect and access their accounts
