@@ -1,0 +1,27 @@
+# This workflow will do a clean install of bun dependencies and lint the code
+# It will also compile the contracts under `hardhat-deploy/` folder to make sure code examples are correct.
+name: Build + Lint
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: 📦 Install dependencies
+        run: bun install
+
+      - name: 🎨 Run ESLint on JS/TS files
+        run: bun run lint
+
+      - name: 👷 Build contracts on Hardhat folders
+        run: |
+          cd hardhat-deploy && bun install ** bun run build

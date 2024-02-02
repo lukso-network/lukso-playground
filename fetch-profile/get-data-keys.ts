@@ -12,5 +12,5 @@ const erc725js = new ERC725(
 );
 
 // Get all data keys from the profile smart contract
-let profileData = await erc725js.getData();
+const profileData = await erc725js.getData();
 console.log(profileData);
