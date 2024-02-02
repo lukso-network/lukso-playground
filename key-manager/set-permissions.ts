@@ -1,4 +1,3 @@
-// Imports
 import { ethers } from 'ethers';
 import {
   PERMISSIONS,

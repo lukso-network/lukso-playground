@@ -1,4 +1,3 @@
-// Imports
 import { ERC725 } from '@erc725/erc725.js';
 import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 import 'isomorphic-fetch';

@@ -1,4 +1,3 @@
-// Imports
 import { ethers } from 'ethers';
 import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
 

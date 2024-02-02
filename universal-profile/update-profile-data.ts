@@ -1,4 +1,3 @@
-// Imports
 import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
 import { LSPFactory } from '@lukso/lsp-factory.js';
@@ -8,7 +7,7 @@ import KeyManager from '@lukso/lsp-smart-contracts/artifacts/LSP6KeyManager.json
 // Static variables
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
 const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
-const CHAIN_ID = 2828;
+const CHAIN_ID = 4201;
 const PRIVATE_KEY = '0x...'; // Replace with your private key
 const UNIVERSAL_PROFILE_ADDRESS = '0x...'; // Replace with the Universal Profile address
 
