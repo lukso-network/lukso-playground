@@ -46,19 +46,24 @@ async function fetchAssetData(address: string): Promise<FetchDataOutput> {
 /*
  * Read properties of an asset
  */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function getAssetProperties(assetJSON: any) {
   let assetImageData: any = [];
   let iconImageData: any = [];
 
   try {
-    if (assetJSON.value.LSP4Metadata.images[0]) {
+    // Check if images are available
+    if (
+      assetJSON.value.LSP4Metadata.images &&
+      assetJSON.value.LSP4Metadata.images.length > 0
+    ) {
       assetImageData = assetJSON.value.LSP4Metadata.images;
-      for (const i in assetImageData) {
-        assetImageLinks.push([
-          i,
-          assetImageData[i][0].url.replace('ipfs://', IPFS_GATEWAY),
-        ]);
+      for (const imageData of assetImageData[0]) {
+        // Assuming the first set of images is what we want
+        assetImageLinks.push({
+          width: imageData.width,
+          height: imageData.height,
+          url: imageData.url.replace('ipfs://', IPFS_GATEWAY),
+        });
       }
       console.log(
         'Asset Image Links: ' +
@@ -66,19 +71,23 @@ async function getAssetProperties(assetJSON: any) {
           '\n',
       );
 
-      fullSizeAssetImage = assetImageLinks[0][1];
+      fullSizeAssetImage =
+        assetImageLinks.length > 0 ? assetImageLinks[0].url : null;
       console.log('Full Size Asset Image Link: ' + fullSizeAssetImage + '\n');
     } else {
       console.log('Asset does not have image data \n');
     }
 
-    if (assetJSON.value.LSP4Metadata.icon[0]) {
+    // Check if icons are available
+    if (
+      assetJSON.value.LSP4Metadata.icon &&
+      assetJSON.value.LSP4Metadata.icon.length > 0
+    ) {
       iconImageData = assetJSON.value.LSP4Metadata.icon;
-      for (const i in iconImageData) {
-        assetIconLinks.push([
-          i,
-          iconImageData[i].url.replace('ipfs://', IPFS_GATEWAY),
-        ]);
+      for (const iconData of iconImageData) {
+        assetIconLinks.push({
+          url: iconData.url.replace('ipfs://', IPFS_GATEWAY),
+        });
       }
 
       console.log(
@@ -87,12 +96,14 @@ async function getAssetProperties(assetJSON: any) {
           '\n',
       );
 
-      fullSizeIconImage = assetIconLinks[0][1];
+      fullSizeIconImage =
+        assetIconLinks.length > 0 ? assetIconLinks[0].url : null;
       console.log('Full Size Icon Image Link: ' + fullSizeIconImage + '\n');
     } else {
       console.log('Asset does not have icon data');
     }
 
+    // Check if description is available
     if (assetJSON.value.LSP4Metadata.description) {
       assetDescription = assetJSON.value.LSP4Metadata.description;
       console.log('Asset Description: ' + assetDescription + '\n');
@@ -109,8 +120,7 @@ async function getAssetProperties(assetJSON: any) {
 const main = async () => {
   const assetData = await fetchAssetData(SAMPLE_ASSET_CONTRACT_ADDRESS);
   console.log(JSON.stringify(assetData, undefined, 2));
-  // TODO: this does not work
-  // getAssetProperties(assetData);
+  getAssetProperties(assetData);
 };
 
 main();
