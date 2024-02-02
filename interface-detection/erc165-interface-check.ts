@@ -4,6 +4,8 @@ import lsp4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
 import { INTERFACE_IDS } from '@lukso/lsp-smart-contracts';
 
+// https://docs.lukso.tech/contracts/interface-ids
+
 // Asset Example
 const myAsset = new ERC725(
   lsp4Schema,

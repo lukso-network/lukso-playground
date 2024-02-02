@@ -4,6 +4,8 @@ import { ethers } from 'ethers';
 // @ts-expect-error This is for the browser
 const provider = new ethers.BrowserProvider(window.ethereum);
 
+// https://docs.lukso.tech/learn/dapp-developer/transfer-lyx
+
 try {
   // Request user accounts (connect to wallet)
   const accounts = await provider.send('eth_requestAccounts', []);
