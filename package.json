@@ -2,7 +2,7 @@
   "name": "lukso-playground",
   "version": "1.0.0",
   "private": true,
-  "description": "Convenient and standalone code snippets to read, write and interact with the LSP smart contracts.",
+  "description": "Convenient and standalone code snippets to read, write and interact with the LUKSO LSP smart contracts.",
   "type": "module",
   "repository": {
     "type": "git",
