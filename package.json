@@ -1,12 +1,9 @@
 {
   "name": "lukso-playground",
   "version": "1.0.0",
-  "description": "Convenient and standalone code snippets to read blockchain data",
-  "main": "index.js",
+  "private": true,
+  "description": "Convenient and standalone code snippets to read, write and interact with the LSP smart contracts.",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lukso-network/lukso-playground.git"
@@ -17,13 +14,14 @@
     "url": "https://github.com/lukso-network/lukso-playground/issues"
   },
   "homepage": "https://github.com/lukso-network/lukso-playground#readme",
-  "dependencies": {
-    "@erc725/erc725.js": "^0.22.0",
-    "@lukso/lsp-factory.js": "^3.2.1",
+  "devDependencies": {
+    "@erc725/erc725.js": "^0.23.0",
+    "@lukso/lsp-factory.js": "^3.3.1",
     "@lukso/lsp-smart-contracts": "^0.14.0",
     "ethers": "^5.7.2",
     "hardhat-deploy": "^0.11.43",
     "isomorphic-fetch": "^3.0.0",
-    "prettier": "^3.0.3"
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
   }
 }

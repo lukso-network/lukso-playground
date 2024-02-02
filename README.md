@@ -33,23 +33,25 @@ We highly recommend that developers fetch and store profile or asset data using 
 
 ## Development
 
-Clone this repository and install its dependencies.
+> A lot of these scripts should run with `ts-node` in development environnements, but you might be encountering issues because of ESM dependencies.
+
+**The scripts will be run using [`bun`](https://bun.sh/docs/installation) and `bunx`. Make sure you have `bun` installed first.**
+
+Then clone this repository and install its dependencies.
 
 ```bash
 git clone https://github.com/lukso-network/lukso-playground.git
 
-cd lukso-playground && npm i
+cd lukso-playground && bun install
 ```
 
 ### Run locally
 
-Run the JavaScript code of one file within the terminal.
+Run the Typescript code of one file within the terminal using `bun`.
 
 ```bash
-node [FILENAME].js
+bun file-path/script.ts
 ```
-
-> Requires NodeJS `version < 19.0.0`
 
 ### Run in browser
 

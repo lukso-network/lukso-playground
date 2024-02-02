@@ -1,5 +1,5 @@
 import { ERC725 } from '@erc725/erc725.js';
-import lsp4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json' assert { type: 'json' };
+import lsp4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 
 // Initatiate erc725.js
 const erc725js = new ERC725(
