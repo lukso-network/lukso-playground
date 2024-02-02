@@ -10,7 +10,7 @@ const config: HardhatUserConfig = {
     luksoTestnet: {
       url: 'https://rpc.testnet.lukso.gateway.fm',
       chainId: 4201,
-      accounts: [process.env.PRIVATE_KEY as string],
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
     },
   },
 };
