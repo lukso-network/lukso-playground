@@ -1,11 +1,18 @@
 import { ERC725 } from '@erc725/erc725.js';
 import LSP6Schema from '@erc725/erc725.js/schemas/LSP6KeyManager.json';
 
-// Setup with sample address and testnet RPC
-const myUniversalProfileAddress = '0xC26508178c4D7d3Ad43Dcb9F9bb1fab9ceeD58B5';
+const myUniversalProfileAddress = '0xEda145b45f76EDB44F112B0d46654044E7B8F319';
+
+// 💡 Note: You can debug any smart contract by using the ERC725 Tools
+// 👉 https://erc725-inspect.lukso.tech/inspector?address=0xEda145b45f76EDB44F112B0d46654044E7B8F319&network=testnet
+
+// https://docs.lukso.tech/networks/testnet/parameters
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
 
 const erc725 = new ERC725(LSP6Schema, myUniversalProfileAddress, RPC_ENDPOINT);
+
+// 💡 You can debug permissions from ERC725 Tools
+// 👉 https://erc725-inspect.lukso.tech/key-manager
 
 async function getPermissionedAddresses() {
   // Get the list of addresses that have permissions on the Universal Profile
