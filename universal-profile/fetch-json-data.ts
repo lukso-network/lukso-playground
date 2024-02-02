@@ -11,6 +11,9 @@ const erc725js = new ERC725(
   },
 );
 
+// 💡 Note: You can debug any smart contract by using the ERC725 Tools
+// 👉 https://erc725-inspect.lukso.tech/inspector?address=0xEda145b45f76EDB44F112B0d46654044E7B8F319&network=testnet
+
 // Download and verify the profile metadata JSON file
 const profileMetaData = await erc725js.fetchData('LSP3Profile');
 console.log(JSON.stringify(profileMetaData, undefined, 2));

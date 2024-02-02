@@ -38,7 +38,7 @@ async function setPermission() {
 
     const permissionParams = [
       bobPermissions,
-      3, // 3 because UP owner + Universal Receiver Delegate permission have already been set by lsp-factory
+      3, // 3 because UP owner + Universal Receiver Delegate permission have already been set on profile creation
       bobAddress,
     ];
 

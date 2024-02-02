@@ -8,6 +8,9 @@ const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
 const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
 const SAMPLE_PROFILE_ADDRESS = '0x9139def55c73c12bcda9c44f12326686e3948634';
 
+// 💡 Note: You can debug any smart contract by using the ERC725 Tools
+// 👉 https://erc725-inspect.lukso.tech/inspector?address=0x9139def55c73c12bcda9c44f12326686e3948634&network=testnet
+
 // Parameters for ERC725 Instance
 const config = { ipfsGateway: IPFS_GATEWAY };
 

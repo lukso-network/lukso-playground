@@ -6,6 +6,9 @@ const provider = new ethers.BrowserProvider(window.ethereum);
 
 // https://docs.lukso.tech/learn/dapp-developer/transfer-lyx
 
+// 💡 Request LYXt from the faucet:
+// 🚰 https://faucet.testnet.lukso.network/
+
 try {
   // Request user accounts (connect to wallet)
   const accounts = await provider.send('eth_requestAccounts', []);

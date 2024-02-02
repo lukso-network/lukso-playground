@@ -5,11 +5,11 @@ Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standard
 ## Contents
 
 - [`universal-profile`](./universal-profile): Universal Profile related scripts
+- [`digital-assets`](./digital-assets/): Digital assets (LSP7/8) scripts
 - [`interface-detection`](./interface-detection): Verify EIP165 Standard Compatibility
 - [`key-manager`](./key-manager): Permission Management of Controller Keys
 - [`metadata-detection`](./metadata-detection): Verify ERC725Y Storage Compatability
 - [`transfer-lyx`](./transfer-lyx): Coin Transfers for Backend and Extension
-- [`digital-assets`](./digital-assets/): Digital assets (LSP7/8) scripts
 
 ### 📑 Smart contracts
 
@@ -18,7 +18,6 @@ Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standard
 ### LUKSO Libraries
 
 - [`@erc725/erc725.js`](https://docs.lukso.tech/tools/erc725js/getting-started)
-- [`@lukso/lsp-factory.js`](https://docs.lukso.tech/tools/lsp-factoryjs/getting-started)
 - [`@lukso/lsp-smart-contracts`](https://docs.lukso.tech/tools/lsp-smart-contracts/getting-started)
 
 Please check the versions used in the [`package.json`](./package.json)

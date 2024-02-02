@@ -1,33 +1,29 @@
 import { ERC725 } from '@erc725/erc725.js';
 import lsp4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 
+// 💡 Note: You can debug any smart contract by using the ERC725 Tools
+// 👉 https://erc725-inspect.lukso.tech/inspector?address=0x86e817172b5c07f7036bf8aa46e2db9063743a83&network=mainnet
+const assetContractAddress = '0x86e817172b5c07f7036bf8aa46e2db9063743a83';
+
 // Initatiate erc725.js
 const erc725js = new ERC725(
   lsp4Schema,
-  '0x6395b330F063F96579aA8F7b59f2584fb9b6c3a5',
-  'https://rpc.testnet.lukso.gateway.fm',
+  assetContractAddress,
+  'https://rpc.lukso.gateway.fm',
   {},
 );
 
-// Fetch the supported storage standard
-let isLSP4 = false;
-
 // Verify if the standard is supported (value !== null)
+// 📚 https://docs.lukso.tech/standards/tokens/LSP4-Digital-Asset-Metadata#supportedstandardslsp4digitalasset
 const data = await erc725js.getData('SupportedStandards:LSP4DigitalAsset');
-if (data.value !== null) {
-  isLSP4 = true;
+const isLSP4 = data.value !== null;
+
+if (isLSP4) {
+  console.log(
+    `✅ The contract: ${assetContractAddress} supports the LSP4DigitalAsset standard`,
+  );
+} else {
+  console.log(
+    `❌ The address: ${assetContractAddress} does not supports the LSP4DigitalAsset standard`,
+  );
 }
-
-console.log(isLSP4);
-
-/*
-Supported schemas from erc725.js library:
-
-LSP1UniversalReceiverDelegate       LSP3ProfileMetadata
-LSP4DigitalAsset                    LSP5ReceivedAssets
-LSP6KeyManager                      LSP8IdentifiableDigitalAsset
-LSP9Vault                           LSP10ReceivedVaults
-LSP12IssuedAssets                   LSP17ContractExtension
-
-All fetchable keys can be found within @erc725/erc725.js/schemas/[schema].json
-*/

@@ -1,33 +1,30 @@
 import { ERC725 } from '@erc725/erc725.js';
 import lsp3ProfileSchema from '@erc725/erc725.js/schemas/LSP3ProfileMetadata.json';
 
+// 💡 Note: You can debug any smart contract by using the ERC725 Tools
+// 👉 https://erc725-inspect.lukso.tech/inspector?address=0x9139def55c73c12bcda9c44f12326686e3948634&network=testnet
+
+const profileContractAddress = '0x9139def55c73c12bcda9c44f12326686e3948634';
+
 // Initatiate erc725.js
 const erc725js = new ERC725(
   lsp3ProfileSchema,
-  '0x9139def55c73c12bcda9c44f12326686e3948634',
+  profileContractAddress,
   'https://rpc.testnet.lukso.gateway.fm',
   {},
 );
 
-// Fetch the supported storage standard
-let isLSP3 = false;
-
 // Verify if the standard is supported (value !== null)
+// 📚 https://docs.lukso.tech/standards/universal-profile/lsp3-profile-metadata/#supportedstandardslsp3profile
 const data = await erc725js.getData('SupportedStandards:LSP3Profile');
-if (data.value !== null) {
-  isLSP3 = true;
+const isLSP3 = data.value !== null;
+
+if (isLSP3) {
+  console.log(
+    `✅ The contract: ${profileContractAddress} supports the LSP3Profile standard`,
+  );
+} else {
+  console.log(
+    `❌ The address: ${profileContractAddress} does not supports the LSP3Profile standard`,
+  );
 }
-
-console.log(isLSP3);
-
-/*
-Supported schemas from erc725.js library:
-
-LSP1UniversalReceiverDelegate       LSP3ProfileMetadata
-LSP4DigitalAsset                    LSP5ReceivedAssets
-LSP6KeyManager                      LSP8IdentifiableDigitalAsset
-LSP9Vault                           LSP10ReceivedVaults
-LSP12IssuedAssets                   LSP17ContractExtension
-
-All fetchable keys can be found within @erc725/erc725.js/schemas/[schema].json
-*/

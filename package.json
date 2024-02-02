@@ -19,7 +19,6 @@
   },
   "devDependencies": {
     "@erc725/erc725.js": "^0.23.0",
-    "@lukso/lsp-factory.js": "^3.3.1",
     "@lukso/lsp-smart-contracts": "^0.14.0",
     "ethers": "^6.10.0",
     "@typescript-eslint/eslint-plugin": "^6.20.0",
