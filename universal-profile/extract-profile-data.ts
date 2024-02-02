@@ -12,12 +12,12 @@ const SAMPLE_PROFILE_ADDRESS = '0x9139def55c73c12bcda9c44f12326686e3948634';
 const config = { ipfsGateway: IPFS_GATEWAY };
 
 // Fetchable metadata information
-let name;
-let description;
-let links = [];
-let firstLinkTitle;
-let firstLinkURL;
-let tags = [];
+let name: string;
+let description: string;
+let links: any = [];
+let firstLinkTitle: string;
+let firstLinkURL: string;
+let tags: string[] = [];
 let firstTag;
 
 // Fetchable picture information

@@ -7,7 +7,6 @@ Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standard
 - [`universal-profile`](./universal-profile): Universal Profile
 - [`extract-data`](./extract-data): Extract LSP3 and LSP4 JSON Data
 - [`fetch-asset`](./fetch-asset): Asset-related Data Fetches and Operations
-- [`fetch-profile`](./fetch-profile): Profile-related Data and Controller Fetches
 - [`hardhat-deploy`](./hardhat-deploy): Smart Contract Deployment Setup and Scripts
 - [`interface-detection`](./interface-detection): Verify EIP165 Standard Compatibility
 - [`key-manager`](./key-manager): Permission Management of Controller Keys
