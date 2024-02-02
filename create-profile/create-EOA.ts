@@ -5,7 +5,7 @@ import { ethers } from 'ethers';
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network/';
 
 // Setup ethers.js provider
-const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
+const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 
 // Create an Ethereum wallet
 const wallet = ethers.Wallet.createRandom();
@@ -21,7 +21,7 @@ async function getBalance() {
     const balance = await provider.getBalance(wallet.address);
 
     // Convert the balance to ether and log it
-    console.log('My balance: ' + ethers.utils.formatEther(balance) + ' LYXt');
+    console.log('My balance: ' + ethers.formatEther(balance) + ' LYXt');
   } catch (error) {
     console.error('Error fetching balance:', error);
   }

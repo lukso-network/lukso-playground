@@ -8,7 +8,7 @@ import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProf
 
 // Connect to the LUKSO Testnet
 const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
-const provider = new ethers.providers.JsonRpcProvider(RPC_ENDPOINT);
+const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 
 const myUniversalProfileAddress = '0x9fc7e5095A054dfA3c6b237E0e5d686638394248';
 const myKeyManagerAddress = '0x87fa9105cA247897Acb4F12Ddf6EC3CEF23F6059';
@@ -43,7 +43,7 @@ async function setPermission() {
       bobAddress,
     ];
 
-    const tx = await universalProfile.populateTransaction.setDataBatch(
+    const tx = await universalProfile.setDataBatch.populateTransaction(
       permissionData,
       permissionParams,
     );
