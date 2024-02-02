@@ -4,15 +4,16 @@ Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standard
 
 ## Contents
 
-- [`universal-profile`](./universal-profile): Universal Profile
-- [`extract-data`](./extract-data): Extract LSP3 and LSP4 JSON Data
-- [`fetch-asset`](./fetch-asset): Asset-related Data Fetches and Operations
-- [`hardhat-deploy`](./hardhat-deploy): Smart Contract Deployment Setup and Scripts
+- [`universal-profile`](./universal-profile): Universal Profile related scripts
 - [`interface-detection`](./interface-detection): Verify EIP165 Standard Compatibility
 - [`key-manager`](./key-manager): Permission Management of Controller Keys
 - [`metadata-detection`](./metadata-detection): Verify ERC725Y Storage Compatability
-- [`transfer-lyx`](./transfer-lyx): Coin Transfers for Backend and Exetnsion
-- [`transfer-token`](./transfer-token/): Token Transfers for Backend and Exetnsion
+- [`transfer-lyx`](./transfer-lyx): Coin Transfers for Backend and Extension
+- [`digital-assets`](./digital-assets/): Digital assets (LSP7/8) scripts
+
+### 📑 Smart contracts
+
+- [`smart-contracts-hardhat`](./smart-contracts-hardhat): Hardhat Smart Contract Deployment Setup and Scripts
 
 ### LUKSO Libraries
 

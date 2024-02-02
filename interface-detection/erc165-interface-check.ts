@@ -5,6 +5,7 @@ import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProf
 import { INTERFACE_IDS } from '@lukso/lsp-smart-contracts';
 
 // https://docs.lukso.tech/contracts/interface-ids
+// https://docs.lukso.tech/learn/dapp-developer/standard-detection
 
 // Asset Example
 const myAsset = new ERC725(
