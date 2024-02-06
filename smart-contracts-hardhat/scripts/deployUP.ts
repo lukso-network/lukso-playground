@@ -17,10 +17,23 @@ async function main() {
   // load the associated UP
   const UP = new ethers.Contract(process.env.UP_ADDR as string, LSP0ABI.abi, signer);
 
+  const tokenFactory = await ethers.getContractFactory('MyCustomToken');
+
+  const deplyedTransaction = await tokenFactory.getDeployTransaction([
+    'My Custom Token', // token name
+    'MCT', // token symbol
+    signer.address, // token owner
+    0, // token type = TOKEN
+    false, // isNonDivisible?
+  ]);
+
+  console.log('test: ', deplyedTransaction);
+
   /**
    * Custom LSP7 Token
    */
-  const CustomTokenBytecode = hre.artifacts.readArtifactSync('CustomToken').bytecode;
+  const CustomTokenBytecode =
+    hre.artifacts.readArtifactSync('MyCustomToken').bytecode;
 
   // get the address of the contract that will be created
   const CustomTokenAddress = await UP.connect(signer)

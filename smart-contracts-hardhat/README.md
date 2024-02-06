@@ -2,10 +2,10 @@
 
 This project is used as a guide to show how to setup HardHat to work with the **[LUKSO networks](https://docs.lukso.tech/networks/mainnet/parameters)** and **[LSPs](https://docs.lukso.tech/contracts/introduction)**.
 
-[HardHat](https://hardhat.org/docs) is a development environment to
+[HardHat](https://hardhat.org/docs) is a development environment to:
 
-- **create** and **edit**,
-- **compile** and **debug**, and
+- **create** and **edit**
+- **compile** and **debug**
 - **deploy** and **verify**
 
 smart contracts on EVM based blockchains.
