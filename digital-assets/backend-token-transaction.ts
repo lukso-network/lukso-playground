@@ -11,11 +11,7 @@ const controller = '0x...'; // Replace with the controller address
 
 // Instantiate the profile contract with an address
 const userProfileAddress = '0x...'; // Replace with the user's profile address
-const myUniversalProfile = new ethers.Contract(
-  userProfileAddress,
-  UniversalProfile.abi,
-  provider,
-);
+const myUniversalProfile = new ethers.Contract(userProfileAddress, UniversalProfile.abi, provider);
 
 // Instantiate the token contract with an address
 const tokenAddress = '0x...'; // Replace with the token contract address

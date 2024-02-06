@@ -109,10 +109,7 @@ async function fetchPictureData(address: string) {
       }
 
       for (const i in profileImagesIPFS) {
-        profileImageLinks.push([
-          i,
-          profileImagesIPFS[i].url.replace('ipfs://', IPFS_GATEWAY),
-        ]);
+        profileImageLinks.push([i, profileImagesIPFS[i].url.replace('ipfs://', IPFS_GATEWAY)]);
       }
 
       fullSizeBackgroundImg = backgroundImageLinks[0][1];
@@ -122,14 +119,10 @@ async function fetchPictureData(address: string) {
       console.log('Fullsize Background Image: ' + fullSizeBackgroundImg + '\n');
       console.log('Fullsize Background Image: ' + fullSizeProfileImg + '\n');
       console.log(
-        'Background Image Links: ' +
-          JSON.stringify(backgroundImageLinks, undefined, 2) +
-          '\n',
+        'Background Image Links: ' + JSON.stringify(backgroundImageLinks, undefined, 2) + '\n',
       );
       console.log(
-        'Background Image Links: ' +
-          JSON.stringify(profileImageLinks, undefined, 2) +
-          '\n',
+        'Background Image Links: ' + JSON.stringify(profileImageLinks, undefined, 2) + '\n',
       );
     } catch (error) {
       return console.log('Could not fetch images: ', error);

@@ -1,8 +1,5 @@
 import { ethers } from 'ethers';
-import {
-  PERMISSIONS,
-  ERC725YDataKeys,
-} from '@lukso/lsp-smart-contracts/constants';
+import { PERMISSIONS, ERC725YDataKeys } from '@lukso/lsp-smart-contracts/constants';
 import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
 
 // Connect to the LUKSO Testnet
@@ -29,11 +26,9 @@ const bobPermissions = PERMISSIONS.SETDATA;
 async function setPermission() {
   try {
     const permissionData = [
-      ERC725YDataKeys.LSP6['AddressPermissions:Permissions'] +
-        bobAddress.substring(2), // allow Bob to setData on your UP
+      ERC725YDataKeys.LSP6['AddressPermissions:Permissions'] + bobAddress.substring(2), // allow Bob to setData on your UP
       ERC725YDataKeys.LSP6['AddressPermissions[]'].length, // length of AddressPermissions[]
-      ERC725YDataKeys.LSP6['AddressPermissions[]'].index +
-        '00000000000000000000000000000001', // add Bob's address into the list of permissions
+      ERC725YDataKeys.LSP6['AddressPermissions[]'].index + '00000000000000000000000000000001', // add Bob's address into the list of permissions
     ];
 
     const permissionParams = [
