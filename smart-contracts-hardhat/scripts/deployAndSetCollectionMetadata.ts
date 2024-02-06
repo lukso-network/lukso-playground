@@ -1,6 +1,6 @@
 import { ethers } from 'hardhat';
 
-import { LSP4_TOKEN_TYPES, ERC725YDataKeys } from '@lukso/lsp-smart-contracts';
+import { ERC725YDataKeys } from '@lukso/lsp-smart-contracts';
 
 async function deployToken() {
   const [deployer] = await ethers.getSigners();
