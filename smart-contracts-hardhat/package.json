@@ -1,11 +1,10 @@
 {
   "name": "hardhat-project",
   "scripts": {
-    "build": "hardhat compile --force --show-stack-traces"
+    "build": "hardhat compile --show-stack-traces"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
-    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.4.1",
     "dotenv": "^16.3.1",
     "ethers": "^6.10.0",
     "hardhat": "^2.19.5",

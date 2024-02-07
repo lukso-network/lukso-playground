@@ -5,8 +5,8 @@ import '@nomicfoundation/hardhat-toolbox';
 LoadEnv();
 
 const config: HardhatUserConfig = {
-  // Default compiler version for all contracts
   solidity: {
+    // Default compiler version for all contracts
     version: '0.8.19',
     settings: {
       optimizer: {

@@ -1,14 +1,6 @@
-# Basic Sample Hardhat Project
+# LSP HardHat Integration
 
-This project is used as a guide to show how to setup HardHat to work with the **[LUKSO networks](https://docs.lukso.tech/networks/mainnet/parameters)** and **[LSPs](https://docs.lukso.tech/contracts/introduction)**.
-
-[HardHat](https://hardhat.org/docs) is a development environment to:
-
-- **create** and **edit**
-- **compile** and **debug**
-- **deploy** and **verify**
-
-smart contracts on EVM based blockchains.
+This project is used as a guide to show how to setup HardHat to interact with **[LSPs](https://docs.lukso.tech/contracts/introduction)** smart contracts on **[LUKSO networks](https://docs.lukso.tech/networks/mainnet/parameters)**.
 
 ## Guides
 
@@ -35,13 +27,7 @@ cp .env.example .env
 
 ### Compile Contracts
 
-Enforce the compilation of contracts and display the stack traces:
-
-```bash
-npm run build
-```
-
-Regular compilation of your smart contracts:
+Compile all smart contracts within `/contracts`:
 
 ```bash
 npx hardhat compile
@@ -70,7 +56,7 @@ npx hardhat --network luksoTestnet run scripts/deployUP.ts
 Verify your contracts with the blockscout API and their constructor parameters:
 
 ```bash
-npx hardhat verify myTokenAddress --constructor-args ./verify/myTokenName.ts --network luksoTestnet
+npx hardhat verify <myContractAddress> --constructor-args ./verify/myContractParameters.ts --network luksoTestnet
 ```
 
 ## Packages
