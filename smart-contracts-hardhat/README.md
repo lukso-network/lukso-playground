@@ -76,7 +76,7 @@ For example, you can import `LSP7Mintable` to create a LSP7 contract that enable
 
 ```js
 // contracts/MyTokens/MyCustomToken.sol
-import { LSP7Mintable } from '@lukso/lsp-smart-contracts/contracts/LSP7DigitalAsset/presets/LSP7Mintable.sol';
+import { LSP7Mintable } from "@lukso/lsp-smart-contracts/contracts/LSP7DigitalAsset/presets/LSP7Mintable.sol";
 ```
 
 ### Inherit LSP functionality
@@ -129,24 +129,24 @@ You can either write properties directly **into the Solditity contract** or **pa
 
 ```js
 // scripts/deployEOA.ts
-import { ethers } from 'hardhat';
-import * as dotenv from 'dotenv';
+import { ethers } from "hardhat";
+import * as dotenv from "dotenv";
 
 dotenv.config();
 
 async function deployToken() {
   const [deployer] = await ethers.getSigners();
-  console.log('Deploying contracts with the account:', deployer.address);
+  console.log("Deploying contracts with the account:", deployer.address);
 
-  const token = await ethers.deployContract('MyToken', [
-    'My Custom Token', // token name
-    'MCT', // token symbol
+  const token = await ethers.deployContract("MyToken", [
+    "My Custom Token", // token name
+    "MCT", // token symbol
     deployer.address, // contract owner
     0, // token type = TOKEN
     false, // isNonDivisible?
   ]);
 
-  console.log('Token address:', await token.getAddress());
+  console.log("Token address:", await token.getAddress());
 }
 
 deployToken()

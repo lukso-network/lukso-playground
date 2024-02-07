@@ -6,11 +6,11 @@ dotenv.config();
 async function main() {
   const [deployer] = await ethers.getSigners();
   const customToken = await ethers.deployContract('MyCustomToken', [
-    'My Custom Token',  // token name
-    'MCT',              // token symbol
-    deployer.address,   // contract owner
-    0,                  // token type = TOKEN
-    false,              // isNonDivisible?
+    'My Custom Token', // token name
+    'MCT', // token symbol
+    deployer.address, // contract owner
+    0, // token type = TOKEN
+    false, // isNonDivisible?
   ]);
 
   await customToken.waitForDeployment();

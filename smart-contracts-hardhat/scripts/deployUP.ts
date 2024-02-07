@@ -20,11 +20,11 @@ async function main() {
   const tokenFactory = await ethers.getContractFactory('MyCustomToken');
 
   const deployTx = tokenFactory.getDeployTransaction(
-    "My Custom Token", // token name
-    "MCT",             // token symbol
-    signer.address,    // token owner
-    0,                 // token type = TOKEN
-    false              // isNonDivisible?
+    'My Custom Token', // token name
+    'MCT', // token symbol
+    signer.address, // token owner
+    0, // token type = TOKEN
+    false, // isNonDivisible?
   );
 
   console.log('test: ', deployTx);
@@ -32,8 +32,7 @@ async function main() {
   /**
    * Custom LSP7 Token
    */
-  const CustomTokenBytecode =
-    hre.artifacts.readArtifactSync('MyCustomToken').bytecode;
+  const CustomTokenBytecode = hre.artifacts.readArtifactSync('MyCustomToken').bytecode;
 
   // get the address of the contract that will be created
   const CustomTokenAddress = await UP.connect(signer)
