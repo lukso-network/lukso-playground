@@ -6,7 +6,7 @@ import {LSP7Burnable} from "@lukso/lsp-smart-contracts/contracts/LSP7DigitalAsse
 
 import {_LSP4_TOKEN_TYPE_TOKEN} from "@lukso/lsp-smart-contracts/contracts/LSP4DigitalAssetMetadata/LSP4Constants.sol";
 
-contract CustomToken is LSP7Mintable, LSP7Burnable {
+contract MyCustomToken is LSP7Mintable, LSP7Burnable {
 
   // Technical Documentation: https://github.com/lukso-network/LIPs/blob/main/LSPs/LSP-7-DigitalAsset.md
   constructor(

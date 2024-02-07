@@ -17,7 +17,7 @@ smart contracts on EVM based blockchains.
 Install the dependencies
 
 ```bash
-npm i
+bun install
 ```
 
 Set the private environment variables
@@ -26,7 +26,7 @@ Set the private environment variables
 cp .env.example .env
 ```
 
-> **INFO** Make sure to add the private key of an EOA and Universal Profile address for deployment.
+> **INFO** Make sure to add the private key of an EOA for deployment. Optionally, you can provide a private key of a controller and a Universal Profile address to deploy via profile.
 
 ## Development
 
@@ -70,17 +70,19 @@ npx hardhat verify myTokenAddress --constructor-args ./verify/myTokenName.ts --n
 
 ## Getting Started
 
-The syntax of smart contracts works by **inheritance**, similarly as Object Oriented Programming language. Every object represents an individual smart contracts, which inherits underlying functionalities. If you create a new smart contract using LSPs, you can `import` standardized and modular presets from the `@lukso/lsp-smart-contracts` developer library. Such presets can then be combined to create complex contract deployments like Universal Profiles and Digital Assets.
+The syntax of smart contracts works by **inheritance**, using underlying functionalities to smart contract objects. If you create a new smart contract using LSPs, you can `import` standardized and modular presets from the `@lukso/lsp-smart-contracts` developer library. Such presets can then be combined to create complex contract deployments like Universal Profiles and Digital Assets.
 
-You could import `LSP7Mintable` to create a LSP7 contract that enables the contract owner to mint these tokens like the following:
+For example, you can import `LSP7Mintable` to create a LSP7 contract that enables the contract owner to mint these tokens like the following:
 
 ```js
+// contracts/MyTokens/MyCustomToken.sol
 import { LSP7Mintable } from '@lukso/lsp-smart-contracts/contracts/LSP7DigitalAsset/presets/LSP7Mintable.sol';
 ```
 
 ### Inherit LSP functionality
 
 ```js
+// contracts/MyTokens/MyCustomToken.sol
 ...
 
 contract MyToken is LSP7Mintable {
@@ -99,6 +101,7 @@ After inheriting, the contract might expect mandatory parameters to fullfil the 
 - if the token can be divided in fractional units (LSP7 specific)
 
 ```js
+// contracts/MyTokens/MyCustomToken.sol
 ...
 
 contract MyToken is LSP7Mintable {
@@ -125,6 +128,7 @@ contract MyToken is LSP7Mintable {
 You can either write properties directly **into the Solditity contract** or **pass them from the deployment scripts**.
 
 ```js
+// scripts/deployEOA.ts
 import { ethers } from 'hardhat';
 import * as dotenv from 'dotenv';
 
@@ -160,7 +164,7 @@ You can run the deployment script [as described above](#deploy-scripts).
 After the token was deployed, you can access and edit the token's metadata on the storage:
 
 ```js
-
+// scripts/deployEOA.ts
 ...
 
 import { LSP4_TOKEN_TYPES, ERC725YDataKeys } from '@lukso/lsp-smart-contracts';
