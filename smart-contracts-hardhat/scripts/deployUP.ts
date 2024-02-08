@@ -1,41 +1,72 @@
 import hre from 'hardhat';
 import { ethers } from 'hardhat';
 import * as dotenv from 'dotenv';
-import * as LSP0ABI from '@lukso/lsp-smart-contracts/artifacts/LSP0ERC725Account.json';
+import LSP0Artifact from '@lukso/lsp-smart-contracts/artifacts/LSP0ERC725Account.json';
 
 // load env vars
 dotenv.config();
 
 async function main() {
-  // setup provider
-  const provider = new ethers.providers.JsonRpcProvider('https://rpc.testnet.lukso.gateway.fm');
+  // Setup the provider
+  const provider = new ethers.JsonRpcProvider('https://rpc.testnet.lukso.gateway.fm');
 
-  // setup signer (the browser extension controller)
+  // Setup the controller used to sign the deployment
   const signer = new ethers.Wallet(process.env.PRIVATE_KEY as string, provider);
-  console.log('Deploying contracts with EOA: ', signer.address);
+  console.log('Deploying contracts with Universal Profile Controller: ', signer.address);
 
-  // load the associated UP
-  const UP = new ethers.Contract(process.env.UP_ADDR as string, LSP0ABI.abi, signer);
+  // Load the Universal Profile
+  const universalProfile = await ethers.getContractAtFromArtifact(
+    LSP0Artifact,
+    process.env.UP_ADDR as string,
+  );
 
   /**
    * Custom LSP7 Token
    */
-  const CustomTokenBytecode = hre.artifacts.readArtifactSync('CustomToken').bytecode;
 
-  // get the address of the contract that will be created
-  const CustomTokenAddress = await UP.connect(signer)
-    .getFunction('execute')
-    .staticCall(1, ethers.constants.AddressZero, 0, CustomTokenBytecode);
+  // Create custom bytecode for the token deployment
+  const CustomTokenBytecode = hre.artifacts.readArtifactSync('MyCustomToken').bytecode;
 
-  // deploy CustomLSP7 as the UP (signed by the browser extension controller)
-  const tx1 = await UP.connect(signer).getFunction('execute')(
-    1,
-    ethers.constants.AddressZero,
-    0,
-    CustomTokenBytecode,
+  const abiEncoder = new ethers.AbiCoder();
+
+  // Encode constructor params
+  const encodedConstructorParams = abiEncoder.encode(
+    ['string', 'string', 'address', 'uint256', 'bool'],
+    [
+      'My Custom Token', // token name
+      'MCT', // token symbol
+      process.env.UP_ADDR, // token owner
+      0, // token type = TOKEN
+      false, // isNonDivisible?
+    ],
   );
 
-  await tx1.wait();
+  // Add the constructor params to the Custom Token bytecode
+  const CustomTokenBytecodeWithConstructor =
+    CustomTokenBytecode + encodedConstructorParams.slice(2);
+
+  // Get the address of the custom token contract that will be created
+  const CustomTokenAddress = await universalProfile
+    .connect(signer)
+    .getFunction('execute')
+    .staticCall(
+      1, // Operation type: CREATE
+      ethers.ZeroAddress,
+      0, // Value is empty
+      CustomTokenBytecodeWithConstructor,
+      { gasLimit: 10000000 },
+    );
+
+  // Deploy the contract by the Universal Profile
+  const tx = await universalProfile.connect(signer).getFunction('execute')(
+    1, // Operation type: CREATE
+    ethers.ZeroAddress,
+    0, // Value is empty
+    CustomTokenBytecodeWithConstructor,
+    { gasLimit: 10000000 },
+  );
+
+  await tx.wait();
 
   console.log('Custom token address: ', CustomTokenAddress);
 }
