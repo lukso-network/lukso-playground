@@ -7,9 +7,6 @@ import LSP0Artifact from '@lukso/lsp-smart-contracts/artifacts/LSP0ERC725Account
 dotenv.config();
 
 async function deployToken() {
-  // Setup the provider
-  const provider = new ethers.JsonRpcProvider('https://rpc.testnet.lukso.gateway.fm');
-
   // Setup the controller used to sign the deployment
   const [signer] = await ethers.getSigners();
   console.log('Deploying contracts with Universal Profile Controller: ', signer.address);
