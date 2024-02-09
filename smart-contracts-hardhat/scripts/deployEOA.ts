@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-async function main() {
+async function deployToken() {
   const [deployer] = await ethers.getSigners();
   const customToken = await ethers.deployContract('MyCustomToken', [
     'My Custom Token', // token name
@@ -18,7 +18,7 @@ async function main() {
   console.log(`Token address: ${CustomTokenAddress}`);
 }
 
-main()
+deployToken()
   .then(() => process.exit(0))
   .catch((error) => {
     console.error(error);

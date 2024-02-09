@@ -6,7 +6,7 @@ import LSP0Artifact from '@lukso/lsp-smart-contracts/artifacts/LSP0ERC725Account
 // load env vars
 dotenv.config();
 
-async function main() {
+async function deployToken() {
   // Setup the provider
   const provider = new ethers.JsonRpcProvider('https://rpc.testnet.lukso.gateway.fm');
 
@@ -71,7 +71,7 @@ async function main() {
   console.log('Custom token address: ', CustomTokenAddress);
 }
 
-main()
+deployToken()
   .then(() => process.exit(0))
   .catch((error) => {
     console.error(error);
