@@ -6,12 +6,9 @@ import LSP0Artifact from '@lukso/lsp-smart-contracts/artifacts/LSP0ERC725Account
 // load env vars
 dotenv.config();
 
-async function main() {
-  // Setup the provider
-  const provider = new ethers.JsonRpcProvider('https://rpc.testnet.lukso.gateway.fm');
-
+async function deployToken() {
   // Setup the controller used to sign the deployment
-  const signer = new ethers.Wallet(process.env.PRIVATE_KEY as string, provider);
+  const [signer] = await ethers.getSigners();
   console.log('Deploying contracts with Universal Profile Controller: ', signer.address);
 
   // Load the Universal Profile
@@ -71,7 +68,7 @@ async function main() {
   console.log('Custom token address: ', CustomTokenAddress);
 }
 
-main()
+deployToken()
   .then(() => process.exit(0))
   .catch((error) => {
     console.error(error);
