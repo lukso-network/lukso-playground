@@ -11,7 +11,7 @@ async function main() {
   const provider = new ethers.JsonRpcProvider('https://rpc.testnet.lukso.gateway.fm');
 
   // Setup the controller used to sign the deployment
-  const signer = new ethers.Wallet(process.env.PRIVATE_KEY as string, provider);
+  const [signer] = await ethers.getSigners();
   console.log('Deploying contracts with Universal Profile Controller: ', signer.address);
 
   // Load the Universal Profile
