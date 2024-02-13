@@ -4,22 +4,25 @@ import { ERC725YDataKeys } from '@lukso/lsp-smart-contracts';
 import { BasicNFTCollection, BasicNFTCollection__factory } from '../typechain-types';
 
 async function deployAndSetCollectionMetadata() {
-  const accounts = await ethers.getSigners();
-  const deployer = accounts[0];
+  // Signer used for deployment
+  const [deployer] = await ethers.getSigners();
 
+  console.log('Deploying contract with EOA: ', deployer.address);
+
+  // Deploy the contract with custom constructor parameters
   const nftCollection: BasicNFTCollection = await new BasicNFTCollection__factory(deployer).deploy(
     'NFT Collection Name', // collection name
     'NFT', // collection symbol
-    deployer.address,
+    deployer.address, // owner
   );
 
+  // Get the BaseURI data key of LSP8
   const baseURIDataKey = ERC725YDataKeys.LSP8['LSP8TokenMetadataBaseURI'];
 
-  const tx = await nftCollection.setData(
-    baseURIDataKey,
-    ethers.toUtf8Bytes('ipfs://your-base-uri-on-ipf-goes-here/'),
-  );
+  // Set the storage data on the deployed contract
+  const tx = await nftCollection.setData(baseURIDataKey, ethers.toUtf8Bytes('ipfs://my-base-uri/'));
 
+  // Wait for the transaction to be included in a block
   await tx.wait();
 
   const result = await nftCollection.getData(baseURIDataKey);

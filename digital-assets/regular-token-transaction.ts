@@ -23,7 +23,7 @@ try {
     '0x', // additional data
   );
 
-  // Wait for the transaction to be mined
+  // Wait for the transaction to be included in a block
   await tx.wait();
 
   console.log('Token transaction sent successfully.');
