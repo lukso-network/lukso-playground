@@ -2,26 +2,30 @@ import { ethers, network } from 'hardhat';
 import * as dotenv from 'dotenv';
 
 import { ERC725YDataKeys } from '@lukso/lsp-smart-contracts';
-import LSP7DigitalAssetArtifact from '@lukso/lsp-smart-contracts/artifacts/LSP7DigitalAsset.json';
-import LSP4DigitalAssetSchema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 import { ERC725 } from '@erc725/erc725.js';
-import { lsp4SampleMetadata } from '../consts/LSP4SampleMetadata';
+import LSP4DigitalAssetSchema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 
-dotenv.config();
+import { lsp4SampleMetadata } from '../consts/LSP4SampleMetadata';
 
 interface CustomNetworkConfig {
   url?: string;
 }
 
+// Load the environment variables
+dotenv.config();
+
 async function attachAssetMetadata(myAssetAddress: string) {
-  // Get the signer key
+  // Signer used for deployment
   const [signer] = await ethers.getSigners();
+  console.log('Updating metadata with EOA: ', signer.address);
 
   // Set up the token contract
-  const token = new ethers.Contract(myAssetAddress, LSP7DigitalAssetArtifact.abi, signer);
+  const token = await ethers.getContractAt('MyCustomToken', myAssetAddress);
 
+  // Get the ERC725Y data key of LSP4
   const metadataKey = ERC725YDataKeys.LSP4['LSP4Metadata'];
 
+  // Setup network parameters for ERC725
   const customNetworkConfig = network.config as CustomNetworkConfig;
   const networkUrl = customNetworkConfig.url;
 
@@ -35,19 +39,18 @@ async function attachAssetMetadata(myAssetAddress: string) {
   const currentMetadata = await erc725js.getData(metadataKey);
   console.log('Current token metadata:', currentMetadata);
 
-  // Encode metadata
-  const encodeLSP4Metadata = erc725js.encodeData(lsp4SampleMetadata);
-  console.log('its encoding', encodeLSP4Metadata);
+  // Encode the new metadata
+  const encodedLSP4Metadata = erc725js.encodeData(lsp4SampleMetadata);
 
-  // Update the token metadata
-  const tx = await token.setDataBatch(encodeLSP4Metadata.keys, encodeLSP4Metadata.values);
+  // Update the ERC725Y storage of the LSP4 metadata
+  const tx = await token.setDataBatch(encodedLSP4Metadata.keys, encodedLSP4Metadata.values);
 
   // Wait for the transaction to be included in a block
   const receipt = await tx.wait();
-  console.log('Token metadata updated:', receipt);
+  console.log('Token metadata updated: ', receipt);
 }
 
-attachAssetMetadata('0xdb86734b1e27F9A1e73627af6238171BD7d3716C')
+attachAssetMetadata('0x...' /* Your custom asset address */)
   .then(() => process.exit(0))
   .catch((error) => {
     console.error(error);
