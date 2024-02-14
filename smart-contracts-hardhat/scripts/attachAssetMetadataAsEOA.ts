@@ -36,13 +36,16 @@ async function attachAssetMetadata(myAssetAddress: string) {
   const erc725js = new ERC725(LSP4DigitalAssetSchema, myAssetAddress, networkUrl);
 
   // Read the current token metadata
+  // https://docs.lukso.tech/tools/erc725js/classes/ERC725#getdata
   const currentMetadata = await erc725js.getData(metadataKey);
   console.log('Current token metadata:', currentMetadata);
 
   // Encode the new metadata
+  // https://docs.lukso.tech/tools/erc725js/classes/ERC725#encodedata
   const encodedLSP4Metadata = erc725js.encodeData(lsp4SampleMetadata);
 
   // Update the ERC725Y storage of the LSP4 metadata
+  // https://docs.lukso.tech/contracts/contracts/ERC725/#setdatabatch
   const tx = await token.setDataBatch(encodedLSP4Metadata.keys, encodedLSP4Metadata.values);
 
   // Wait for the transaction to be included in a block
