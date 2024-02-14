@@ -37,6 +37,7 @@ async function deployToken() {
   const tokenBytecodeWithConstructor = tokenBytecode + encodedConstructorParams.slice(2);
 
   // Get the address of the custom token contract that will be created
+  // https://docs.lukso.tech/contracts/contracts/ERC725/#execute
   const customTokenAddress = await universalProfile.execute.staticCall(
     1, // Operation type: CREATE
     ethers.ZeroAddress, // Target: 0x0 as contract will be initialized
@@ -45,6 +46,7 @@ async function deployToken() {
   );
 
   // Deploy the contract by the Universal Profile
+  // https://docs.lukso.tech/contracts/contracts/ERC725/#execute
   const tx = await universalProfile.execute(
     1, // Operation type: CREATE
     ethers.ZeroAddress, // Target: 0x0 as contract will be initialized
