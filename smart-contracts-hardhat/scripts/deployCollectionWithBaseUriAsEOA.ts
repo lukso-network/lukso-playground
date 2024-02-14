@@ -20,11 +20,13 @@ async function deployAndSetCollectionMetadata() {
   const baseURIDataKey = ERC725YDataKeys.LSP8['LSP8TokenMetadataBaseURI'];
 
   // Set the storage data on the deployed contract
+  // https://docs.lukso.tech/contracts/contracts/ERC725/#setdata
   const tx = await nftCollection.setData(baseURIDataKey, ethers.toUtf8Bytes('ipfs://my-base-uri/'));
 
   // Wait for the transaction to be included in a block
   await tx.wait();
 
+  // https://docs.lukso.tech/contracts/contracts/ERC725/#getdata
   const result = await nftCollection.getData(baseURIDataKey);
   console.log('Base URI set to: ', result);
 }

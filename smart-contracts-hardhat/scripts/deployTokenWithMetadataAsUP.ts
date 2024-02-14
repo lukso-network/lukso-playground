@@ -42,6 +42,7 @@ async function deployTokenWithMetadata() {
   const tokenBytecodeWithConstructor = tokenBytecode + encodedConstructorParams.slice(2);
 
   // Get the address of the custom token contract that will be created
+  // https://docs.lukso.tech/contracts/contracts/ERC725/#execute
   const customTokenAddress = await universalProfile.execute.staticCall(
     1, // Operation type: CREATE
     ethers.ZeroAddress, // Target: 0x0 as contract will be initialized
@@ -50,6 +51,7 @@ async function deployTokenWithMetadata() {
   );
 
   // Encode the metadata for deployment
+  // https://docs.lukso.tech/tools/erc725js/classes/ERC725#encodedata
   const encodedLSP4Metadata = ERC725.encodeData(lsp4SampleMetadata, LSP4DigitalAssetSchema);
 
   // Set up the token contract
@@ -59,12 +61,14 @@ async function deployTokenWithMetadata() {
   const metadataKey = ERC725YDataKeys.LSP4['LSP4Metadata'];
 
   // Create the transaction payload for setting storage data
+  // https://docs.lukso.tech/contracts/contracts/ERC725/#setdata
   const lsp4StorageBytecode = token.interface.encodeFunctionData('setData', [
     metadataKey,
     encodedLSP4Metadata.values[0],
   ]);
 
   // Deploy the contract by the Universal Profile
+  // https://docs.lukso.tech/contracts/contracts/ERC725/#executebatch
   const tx = await universalProfile.executeBatch(
     [
       // Array of Operation types
