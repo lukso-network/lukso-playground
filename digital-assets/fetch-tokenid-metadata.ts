@@ -48,7 +48,7 @@ async function fetchTokenIdMetadata() {
 
     // Retrieve the metadata contents
     const response = await fetch(fileUrl);
-    const jsonMetadata = await response.text();
+    const jsonMetadata = await response.json();
     console.log('Metadata Contents: ', jsonMetadata);
   }
 }

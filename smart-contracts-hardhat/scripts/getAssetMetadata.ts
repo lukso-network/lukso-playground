@@ -67,7 +67,7 @@ async function getAssetMetadata() {
     const fileUrl = 'https://api.universalprofile.cloud/ipfs/' + contentID;
 
     const response = await fetch(fileUrl);
-    const jsonMetadata = await response.text();
+    const jsonMetadata = await response.json();
     console.log('Metadata Contents: ', jsonMetadata);
   } catch {
     console.log('No sample address provided for the current Hardhat network');
