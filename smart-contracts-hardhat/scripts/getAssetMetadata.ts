@@ -60,7 +60,15 @@ async function getAssetMetadata() {
         value: rawTokenIdMetadata,
       },
     ]);
-    console.log('tokenIdMetadata: ', tokenIdMetadata);
+    console.log('Contract Metadata: ', JSON.stringify(tokenIdMetadata, undefined, 2));
+
+    // Retreive the metadata contents
+    const contentID = tokenIdMetadata[0].value.url.replace('ipfs://', '');
+    const fileUrl = 'https://api.universalprofile.cloud/ipfs/' + contentID;
+
+    const response = await fetch(fileUrl);
+    const jsonMetadata = await response.text();
+    console.log('Metadata Contents: ', jsonMetadata);
   } catch {
     console.log('No sample address provided for the current Hardhat network');
   }

@@ -18,7 +18,7 @@ async function fetchJSONData() {
   // Print simplified JSON
   console.log(assetMetadata);
 
-  // Print full JSON
+  // Print full JSON metadata
   console.log(JSON.stringify(assetMetadata, null, 2));
 
   // Fetch all creators of the asset
