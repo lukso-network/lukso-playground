@@ -39,7 +39,7 @@ async function deployTokenWithMetadata() {
   );
 
   // Add the constructor parameters to the token bytecode
-  const tokenBytecodeWithConstructor = tokenBytecode + encodedConstructorParams.slice(2);
+  const tokenBytecodeWithConstructor = ethers.concat([tokenBytecode, encodedConstructorParams]);
 
   // Get the address of the custom token contract that will be created
   // https://docs.lukso.tech/contracts/contracts/ERC725/#execute
