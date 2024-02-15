@@ -2,10 +2,14 @@ import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
 
 import lsp4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
-import { INTERFACE_IDS, ERC725YDataKeys } from '@lukso/lsp-smart-contracts/dist/constants.cjs.js';
+import { INTERFACE_IDS, ERC725YDataKeys } from '@lukso/lsp-smart-contracts/constants';
 import lsp8Artifact from '@lukso/lsp-smart-contracts/artifacts/LSP8IdentifiableDigitalAsset.json';
 
 async function fetchTokenIdMetadata() {
+  /**
+   * Note: assets created with LSP versions below @lukso/lsp-smart-contracts@0.14.0
+   * lack support for retrieving token ID metadata.
+   */
   const SAMPLE_LSP8_ASSET = '0x8734600968c7e7193BB9B1b005677B4edBaDcD18';
   const RPC_URL = 'https://rpc.testnet.lukso.gateway.fm';
 
