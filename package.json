@@ -15,7 +15,8 @@
   },
   "homepage": "https://github.com/lukso-network/lukso-playground#readme",
   "scripts": {
-    "lint": "eslint . --ext .ts,.js"
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix"
   },
   "devDependencies": {
     "@erc725/erc725.js": "^0.23.0",
