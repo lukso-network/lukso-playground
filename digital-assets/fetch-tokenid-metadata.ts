@@ -13,13 +13,13 @@ const provider = new ethers.JsonRpcProvider(RPC_URL);
 // Create contract instance
 const myAsset = new ethers.Contract(SAMPLE_LSP8_ASSET, lsp8Artifact.abi, provider);
 
+/**
+ * Note: assets created with LSP versions below @lukso/lsp-smart-contracts@0.14.0
+ * lack support for retrieving token ID metadata.
+ */
 const isLSP8 = await myAsset.supportsInterface(INTERFACE_IDS.LSP8IdentifiableDigitalAsset);
 
 async function fetchTokenIdMetadata() {
-  /**
-   * Note: assets created with LSP versions below @lukso/lsp-smart-contracts@0.14.0
-   * lack support for retrieving token ID metadata.
-   */
   if (!isLSP8) {
     console.log('Asset is not an LSP8.');
     return;
@@ -51,6 +51,7 @@ async function fetchTokenIdMetadata() {
   console.log('ContentID: ', contentID);
 
   // Get the BaseURI of the storage provider
+  // https://github.com/lukso-network/LIPs/blob/main/LSPs/LSP-8-IdentifiableDigitalAsset.md#lsp8tokenmetadatabaseuri
   let tokenBaseURI = await myAsset.getData(ERC725YDataKeys.LSP8['LSP8TokenMetadataBaseURI']);
   console.log('BaseURI: ', tokenBaseURI);
 
