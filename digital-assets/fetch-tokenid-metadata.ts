@@ -20,36 +20,38 @@ async function fetchTokenIdMetadata() {
 
   const isLSP8 = await myAsset.supportsInterface(INTERFACE_IDS.LSP8IdentifiableDigitalAsset);
 
-  if (isLSP8) {
-    // Token ID as Bytes32 value (1)
-    const tokenID = '0x0000000000000000000000000000000000000000000000000000000000000001';
-
-    // Get the encoded asset metadata
-    const tokenIdMetadata = await myAsset.getDataForTokenId(
-      tokenID,
-      ERC725YDataKeys.LSP4['LSP4Metadata'],
-    );
-
-    const erc725js = new ERC725(lsp4Schema);
-
-    // Decode the metadata
-    const decodedMetadata = erc725js.decodeData([
-      {
-        keyName: 'LSP4Metadata',
-        value: tokenIdMetadata,
-      },
-    ]);
-
-    console.log('Contract Metadata: ', JSON.stringify(decodedMetadata, undefined, 2));
-
-    // Prepare IPFS link to fetch
-    const contentID = decodedMetadata[0].value.url.replace('ipfs://', '');
-    const fileUrl = 'https://api.universalprofile.cloud/ipfs/' + contentID;
-
-    // Retrieve the metadata contents
-    const response = await fetch(fileUrl);
-    const jsonMetadata = await response.json();
-    console.log('Metadata Contents: ', jsonMetadata);
+  if (!isLSP8) {
+    console.log('Asset is not an LSP8.');
+    return;
   }
+  // Token ID as Bytes32 value (1)
+  const tokenID = '0x0000000000000000000000000000000000000000000000000000000000000001';
+
+  // Get the encoded asset metadata
+  const tokenIdMetadata = await myAsset.getDataForTokenId(
+    tokenID,
+    ERC725YDataKeys.LSP4['LSP4Metadata'],
+  );
+
+  const erc725js = new ERC725(lsp4Schema);
+
+  // Decode the metadata
+  const decodedMetadata = erc725js.decodeData([
+    {
+      keyName: 'LSP4Metadata',
+      value: tokenIdMetadata,
+    },
+  ]);
+
+  console.log('Contract Metadata: ', JSON.stringify(decodedMetadata, undefined, 2));
+
+  // Prepare IPFS link to fetch
+  const contentID = decodedMetadata[0].value.url.replace('ipfs://', '');
+  const fileUrl = 'https://api.universalprofile.cloud/ipfs/' + contentID;
+
+  // Retrieve the metadata contents
+  const response = await fetch(fileUrl);
+  const jsonMetadata = await response.json();
+  console.log('Metadata Contents: ', jsonMetadata);
 }
 fetchTokenIdMetadata();
