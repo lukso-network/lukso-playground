@@ -4,7 +4,7 @@ import LSP6Schema from '@erc725/erc725.js/schemas/LSP6KeyManager.json';
 // 💡 Note: You can debug any smart contract by using the ERC725 Tools
 // 👉 https://erc725-inspect.lukso.tech/inspector?address=0xEda145b45f76EDB44F112B0d46654044E7B8F319&network=testnet
 
-// Set up Universal Profile on the LUKSO Testnet
+// Instantiate erc725.js with a Universal Profile address on Testnet
 const erc725 = new ERC725(
   LSP6Schema,
   // Sample Profile Address
@@ -20,16 +20,16 @@ async function getPermissionedAddresses() {
   // Get the list of addresses that have permissions on the Universal Profile
   // https://docs.lukso.tech/standards/universal-profile/lsp6-key-manager/#permissions
   // https://docs.lukso.tech/tools/erc725js/classes/ERC725#getdata
-  const result = await erc725.getData('AddressPermissions[]');
+  const controllerAddresses = await erc725.getData('AddressPermissions[]');
 
-  if (!result) {
+  if (!controllerAddresses) {
     console.error('No controllers listed under this Universal Profile ');
   }
 
-  if (Array.isArray(result.value)) {
+  if (Array.isArray(controllerAddresses.value)) {
     // Get the permissions of each controller of the UP
-    for (let i = 0; i < result.value.length; i++) {
-      const address = result.value[i] as string;
+    for (let i = 0; i < controllerAddresses.value.length; i++) {
+      const address = controllerAddresses.value[i] as string;
 
       // https://docs.lukso.tech/tools/erc725js/classes/ERC725#getdata
       const addressPermission = await erc725.getData({
