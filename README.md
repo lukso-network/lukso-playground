@@ -26,7 +26,7 @@ Please check the versions used in the [`package.json`](./package.json)
 
 > A lot of these scripts should run with `ts-node` in development environnements, but you might be encountering issues because of ESM dependencies.
 
-**The scripts will be run using [`bun`](https://bun.sh/docs/installation) and `bunx`. Make sure you have `bun` installed first.**
+**This repository uses the [bun](https://bun.sh) toolkit to manage packages and run scripts.Make sure to [install it](https://bun.sh/docs/installation) first.**
 
 Then clone this repository and install its dependencies.
 
@@ -51,7 +51,3 @@ We highly recommend that developers fetch and store profile or asset data using 
 - IPFS Gateway: `https://api.universalprofile.cloud/ipfs`
 
 > LUKSO does not provide an official gateway for uploading asset data.
-
-### Run in browser
-
-Open this project on [StackBlitz](https://stackblitz.com/github/lukso-network/lukso-playground) and start coding right away.
