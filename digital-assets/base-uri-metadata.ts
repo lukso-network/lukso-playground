@@ -41,6 +41,34 @@ async function getTokenIdFormat() {
   }
 }
 
+// https://github.com/lukso-network/LIPs/blob/main/LSPs/LSP-8-IdentifiableDigitalAsset.md#lsp8tokenmetadatabaseuri
+function decodeTokenId(encodedTokenId: string, tokenIdFormat: number) {
+  switch (tokenIdFormat) {
+    // Number
+    case 0:
+    case 100:
+      return BigInt(encodedTokenId).toString();
+    // String
+    case 1:
+    case 101:
+      return ethers.toUtf8String(encodedTokenId).replace(/\0+$/, '');
+    // Address
+    case 2:
+    case 102:
+      return '0x' + encodedTokenId.slice(encodedTokenId.length - 40);
+    // Byte Value
+    case 3:
+    case 103:
+      // Extracts the non-zero portion (right padded)
+      return encodedTokenId.replace(/0+$/, '');
+    // Hash Digest
+    case 4:
+    case 104:
+      // Hash digests are not modified during encoding, so return as is
+      return encodedTokenId;
+  }
+}
+
 async function fetchBaseURI(tokenID: string, tokenIdFormat: number) {
   let isLSP8 = false;
   try {
@@ -98,7 +126,8 @@ async function fetchBaseURI(tokenID: string, tokenIdFormat: number) {
 
   // Build link to JSON metadata
   const baseURLlink = decodedBaseURI[0].value.url;
-  const metadataJsonLink = `${baseURLlink}${byte32TokenId}`;
+  const decodedTokenID = decodeTokenId(tokenID, tokenIdFormat);
+  const metadataJsonLink = `${baseURLlink}${decodedTokenID}`;
 
   // Fetch the URL
   const response = await fetch(metadataJsonLink);
