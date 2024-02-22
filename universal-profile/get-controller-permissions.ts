@@ -19,7 +19,10 @@ async function getPermissionedAddresses() {
   const result = await erc725.getData('AddressPermissions[]');
 
   if (!result) {
-    console.error('No controllers listed under UP at address ', myUniversalProfileAddress);
+    console.error(
+      'No controllers listed under UP at address ',
+      myUniversalProfileAddress,
+    );
   }
 
   if (Array.isArray(result.value)) {
@@ -33,11 +36,14 @@ async function getPermissionedAddresses() {
       });
 
       // Decode the permission of each address
-      const decodedPermission = erc725.decodePermissions(addressPermission.value as string);
+      const decodedPermission = erc725.decodePermissions(
+        addressPermission.value as string,
+      );
 
       // Display the permission in a readable format
       console.log(
-        `decoded permission for ${address} = ` + JSON.stringify(decodedPermission, null, 2),
+        `decoded permission for ${address} = ` +
+          JSON.stringify(decodedPermission, null, 2),
       );
     }
   }

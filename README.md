@@ -38,7 +38,7 @@ cd lukso-playground && bun install
 
 ### Run locally
 
-Run the Typescript code of one file within the terminal using `bun`.
+Run the TypeScript code of one file within the terminal using `bun`.
 
 ```bash
 bun file-path/script.ts
