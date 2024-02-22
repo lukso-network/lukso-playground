@@ -82,6 +82,7 @@ if (tokenIdFormat !== null) {
   if (tokenIdFormat >= 100) {
     tokenIdFormat = parseInt(
       // Retrieve token ID format for the individual token ID
+      // https://docs.lukso.tech/contracts/contracts/LSP8IdentifiableDigitalAsset/#getdatafortokenid
       await myAssetContract.getDataForTokenId(
         byte32TokenId,
         ERC725YDataKeys.LSP8['LSP8TokenIdFormat'],
