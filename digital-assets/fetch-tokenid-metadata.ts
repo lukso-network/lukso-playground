@@ -45,11 +45,6 @@ async function fetchTokenIdMetadata(tokenID: string) {
     return;
   }
 
-  if (!isLSP8) {
-    console.log('Asset is not an LSP8.');
-    return;
-  }
-
   /**
    * Get the encoded asset metadata
    * https://docs.lukso.tech/contracts/contracts/LSP8IdentifiableDigitalAsset/#getdatafortokenid
