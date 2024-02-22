@@ -19,7 +19,11 @@ const data = await erc725js.getData('SupportedStandards:LSP9Vault');
 const isLSP9 = data.value !== null;
 
 if (isLSP9) {
-  console.log(`✅ The contract: ${vaultContractAddress} supports the LSP9Vault standard`);
+  console.log(
+    `✅ The contract: ${vaultContractAddress} supports the LSP9Vault standard`,
+  );
 } else {
-  console.log(`❌ The address: ${vaultContractAddress} does not supports the LSP9Vault standard`);
+  console.log(
+    `❌ The address: ${vaultContractAddress} does not supports the LSP9Vault standard`,
+  );
 }

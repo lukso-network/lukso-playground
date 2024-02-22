@@ -1,6 +1,6 @@
 import { ERC725 } from '@erc725/erc725.js';
+import { EncodeDataInput } from '@erc725/erc725.js/build/main/src/types/decodeData.js';
 import LSP4DigitalAssetSchema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
-import { EncodeDataInput } from '@erc725/erc725.js/build/main/src/types/decodeData';
 
 const LSP4SampleJSON = {
   LSP4Metadata: {
@@ -71,11 +71,19 @@ const lsp4SampleMetadata: EncodeDataInput[] = [
 
 // Encode the new LSP4 metadata as Verifiable URI
 // https://docs.lukso.tech/tools/erc725js/classes/ERC725#encodedata
-const encodedLSP4Metadata = ERC725.encodeData(lsp4SampleMetadata, LSP4DigitalAssetSchema);
+const encodedLSP4Metadata = ERC725.encodeData(
+  lsp4SampleMetadata,
+  LSP4DigitalAssetSchema,
+);
 console.log(encodedLSP4Metadata);
 
 const decodedLSP4Metadata = ERC725.decodeData(
-  [{ keyName: encodedLSP4Metadata.keys[0], value: encodedLSP4Metadata.values[0] }],
+  [
+    {
+      keyName: encodedLSP4Metadata.keys[0],
+      value: encodedLSP4Metadata.values[0],
+    },
+  ],
   LSP4DigitalAssetSchema,
 );
 

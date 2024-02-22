@@ -27,5 +27,7 @@ const receivedAssetsDataKey = await erc725js.fetchData('LSP5ReceivedAssets[]');
 console.log(receivedAssetsDataKey);
 
 // Fetch the profile's universal receiver
-const universalReceiverDataKey = await erc725js.fetchData('LSP1UniversalReceiverDelegate');
+const universalReceiverDataKey = await erc725js.fetchData(
+  'LSP1UniversalReceiverDelegate',
+);
 console.log(universalReceiverDataKey);
