@@ -20,7 +20,9 @@ const data = await erc725js.getData('SupportedStandards:LSP3Profile');
 const isLSP3 = data.value !== null;
 
 if (isLSP3) {
-  console.log(`✅ The contract: ${profileContractAddress} supports the LSP3Profile standard`);
+  console.log(
+    `✅ The contract: ${profileContractAddress} supports the LSP3Profile standard`,
+  );
 } else {
   console.log(
     `❌ The address: ${profileContractAddress} does not supports the LSP3Profile standard`,

@@ -1,0 +1,13 @@
+{
+  "ignorePatterns": ["artifacts/", "cache/", "dist/", "types/", "contracts.ts"],
+  "plugins": ["@typescript-eslint/eslint-plugin", "prettier"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-explicit-any": "off"
+  },
+  "root": true
+}

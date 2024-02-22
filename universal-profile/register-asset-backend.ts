@@ -36,9 +36,14 @@ const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 const myWallet = new ethers.Wallet(PRIVATE_KEY, provider);
 
 // 1. encode the data keys related to LSP12IssuedAssets[]
-const erc725 = new ERC725(LSP12Schema, UNIVERSAL_PROFILE_ADDRESS, RPC_ENDPOINT, {
-  ipfsGateway: 'https://api.universalprofile.cloud/ipfs',
-});
+const erc725 = new ERC725(
+  LSP12Schema,
+  UNIVERSAL_PROFILE_ADDRESS,
+  RPC_ENDPOINT,
+  {
+    ipfsGateway: 'https://api.universalprofile.cloud/ipfs',
+  },
+);
 
 const allAssetAddresses = issuedAssets.map((asset) => asset.address);
 

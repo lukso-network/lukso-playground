@@ -8,7 +8,8 @@ const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
 
 // 💡 Note: You can debug any smart contract by using the ERC725 Tools
 // 👉 https://erc725-inspect.lukso.tech/inspector?address=0x61b083f1fb63ba2F064990f01B233B547ED4F5Cb&network=mainnet
-const SAMPLE_ASSET_CONTRACT_ADDRESS = '0x61b083f1fb63ba2F064990f01B233B547ED4F5Cb';
+const SAMPLE_ASSET_CONTRACT_ADDRESS =
+  '0x61b083f1fb63ba2F064990f01B233B547ED4F5Cb';
 
 // Parameters for the ERC725 instance
 const config = { ipfsGateway: IPFS_GATEWAY };
@@ -51,7 +52,10 @@ async function getAssetProperties(assetJSON: any) {
 
   try {
     // Check if images are available
-    if (assetJSON.value.LSP4Metadata.images && assetJSON.value.LSP4Metadata.images.length > 0) {
+    if (
+      assetJSON.value.LSP4Metadata.images &&
+      assetJSON.value.LSP4Metadata.images.length > 0
+    ) {
       assetImageData = assetJSON.value.LSP4Metadata.images;
       for (const imageData of assetImageData[0]) {
         // Assuming the first set of images is what we want
@@ -61,16 +65,24 @@ async function getAssetProperties(assetJSON: any) {
           url: imageData.url.replace('ipfs://', IPFS_GATEWAY),
         });
       }
-      console.log('Asset Image Links: ' + JSON.stringify(assetImageLinks, undefined, 2) + '\n');
+      console.log(
+        'Asset Image Links: ' +
+          JSON.stringify(assetImageLinks, undefined, 2) +
+          '\n',
+      );
 
-      fullSizeAssetImage = assetImageLinks.length > 0 ? assetImageLinks[0].url : null;
+      fullSizeAssetImage =
+        assetImageLinks.length > 0 ? assetImageLinks[0].url : null;
       console.log('Full Size Asset Image Link: ' + fullSizeAssetImage + '\n');
     } else {
       console.log('Asset does not have image data \n');
     }
 
     // Check if icons are available
-    if (assetJSON.value.LSP4Metadata.icon && assetJSON.value.LSP4Metadata.icon.length > 0) {
+    if (
+      assetJSON.value.LSP4Metadata.icon &&
+      assetJSON.value.LSP4Metadata.icon.length > 0
+    ) {
       iconImageData = assetJSON.value.LSP4Metadata.icon;
       for (const iconData of iconImageData) {
         assetIconLinks.push({
@@ -78,9 +90,14 @@ async function getAssetProperties(assetJSON: any) {
         });
       }
 
-      console.log('Asset Icon Links: ' + JSON.stringify(assetIconLinks, undefined, 2) + '\n');
+      console.log(
+        'Asset Icon Links: ' +
+          JSON.stringify(assetIconLinks, undefined, 2) +
+          '\n',
+      );
 
-      fullSizeIconImage = assetIconLinks.length > 0 ? assetIconLinks[0].url : null;
+      fullSizeIconImage =
+        assetIconLinks.length > 0 ? assetIconLinks[0].url : null;
       console.log('Full Size Icon Image Link: ' + fullSizeIconImage + '\n');
     } else {
       console.log('Asset does not have icon data');

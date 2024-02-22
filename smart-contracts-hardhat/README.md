@@ -9,6 +9,8 @@ This project is used as a guide to show how to setup HardHat to interact with **
 
 ## Setup
 
+**This Hardhat repository uses the [bun](https://bun.sh) package manager. Make sure to [install it](https://bun.sh/docs/installation) first.**
+
 Install the dependencies
 
 ```bash

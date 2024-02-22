@@ -13,7 +13,11 @@ const controller = '0x...'; // Replace with the controller address
 
 // Instantiate Universal Profile
 const userProfileAddress = '0x...'; // Replace with the user's profile address
-const myUniversalProfile = new ethers.Contract(userProfileAddress, UniversalProfile.abi, provider);
+const myUniversalProfile = new ethers.Contract(
+  userProfileAddress,
+  UniversalProfile.abi,
+  provider,
+);
 
 (async () => {
   try {
