@@ -71,6 +71,32 @@ async function fetchTokenIdMetadata(tokenID: string) {
     'Decoded Metadata: ',
     JSON.stringify(decodedMetadata, undefined, 2),
   );
+
+  // Get Value of the URL to retrieve JSON
+  const metadataURL = decodedMetadata[0].value.url;
+
+  // Generate link to JSON metadata
+  const metadataJsonLink = generateMetadataLink(metadataURL);
+
+  // Fetch the URL
+  const response = await fetch(metadataJsonLink);
+  const jsonMetadata = await response.json();
+  console.log('Metadata JSON: ', jsonMetadata);
+}
+
+function generateMetadataLink(link) {
+  // If link is a regular Web2 Link, it can be passed back
+  if (link.startsWith('https://') || link.startsWith('http://')) {
+    // Use your default IPFS Gateway address
+    return link;
+  }
+  // If link has custom protocoll, adjust the link
+  if (link.startsWith('ipfs://')) {
+    // Use your default IPFS Gateway address
+    return `https://api.universalprofile.cloud/ipfs/${link.slice(7)}`;
+  }
+
+  // Handle other cases if needed ...
 }
 
 fetchTokenIdMetadata(byte32TokenId);
