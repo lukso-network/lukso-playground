@@ -1,11 +1,14 @@
 {
   "name": "hardhat-project",
   "scripts": {
-    "build": "hardhat compile --show-stack-traces"
+    "build": "hardhat compile --show-stack-traces",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
     "dotenv": "^16.3.1",
+    "eslint": "^8.56.0",
     "ethers": "^6.10.0",
     "hardhat": "^2.19.5",
     "prettier": "^3.2.5",

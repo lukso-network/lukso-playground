@@ -38,12 +38,14 @@ async function getPermissionedAddresses() {
       });
 
       // Decode the permission of each address
-      // https://docs.lukso.tech/tools/erc725js/classes/ERC725#decodepermissions
-      const decodedPermission = erc725.decodePermissions(addressPermission.value as string);
+      const decodedPermission = erc725.decodePermissions(
+        addressPermission.value as string,
+      );
 
       // Display the permission in a readable format
       console.log(
-        `Decoded permission for ${address} = ` + JSON.stringify(decodedPermission, null, 2),
+        `decoded permission for ${address} = ` +
+          JSON.stringify(decodedPermission, null, 2),
       );
     }
   }
