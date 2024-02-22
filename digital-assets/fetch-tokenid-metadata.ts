@@ -26,10 +26,24 @@ const byte32TokenId =
   '0x0000000000000000000000000000000000000000000000000000000000000001';
 
 async function fetchTokenIdMetadata(tokenID: string) {
-  // https://docs.lukso.tech/contracts/contracts/ERC725/#supportsinterface
-  const isLSP8 = await myAssetContract.supportsInterface(
-    INTERFACE_IDS.LSP8IdentifiableDigitalAsset,
-  );
+  let isLSP8 = false;
+
+  try {
+    // https://docs.lukso.tech/contracts/contracts/ERC725/#supportsinterface
+    isLSP8 = await myAssetContract.supportsInterface(
+      INTERFACE_IDS.LSP8IdentifiableDigitalAsset,
+    );
+  } catch (err) {
+    console.error(
+      'Could not check for LSP8 interface. Please provide an LSP8 asset address.',
+    );
+    return;
+  }
+
+  if (!isLSP8) {
+    console.log('Contract is not an LSP8 asset');
+    return;
+  }
 
   if (!isLSP8) {
     console.log('Asset is not an LSP8.');
