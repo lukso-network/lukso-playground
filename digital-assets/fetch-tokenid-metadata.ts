@@ -11,25 +11,27 @@ const RPC_URL = 'https://rpc.testnet.lukso.gateway.fm';
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 
 // Create contract instance
-const myAsset = new ethers.Contract(SAMPLE_LSP8_ASSET, lsp8Artifact.abi, provider);
+const myAssetContract = new ethers.Contract(SAMPLE_LSP8_ASSET, lsp8Artifact.abi, provider);
 
-/**
- * Note: assets created with LSP versions below @lukso/lsp-smart-contracts@0.14.0
- * lack support for retrieving token ID metadata.
- */
-const isLSP8 = await myAsset.supportsInterface(INTERFACE_IDS.LSP8IdentifiableDigitalAsset);
+// Token ID as Bytes32 value (1)
+const byte32TokenId = '0x0000000000000000000000000000000000000000000000000000000000000001';
 
-async function fetchTokenIdMetadata() {
+async function fetchTokenIdMetadata(tokenID: string) {
+  const isLSP8 = await myAssetContract.supportsInterface(
+    INTERFACE_IDS.LSP8IdentifiableDigitalAsset,
+  );
+
   if (!isLSP8) {
     console.log('Asset is not an LSP8.');
     return;
   }
 
-  // Token ID as Bytes32 value (1)
-  const tokenID = '0x0000000000000000000000000000000000000000000000000000000000000001';
-
-  // Get the encoded asset metadata
-  const tokenIdMetadata = await myAsset.getDataForTokenId(
+  /**
+   *  Get the encoded asset metadata
+   * Note: assets created with LSP versions below @lukso/lsp-smart-contracts@0.14.0
+   * lack support for retrieving token ID metadata.
+   */
+  const tokenIdMetadata = await myAssetContract.getDataForTokenId(
     tokenID,
     ERC725YDataKeys.LSP4['LSP4Metadata'],
   );
@@ -44,29 +46,7 @@ async function fetchTokenIdMetadata() {
     },
   ]);
 
-  console.log('Contract Metadata: ', JSON.stringify(decodedMetadata, undefined, 2));
-
-  // Get the contentID or file link
-  let contentID = decodedMetadata[0].value.url;
-  console.log('ContentID: ', contentID);
-
-  // Get the BaseURI of the storage provider
-  // https://github.com/lukso-network/LIPs/blob/main/LSPs/LSP-8-IdentifiableDigitalAsset.md#lsp8tokenmetadatabaseuri
-  let tokenBaseURI = await myAsset.getData(ERC725YDataKeys.LSP8['LSP8TokenMetadataBaseURI']);
-  console.log('BaseURI: ', tokenBaseURI);
-
-  if (tokenBaseURI === '0x') {
-    // If no BaseURI was set, use a default IPFS gateway
-    tokenBaseURI = 'https://api.universalprofile.cloud/ipfs/';
-    // Prepare IPFS link to fetch
-    contentID = contentID.replace('ipfs://', '');
-  }
-
-  const fileUrl = tokenBaseURI + contentID;
-
-  // Retrieve the metadata contents
-  const response = await fetch(fileUrl);
-  const jsonMetadata = await response.json();
-  console.log('Metadata Contents: ', JSON.stringify(jsonMetadata, undefined, 2));
+  console.log('Decoded Metadata: ', JSON.stringify(decodedMetadata, undefined, 2));
 }
-fetchTokenIdMetadata();
+
+fetchTokenIdMetadata(byte32TokenId);
