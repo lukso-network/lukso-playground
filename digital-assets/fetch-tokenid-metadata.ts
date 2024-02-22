@@ -2,7 +2,10 @@ import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
 
 import lsp4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
-import { INTERFACE_IDS, ERC725YDataKeys } from '@lukso/lsp-smart-contracts/constants';
+import {
+  INTERFACE_IDS,
+  ERC725YDataKeys,
+} from '@lukso/lsp-smart-contracts/constants';
 import lsp8Artifact from '@lukso/lsp-smart-contracts/artifacts/LSP8IdentifiableDigitalAsset.json';
 
 const SAMPLE_LSP8_ASSET = '0x8734600968c7e7193BB9B1b005677B4edBaDcD18';
