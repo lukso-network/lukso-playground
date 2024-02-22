@@ -14,9 +14,11 @@ const provider = new ethers.JsonRpcProvider(RPC_URL);
 const myAssetContract = new ethers.Contract(SAMPLE_LSP8_ASSET, lsp8Artifact.abi, provider);
 
 // Token ID as Bytes32 value (1)
+// https://github.com/lukso-network/LIPs/blob/main/LSPs/LSP-8-IdentifiableDigitalAsset.md#lsp8tokenidformat
 const byte32TokenId = '0x0000000000000000000000000000000000000000000000000000000000000001';
 
 async function fetchTokenIdMetadata(tokenID: string) {
+  // https://docs.lukso.tech/contracts/contracts/ERC725/#supportsinterface
   const isLSP8 = await myAssetContract.supportsInterface(
     INTERFACE_IDS.LSP8IdentifiableDigitalAsset,
   );
@@ -27,9 +29,11 @@ async function fetchTokenIdMetadata(tokenID: string) {
   }
 
   /**
-   *  Get the encoded asset metadata
+   * Get the encoded asset metadata
    * Note: assets created with LSP versions below @lukso/lsp-smart-contracts@0.14.0
    * lack support for retrieving token ID metadata.
+   *
+   * https://docs.lukso.tech/contracts/contracts/LSP8IdentifiableDigitalAsset/#getdatafortokenid
    */
   const tokenIdMetadata = await myAssetContract.getDataForTokenId(
     tokenID,
@@ -38,7 +42,10 @@ async function fetchTokenIdMetadata(tokenID: string) {
 
   const erc725js = new ERC725(lsp4Schema);
 
-  // Decode the metadata
+  /**
+   * Decode the metadata
+   * https://docs.lukso.tech/tools/erc725js/classes/ERC725#decodedata
+   */
   const decodedMetadata = erc725js.decodeData([
     {
       keyName: 'LSP4Metadata',
