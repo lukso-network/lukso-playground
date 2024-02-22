@@ -7,11 +7,11 @@ LoadEnv();
 const config: HardhatUserConfig = {
   solidity: {
     // Default compiler version for all contracts
-    version: '0.8.19',
+    version: '0.8.24',
     settings: {
       optimizer: {
         enabled: true,
-        runs: 1000,
+        runs: 200,
       },
     },
   },
@@ -20,6 +20,7 @@ const config: HardhatUserConfig = {
       url: 'https://rpc.testnet.lukso.gateway.fm',
       chainId: 4201,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      hardfork: 'cancun',
     },
     luksoMainnet: {
       url: 'https://rpc.lukso.gateway.fm',
@@ -34,7 +35,7 @@ const config: HardhatUserConfig = {
         network: 'luksoTestnet',
         chainId: 4201,
         urls: {
-          apiURL: 'https://explorer.execution.testnet.lukso.network/api',
+          apiURL: 'https://api.explorer.execution.testnet.lukso.network/api',
           browserURL: 'https://explorer.execution.testnet.lukso.network/',
         },
       },
