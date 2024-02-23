@@ -125,7 +125,7 @@ Then you can claim your POAP on the contract
 You can then verify the deployed contract on LUKSO Testnet by running the following command:
 
 ```bash
-
+npx hardhat verify <lsp8-poap-contract-address> --constructor-args ./scripts/constructor-args.js --network luksoTestnet
 ```
 
 ## Expanding, moving forward
