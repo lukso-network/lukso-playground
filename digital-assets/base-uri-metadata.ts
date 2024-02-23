@@ -78,13 +78,15 @@ async function fetchBaseURI(tokenID: string, tokenIdFormat: number) {
     );
   } catch (err) {
     console.error(
-      'Could not check for LSP8 interface. Please provide an LSP8 asset address.',
+      `Could not check if address ${SAMPLE_LSP8_ASSET} supports interface ${INTERFACE_IDS.LSP8IdentifiableDigitalAsset}, is it a smart contract address?`,
     );
     return;
   }
 
   if (!isLSP8) {
-    console.log('Asset is not an LSP8.');
+    console.log(
+      `Contract: ${SAMPLE_LSP8_ASSET} does not support the LSP8 interface ID: ${INTERFACE_IDS.LSP8IdentifiableDigitalAsset}.`,
+    );
     return;
   }
 
