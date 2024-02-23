@@ -1,5 +1,13 @@
 # LUKSO POAP
 
+## Pre-requisite
+
+We will deploying our contract using Remix an the LUKSO Browser Extension.
+
+1. [Install the LUKSO Browser Extension](https://docs.lukso.tech/install-up-browser-extension/).
+2. Create a Universal Profile on Testnet.
+3. Activate the LUKSO Browser Extension in your browser, and ** :warning: make sure you have de-activated Metamask.**
+
 ## Create the basis of the contract
 
 Create the contract and call it `MyLUKSOPOAP`.
@@ -112,10 +120,14 @@ We will deploy the POAP contract and set the metadata (pre-filled).
 
 Then you can claim your POAP on the contract
 
+## Verifying our deployed POAP contract
+
+You can then verify the deployed contract on LUKSO Testnet by running the following command:
+
+```bash
+
+```
+
 ## Expanding, moving forward
 
 You can then instead inherit the contract from `LSP8IdentifiableDigitalAssetInitAbstract` and implement an `initialize(...)` function. You can then deploy this base implementation contract once and have users of your application deploy their own as proxies. This way, you can implement the proxy pattern which will make it cheaper for your user to deploy their own POAP contract.
-
-## Todo
-
-- [] Upload 5 x POAP metadata images and JSON files on IPFS to be used as sample values

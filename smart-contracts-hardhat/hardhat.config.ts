@@ -20,7 +20,6 @@ const config: HardhatUserConfig = {
       url: 'https://rpc.testnet.lukso.gateway.fm',
       chainId: 4201,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
-      hardfork: 'cancun',
     },
     luksoMainnet: {
       url: 'https://rpc.lukso.gateway.fm',
