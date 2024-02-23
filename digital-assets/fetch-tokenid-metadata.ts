@@ -35,13 +35,15 @@ async function fetchTokenIdMetadata(tokenID: string) {
     );
   } catch (err) {
     console.error(
-      'Could not check for LSP8 interface. Please provide an LSP8 asset address.',
+      `Could not check if address ${SAMPLE_LSP8_ASSET} supports interface ${INTERFACE_IDS.LSP8IdentifiableDigitalAsset}, is it a smart contract address?`,
     );
     return;
   }
 
   if (!isLSP8) {
-    console.log('Contract is not an LSP8 asset');
+    console.log(
+      `Contract: ${SAMPLE_LSP8_ASSET} does not support the LSP8 interface ID: ${INTERFACE_IDS.LSP8IdentifiableDigitalAsset}.`,
+    );
     return;
   }
 
@@ -79,12 +81,16 @@ async function fetchTokenIdMetadata(tokenID: string) {
   const metadataJsonLink = generateMetadataLink(metadataURL);
 
   // Fetch the URL
-  const response = await fetch(metadataJsonLink);
-  const jsonMetadata = await response.json();
-  console.log('Metadata JSON: ', jsonMetadata);
+  if (metadataJsonLink) {
+    const response = await fetch(metadataJsonLink);
+    const jsonMetadata = await response.json();
+    console.log('Metadata JSON: ', jsonMetadata);
+  } else {
+    console.log('Could not generate metadata link based on value.url content.');
+  }
 }
 
-function generateMetadataLink(link) {
+function generateMetadataLink(link: string) {
   // If link is a regular Web2 Link, it can be passed back
   if (link.startsWith('https://') || link.startsWith('http://')) {
     // Use your default IPFS Gateway address
@@ -94,6 +100,8 @@ function generateMetadataLink(link) {
   if (link.startsWith('ipfs://')) {
     // Use your default IPFS Gateway address
     return `https://api.universalprofile.cloud/ipfs/${link.slice(7)}`;
+  } else {
+    return null;
   }
 
   // Handle other cases if needed ...
