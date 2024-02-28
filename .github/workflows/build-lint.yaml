@@ -14,18 +14,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: 🔄 Checkout
+        uses: actions/checkout@v4
 
-      - name: Setup Bun
+      - name: 🛠️ Setup Bun
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
 
+      # Everything for the root scripts
       - name: 📦 Install dependencies
         run: bun install
 
-      - name: 🎨 Run ESLint on JS/TS files
+      - name: 🎨 Lint
         run: bun run lint
 
-      - name: 👷 Build contracts on Hardhat folders
-        run: cd smart-contracts-hardhat && bun install && bun run build
+      # Everything Hardhat related
+      - name: 📦 Install Hardhat dependencies
+        working-directory: ./smart-contracts-hardhat
+        run: bun install
+
+      - name: 🎨 Lint Hardhat folder
+        working-directory: ./smart-contracts-hardhat
+        run: bun run lint
+
+      - name: 👷 Build contracts
+        working-directory: ./smart-contracts-hardhat
+        run: bun run build
