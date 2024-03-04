@@ -62,7 +62,7 @@ async function deployTokenWithMetadata() {
 
   // Create the transaction payload for setting storage data
   // https://docs.lukso.tech/contracts/contracts/ERC725/#setdata
-  const lsp4StorageBytecode = token.interface.encodeFunctionData('setData', [
+  const setLSP4MetadataPayload = token.interface.encodeFunctionData('setData', [
     metadataKey,
     encodedLSP4Metadata.values[0],
   ]);
@@ -82,7 +82,7 @@ async function deployTokenWithMetadata() {
     [0, 0], // Value is empty for both operations
     [
       tokenBytecodeWithConstructor, // Payload for contract deployment
-      lsp4StorageBytecode, // Payload for setting a data key on the deployed contract
+      setLSP4MetadataPayload, // Payload for setting a data key on the deployed contract
     ],
   );
 
