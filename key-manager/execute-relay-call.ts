@@ -28,6 +28,7 @@ const universalProfile = new ethers.Contract(
 
 // Call the Universal Profile contract to get the Key Manager
 const keyManagerAddress = await universalProfile.owner();
+console.log('Key Manager Address: ', keyManagerAddress);
 
 // Setup the contract instance of the Key Manager
 const keyManager = new ethers.Contract(
@@ -117,7 +118,13 @@ const { signature } = await eip191Signer.signDataWithIntendedValidator(
  */
 const executeRelayCallTransaction = await keyManager
   .connect(controllerAccount)
+  // @ts-expect-error Ethers BaseContract does not pick dynamic types from ABIs
   .executeRelayCall(signature, nonce, validityTimestamps, abiPayload);
 
 const receipt = await executeRelayCallTransaction.wait();
-console.log('Transaction receipt:', receipt);
+
+if (receipt.status === 1 || receipt.status === true) {
+  console.log('Transaction successful');
+} else {
+  console.log('Transaction failed');
+}
