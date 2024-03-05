@@ -1,0 +1,50 @@
+{
+  "LSP4Metadata": {
+    "description": "LUKSO POAP Workshop Example.",
+    "links": [
+      { "title": "Twitter", "url": "https://twitter.com/lukso_io" },
+      { "title": "docs.lukso.tech", "url": "https://docs.lukso.tech" }
+    ],
+    "icon": [
+      {
+        "width": 256,
+        "height": 256,
+        "url": "ipfs://QmR1kiBSKecNCU7TuBXuDCHxvujfYV4rcEXZMmDVWa4Xo9",
+        "verification": {
+          "method": "keccak256(bytes)",
+          "data": "0xbf3dc91e587e0e83018feacd43c39cb552ee767c63690e481a8f0ef0ef85cdfd"
+        }
+      }
+    ],
+    "images": [
+      [
+        {
+          "width": 1024,
+          "height": 974,
+          "url": "ipfs://QmR1kiBSKecNCU7TuBXuDCHxvujfYV4rcEXZMmDVWa4Xo9",
+          "verification": {
+            "method": "keccak256(bytes)",
+            "data": "0xbf3dc91e587e0e83018feacd43c39cb552ee767c63690e481a8f0ef0ef85cdfd"
+          }
+        }
+      ]
+    ],
+    "attributes": [
+      {
+        "key": "Standard type",
+        "value": "LSP",
+        "type": "string"
+      },
+      {
+        "key": "Standard number",
+        "value": 4,
+        "type": "number"
+      },
+      {
+        "key": "🆙",
+        "value": true,
+        "type": "boolean"
+      }
+    ]
+  }
+}

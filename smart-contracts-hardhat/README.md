@@ -32,7 +32,7 @@ cp .env.example .env
 Compile all smart contracts within `/contracts`:
 
 ```bash
-npx hardhat compile
+bun hardhat compile
 ```
 
 > **INFO** Add the `--verbose` and `--show-stack-traces` flags for further information.
@@ -42,13 +42,13 @@ npx hardhat compile
 Deploy a sample LSP7 contract with an Externally Owned Account:
 
 ```bash
-npx hardhat --network luksoTestnet run scripts/deployEOA.ts
+bun hardhat --network luksoTestnet run scripts/deployEOA.ts
 ```
 
 Deploy a sample LSP7 contract with a Universal Profile:
 
 ```bash
-npx hardhat --network luksoTestnet run scripts/deployUP.ts
+bun hardhat --network luksoTestnet run scripts/deployUP.ts
 ```
 
 > **INFO** Adjust the network and token name within the command and script.
@@ -58,7 +58,7 @@ npx hardhat --network luksoTestnet run scripts/deployUP.ts
 Verify your contracts with the blockscout API and their constructor parameters:
 
 ```bash
-npx hardhat verify <myContractAddress> --constructor-args ./verify/myContractParameters.ts --network luksoTestnet
+bun hardhat verify <myContractAddress> --constructor-args ./verify/myContractParameters.ts --network luksoTestnet
 ```
 
 ## Packages
