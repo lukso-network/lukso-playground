@@ -29,7 +29,6 @@ async function fetchTokenIdMetadata(tokenID: string) {
   let isLSP8 = false;
 
   try {
-    // https://docs.lukso.tech/contracts/contracts/ERC725/#supportsinterface
     isLSP8 = await myAssetContract.supportsInterface(
       INTERFACE_IDS.LSP8IdentifiableDigitalAsset,
     );
@@ -93,13 +92,13 @@ async function fetchTokenIdMetadata(tokenID: string) {
 function generateMetadataLink(link: string) {
   // If link is a regular Web2 Link, it can be passed back
   if (link.startsWith('https://') || link.startsWith('http://')) {
-    // Use your default IPFS Gateway address
     return link;
   }
   // If link has custom protocoll, adjust the link
   if (link.startsWith('ipfs://')) {
     // Use your default IPFS Gateway address
-    return `https://api.universalprofile.cloud/ipfs/${link.slice(7)}`;
+    const ipfsHash = link.slice(7);
+    return `https://api.universalprofile.cloud/ipfs/${ipfsHash}`;
   } else {
     return null;
   }
