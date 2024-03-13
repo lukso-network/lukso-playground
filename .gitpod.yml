@@ -1,3 +1,5 @@
+image: gitpod/workspace-bun
+
 # Commands that will run on workspace start
 tasks:
   - name: Setup, Install & Build
