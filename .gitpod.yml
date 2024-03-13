@@ -6,4 +6,4 @@ tasks:
     init: |
       cd ./smart-contracts-hardhat
       bun install
-      bun run build
+      bun --bun run build
