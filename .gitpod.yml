@@ -1,8 +1,8 @@
 # Commands that will run on workspace start
 tasks:
   - name: Setup, Install & Build
-    before: cd ./smart-contracts-hardhat
     init: |
+      cd ./smart-contracts-hardhat
       bun install
       bun run build
       echo "Setup Successful!  🎉 💪🏻 🆙 👨‍🏫 You are almost ready to code! Follow the remaining instructions below ↙️ \n"
