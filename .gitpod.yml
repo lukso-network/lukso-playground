@@ -7,9 +7,3 @@ tasks:
       cd ./smart-contracts-hardhat
       bun install
       bun run build
-      echo "Setup Successful!  🎉 💪🏻 🆙 👨‍🏫 You are almost ready to code! Follow the remaining instructions below ↙️ \n"
-      echo "You have 4 tasks remaining: \n"
-      echo "1. Create a `.env` file under the `./smart-contracts-hardhat/ folder \n"
-      echo "2. Create 2 x EOAs (or pick existing ones) from your Browser wallet (Metamask or other...)\n"
-      echo "3. Add their private keys inside two environnement variables in the `.env` file: `PRIVATE_KEY="0x..."` and `OPERATOR_PRIVATE_KEY="0x..."`\n"
-      echo "4. Fund these 2 x addresses with some Testnet LYX by visiting the faucet at: "
