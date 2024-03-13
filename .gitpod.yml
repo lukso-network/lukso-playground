@@ -5,5 +5,5 @@ tasks:
   - name: Setup, Install & Build
     init: |
       cd ./smart-contracts-hardhat
-      bun install
-      bun --bun run build
+      npm install
+      npm run build
