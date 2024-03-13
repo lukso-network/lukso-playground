@@ -1,4 +1,4 @@
-image: gitpod/workspace-bun
+image: gitpod/workspace-full
 
 # Commands that will run on workspace start
 tasks:
