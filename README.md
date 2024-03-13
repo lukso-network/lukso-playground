@@ -2,6 +2,14 @@
 
 Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standards/standards-roadmap) standards on LUKSO. Code examples are taken from the [LUKSO Tech Docs](https://docs.lukso.tech/) and are working as standalone scripts.
 
+## Want to get started quickly?
+
+**Start prototyping quickly on a [Gitpod](https://gitpod.io/)!**
+
+_This will open the repository and setup everything for you automatically (install dependencies 📦, build contracts 🏗️, etc...)_
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/CJ42/lukso-playground/tree/migrate-erc-lsp)
+
 ## Contents
 
 - [`universal-profile`](./universal-profile): Universal Profile related scripts
