@@ -69,7 +69,10 @@ function decodeTokenId(encodedTokenId: string, tokenIdFormat: number) {
   }
 }
 
-async function fetchBaseURI(tokenID: string, tokenIdFormat: number) {
+async function fetchMetadataFromBaseURI(
+  tokenID: string,
+  tokenIdFormat: number,
+) {
   let isLSP8 = false;
   try {
     // https://docs.lukso.tech/contracts/contracts/ERC725/#supportsinterface
@@ -120,19 +123,26 @@ async function fetchBaseURI(tokenID: string, tokenIdFormat: number) {
   // Decode the baseURI
   // https://docs.lukso.tech/tools/erc725js/classes/ERC725#decodedata
   const decodedBaseURI = erc725js.decodeData([
-    {
-      keyName: 'LSP8TokenMetadataBaseURI',
-      value: tokenBaseURI,
-    },
+    { keyName: 'LSP8TokenMetadataBaseURI', value: tokenBaseURI },
   ]);
 
-  // Build link to JSON metadata
-  const baseURLlink = decodedBaseURI[0].value.url;
+  // Build valid link to JSON metadata
+  let baseURLlink = decodedBaseURI[0].value.url;
+  if (!baseURLlink.endsWith('/')) {
+    baseURLlink += '/';
+  }
+
   const decodedTokenID = decodeTokenId(tokenID, tokenIdFormat);
   const metadataJsonLink = `${baseURLlink}${decodedTokenID}`;
 
   // Fetch the URL
   const response = await fetch(metadataJsonLink);
+  if (!response.ok) {
+    throw new Error(`HTTP Response Error: ${response.status}`);
+  }
+  if (!response.json) {
+    throw new Error('Metadata is not a JSON object');
+  }
   const jsonMetadata = await response.json();
   console.log('Metadata Contents: ', jsonMetadata);
 }
@@ -142,5 +152,5 @@ const tokenIdFormat = await getTokenIdFormat();
 console.log('Token ID Format: ', tokenIdFormat);
 
 if (tokenIdFormat !== null) {
-  fetchBaseURI(byte32TokenId, tokenIdFormat);
+  fetchMetadataFromBaseURI(byte32TokenId, tokenIdFormat);
 }
