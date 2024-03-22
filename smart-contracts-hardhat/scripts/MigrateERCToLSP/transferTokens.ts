@@ -4,7 +4,7 @@ import LSP7Artifact from '@lukso/lsp7-contracts/artifacts/LSP7Mintable.json';
 
 LoadEnv();
 
-const TOKEN_ADDRESS = '0xCDd467E16034C2B55aFCe97a9B38B201487c5934';
+const TOKEN_ADDRESS = '0xdb6B269e77634CD13A4F738C66aAF466344B4348';
 
 const provider = new ethers.JsonRpcProvider('https://rpc.testnet.lukso.network');
 
@@ -25,13 +25,14 @@ async function transferTokensAsHolder() {
   try {
     const tx = await tokenContract
       .connect(SIGNER)
-      .transfer(SIGNER.address, tokenRecipient, amount, false, '0x');
+      .transfer(SIGNER.address, tokenRecipient, amount, true, '0x');
 
     const receipt = await tx.wait();
     console.log('sending tokens as holder');
     console.log('tx hash: ', receipt.hash);
   } catch (error: any) {
     const errorDescription = tokenContract.interface.getError(error.data.slice(0, 10));
+    console.log('errorDescription: ', errorDescription);
 
     const errorName = errorDescription?.name;
     console.log('name of custom error: ', errorName);

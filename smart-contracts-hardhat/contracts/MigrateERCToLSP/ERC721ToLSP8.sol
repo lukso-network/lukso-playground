@@ -18,8 +18,8 @@ contract TimeCapsulezAsERC721 is ERC721, ERC721Burnable, Ownable {
 
 // modules
 import {
-    LSP8IdentifiableDigitalAsset
-} from "@lukso/lsp-smart-contracts/contracts/LSP8IdentifiableDigitalAsset/LSP8IdentifiableDigitalAsset.sol";
+    LSP8Mintable
+} from "@lukso/lsp8-contracts/contracts/presets/LSP8Mintable.sol";
 import {
     LSP8Burnable
 } from "@lukso/lsp-smart-contracts/contracts/LSP8IdentifiableDigitalAsset/extensions/LSP8Burnable.sol";
@@ -32,11 +32,11 @@ import {
     _LSP8_TOKENID_FORMAT_NUMBER
 } from "@lukso/lsp8-contracts/contracts/LSP8Constants.sol";
 
-contract TimeCapsulezAsLSP8 is LSP8IdentifiableDigitalAsset, LSP8Burnable {
+contract TimeCapsulezAsLSP8 is LSP8Mintable, LSP8Burnable {
     constructor(
         address initialOwner
     )
-        LSP8IdentifiableDigitalAsset(
+        LSP8Mintable(
             "Time Capsulez",
             "TCZ",
             initialOwner,

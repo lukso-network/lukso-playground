@@ -1,10 +1,4 @@
-import {
-  JsonRpcProvider,
-  Wallet,
-  Contract,
-  toUtf8String,
-  toUtf8Bytes,
-} from 'ethers';
+import { JsonRpcProvider, Wallet, Contract, toUtf8String, toUtf8Bytes } from 'ethers';
 import { config as LoadEnv } from 'dotenv';
 import LSP7Artifact from '@lukso/lsp7-contracts/artifacts/LSP7Mintable.json';
 
@@ -15,7 +9,7 @@ const provider = new JsonRpcProvider('https://rpc.testnet.lukso.gateway.fm');
 // constants
 import { LSP4DataKeys } from '@lukso/lsp4-contracts';
 import { LSP8DataKeys } from '@lukso/lsp8-contracts';
-const TOKEN_ADDRESS = '0xCDd467E16034C2B55aFCe97a9B38B201487c5934';
+const TOKEN_ADDRESS = '0xdb6B269e77634CD13A4F738C66aAF466344B4348';
 
 const SIGNER = new Wallet(process.env.PRIVATE_KEY as string, provider);
 
@@ -23,18 +17,14 @@ const tokenContract = new Contract(TOKEN_ADDRESS, LSP7Artifact.abi, SIGNER);
 
 async function readTokenData() {
   // get token name
-  const tokenNameBytes = await tokenContract.getData(
-    LSP4DataKeys.LSP4TokenName,
-  );
+  const tokenNameBytes = await tokenContract.getData(LSP4DataKeys.LSP4TokenName);
   console.log('token name: ', toUtf8String(tokenNameBytes));
 
   // get token symbol
-  const tokenSymbolBytes = await tokenContract.getData(
-    LSP4DataKeys.LSP4TokenSymbol,
-  );
+  const tokenSymbolBytes = await tokenContract.getData(LSP4DataKeys.LSP4TokenSymbol);
   console.log('token symbol: ', toUtf8String(tokenSymbolBytes));
 }
-readTokenData();
+// readTokenData();
 
 async function setTokenData() {
   const BASE_URI = 'https://my-base-uri.com/nft/';
@@ -58,11 +48,7 @@ async function setTokenData() {
       LSP4DataKeys['LSP4Creators[]'].index + '00000000000000000000000000000000',
       LSP4DataKeys.LSP4Metadata,
     ],
-    [
-      '0x00000000000000000000000000000001',
-      SIGNER.address,
-      VERIFIABLE_URI_SAMPLE_VALUE,
-    ],
+    ['0x00000000000000000000000000000001', SIGNER.address, VERIFIABLE_URI_SAMPLE_VALUE],
   );
   const batchTxReceipt = await batchTx.wait();
 

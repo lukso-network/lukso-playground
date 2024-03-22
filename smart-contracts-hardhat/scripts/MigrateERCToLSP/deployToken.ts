@@ -10,17 +10,11 @@ const provider = new JsonRpcProvider('https://rpc.testnet.lukso.gateway.fm');
 const SIGNER = new Wallet(process.env.PRIVATE_KEY as string, provider);
 console.log('signer address: ', SIGNER.address);
 
-const tokenContractFactory = new ContractFactory(
-  EcoCoinAsLSP7.abi,
-  EcoCoinAsLSP7.bytecode,
-  SIGNER,
-);
+const tokenContractFactory = new ContractFactory(EcoCoinAsLSP7.abi, EcoCoinAsLSP7.bytecode, SIGNER);
 
 async function deployTokenContract() {
   const tokenContract = await tokenContractFactory.deploy(SIGNER.address);
-  console.log(
-    'token contract deployed at: ' + (await tokenContract.getAddress()),
-  );
+  console.log('token contract deployed at: ' + (await tokenContract.getAddress()));
 }
 
 deployTokenContract();
