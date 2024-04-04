@@ -4,7 +4,7 @@ import 'isomorphic-fetch';
 import { FetchDataOutput } from '@erc725/erc725.js/build/main/src/types/decodeData.js';
 
 // Static variables
-const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
+const RPC_ENDPOINT = 'https://4201.rpc.thirdweb.com';
 const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
 const SAMPLE_PROFILE_ADDRESS = '0x9139def55c73c12bcda9c44f12326686e3948634';
 

@@ -11,7 +11,7 @@ const myUniversalProfileAddress = '0x9139def55c73c12bcda9c44f12326686e3948634';
 const erc725js = new ERC725(
   lsp3ProfileSchema,
   myUniversalProfileAddress,
-  'https://rpc.testnet.lukso.gateway.fm',
+  'https://4201.rpc.thirdweb.com',
   {
     ipfsGateway: 'https://api.universalprofile.cloud/ipfs',
   },

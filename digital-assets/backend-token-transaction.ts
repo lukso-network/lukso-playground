@@ -3,7 +3,7 @@ import LSP7Mintable from '@lukso/lsp-smart-contracts/artifacts/LSP7Mintable.json
 import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
 
 // Connect to the mainnet or testnet
-const RPC_ENDPOINT = 'https://rpc.testnet.lukso.gateway.fm';
+const RPC_ENDPOINT = 'https://4201.rpc.thirdweb.com';
 const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 
 // Get the controller key of the Universal Profile

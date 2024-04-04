@@ -6,7 +6,7 @@ async function fetchJSONData() {
   const erc725js = new ERC725(
     lsp4Schema,
     '0x0514A829C832639Afcc02D257154A9DaAD8fa21B', // LSP7 Address
-    'https://rpc.testnet.lukso.gateway.fm',
+    'https://4201.rpc.thirdweb.com',
     {
       ipfsGateway: 'https://api.universalprofile.cloud/ipfs',
     },
