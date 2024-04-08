@@ -13,7 +13,7 @@ const SAMPLE_ASSET_CONTRACT_ADDRESS =
   '0x61b083f1fb63ba2F064990f01B233B547ED4F5Cb';
 
 // https://docs.lukso.tech/networks/mainnet/parameters
-const RPC_URL = 'https://rpc.lukso.gateway.fm';
+const RPC_URL = 'https://42.rpc.thirdweb.com';
 
 const myAsset = new ERC725(lsp4Schema, SAMPLE_ASSET_CONTRACT_ADDRESS, RPC_URL, {
   ipfsGateway: 'https://api.universalprofile.cloud/ipfs',
