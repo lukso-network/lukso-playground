@@ -2,7 +2,7 @@ import { ethers } from 'ethers';
 import LSP7Mintable from '@lukso/lsp-smart-contracts/artifacts/LSP7Mintable.json';
 import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
 
-// Connect to the mainnet or testnet
+// Connect to the testnet
 const RPC_ENDPOINT = 'https://4201.rpc.thirdweb.com';
 const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 
