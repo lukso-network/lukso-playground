@@ -10,7 +10,7 @@ const erc725 = new ERC725(
   // Sample Profile Address
   '0xEda145b45f76EDB44F112B0d46654044E7B8F319',
   // LUKSO Testnet RPC
-  'https://rpc.testnet.lukso.network',
+  'https://4201.rpc.thirdweb.com',
 );
 
 // 💡 You can debug permissions from ERC725 Tools

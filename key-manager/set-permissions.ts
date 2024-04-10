@@ -6,7 +6,7 @@ import {
 import UniversalProfile from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
 
 // Connect to the LUKSO Testnet
-const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
+const RPC_ENDPOINT = 'https://4201.rpc.thirdweb.com';
 const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 
 const myUniversalProfileAddress = '0x9fc7e5095A054dfA3c6b237E0e5d686638394248';
