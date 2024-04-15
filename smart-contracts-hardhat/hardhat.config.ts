@@ -34,7 +34,7 @@ const config: HardhatUserConfig = {
         network: 'luksoTestnet',
         chainId: 4201,
         urls: {
-          apiURL: 'https://explorer.execution.testnet.lukso.network/api',
+          apiURL: 'https://api.explorer.execution.testnet.lukso.network/api',
           browserURL: 'https://explorer.execution.testnet.lukso.network/',
         },
       },
@@ -42,7 +42,7 @@ const config: HardhatUserConfig = {
         network: 'luksoMainnet',
         chainId: 42,
         urls: {
-          apiURL: 'https://explorer.execution.mainnet.lukso.network/api',
+          apiURL: 'https://api.explorer.execution.mainnet.lukso.network/api',
           browserURL: 'https://explorer.execution.mainnet.lukso.network/',
         },
       },
