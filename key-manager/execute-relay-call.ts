@@ -12,7 +12,7 @@ const universalProfileAddress = '0x...';
 const recipientAddress = '0x...';
 
 // Setup the Universal Profile controller account
-const controllerPrivateKey = '0x...';
+const controllerPrivateKey = process.env.PRIVATE_KEY || '';
 const controllerAccount = new ethers.Wallet(controllerPrivateKey).connect(
   provider,
 );
