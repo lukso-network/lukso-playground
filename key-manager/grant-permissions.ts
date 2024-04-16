@@ -1,7 +1,7 @@
 import { ethers } from 'ethers';
 import { ERC725 } from '@erc725/erc725.js';
 import LSP6Schema from '@erc725/erc725.js/schemas/LSP6KeyManager.json';
-import UniversalProfileArtefact from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
+import UniversalProfileArtifact from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
 
 const myUniversalProfileAddress = process.env.UP_ADDR || '';
 
@@ -27,7 +27,7 @@ const myBeneficiaryAddress = '0xcafecafecafecafecafecafecafecafecafecafe';
 // Retrieve the current controllers of the Universal Profile
 const addressPermissionsArray = await erc725.getData('AddressPermissions[]');
 let currentControllerAddresses = null;
-let currentControllerLength: number = 0;
+let currentControllerLength = 0;
 
 if (Array.isArray(addressPermissionsArray.value)) {
   currentControllerAddresses = addressPermissionsArray.value;
@@ -60,27 +60,31 @@ const controller = new ethers.Wallet(PRIVATE_KEY).connect(provider);
 // instantiate the Universal Profile
 const myUniversalProfile = new ethers.Contract(
   myUniversalProfileAddress,
-  UniversalProfileArtefact.abi,
+  UniversalProfileArtifact.abi,
 );
 
-// Execute the transaction
-await myUniversalProfile
-  .connect(controller)
-  // @ts-expect-error Ethers BaseContract does not pick dynamic types from ABIs
-  .setData(permissionData.keys, permissionData.values);
+try {
+  // Execute the transaction
+  await myUniversalProfile
+    .connect(controller)
+    // @ts-expect-error Ethers BaseContract does not pick dynamic types from ABIs
+    .setData(permissionData.keys, permissionData.values);
 
-const updatedPermissions = await erc725.getData({
-  keyName: 'AddressPermissions:Permissions:<address>',
-  dynamicKeyParts: myBeneficiaryAddress,
-});
+  const updatedPermissions = await erc725.getData({
+    keyName: 'AddressPermissions:Permissions:<address>',
+    dynamicKeyParts: myBeneficiaryAddress,
+  });
 
-if (updatedPermissions && typeof updatedPermissions.value === 'string') {
-  console.log(
-    `The beneficiary address ${myBeneficiaryAddress} has the following permissions:`,
-    erc725.decodePermissions(updatedPermissions.value),
-  );
-} else {
-  console.error(
-    `No permissions for beneficiary address ${myBeneficiaryAddress} found`,
-  );
+  if (updatedPermissions && typeof updatedPermissions.value === 'string') {
+    console.log(
+      `The beneficiary address ${myBeneficiaryAddress} has the following permissions:`,
+      erc725.decodePermissions(updatedPermissions.value),
+    );
+  } else {
+    console.error(
+      `No permissions for beneficiary address ${myBeneficiaryAddress} found`,
+    );
+  }
+} catch (error) {
+  console.error('Could not execute the controller update:', error);
 }
