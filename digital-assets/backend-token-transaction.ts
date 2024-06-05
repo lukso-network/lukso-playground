@@ -34,7 +34,7 @@ try {
   // Will forward to the LSP6 Key Manager to check permissions of the controller
   const transaction = await myUniversalProfile.execute(
     0, // Operation of type CALL
-    tokenAddress, // Target contract to call, on the behalf of this profile. Here, it should be the address of 
+    tokenAddress, // Target contract to call, on the behalf of this profile
     0, // Amount in LYX
     tokenCalldata, // Contract calldata, empty for regular transfer
     { gasLimit: 500000, from: controller }, // Gas limit of the transaction and sender address
