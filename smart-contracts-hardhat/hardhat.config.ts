@@ -7,7 +7,7 @@ LoadEnv();
 const config: HardhatUserConfig = {
   solidity: {
     // Default compiler version for all contracts
-    version: '0.8.19',
+    version: '0.8.20',
     settings: {
       optimizer: {
         enabled: true,
