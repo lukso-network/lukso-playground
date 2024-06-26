@@ -1,16 +1,19 @@
 import { ethers } from 'hardhat';
 
+import EventTicketsNFT from '../artifacts/contracts/Tokens/EventTicketsNFT.sol/EventTicketsNFT.json';
+
 import { EventTicketsNFT, EventTicketsNFT__factory } from '../typechain-types';
 
 async function deployAndCreateTickets() {
   const accounts = await ethers.getSigners();
   const deployer = accounts[0];
 
-  const luksoMeetupTickets: EventTicketsNFT = await new EventTicketsNFT__factory(deployer).deploy(
-    'LUKSO Meetup #2',
-    'MUP2',
-    deployer.address,
-  );
+  const luksoMeetupTickets: EventTicketsNFT =
+    await new EventTicketsNFT__factory(deployer).deploy(
+      'LUKSO Meetup #2',
+      'MUP2',
+      deployer.address,
+    );
 
   // create 100 entry tickets.
   // Give them to the deployer initially, who will distribute them afterwards.
@@ -23,7 +26,10 @@ async function deployAndCreateTickets() {
 
   const receipt = await tx.wait();
 
-  console.log('Succesfully deployed and minted 100 NFT tickets! Receipt: ', receipt);
+  console.log(
+    'Succesfully deployed and minted 100 NFT tickets! Receipt: ',
+    receipt,
+  );
 }
 
 deployAndCreateTickets().catch((error) => {
