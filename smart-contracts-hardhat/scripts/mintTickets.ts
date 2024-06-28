@@ -1,5 +1,7 @@
 import { ethers } from 'hardhat';
 
+import EventTicketsNFT from '../artifacts/contracts/Tokens/EventTicketsNFT.sol/EventTicketsNFT.json';
+
 import { EventTicketsNFT, EventTicketsNFT__factory } from '../typechain-types';
 
 async function deployAndCreateTickets() {

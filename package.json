@@ -19,7 +19,7 @@
     "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@erc725/erc725.js": "^0.24.2",
+    "@erc725/erc725.js": "^0.27.0",
     "@lukso/lsp-smart-contracts": "^0.14.0",
     "@typescript-eslint/eslint-plugin": "^6.20.0",
     "@typescript-eslint/parser": "^6.20.0",
