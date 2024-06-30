@@ -36,6 +36,16 @@ git clone https://github.com/lukso-network/lukso-playground.git
 cd lukso-playground && bun install
 ```
 
+### Set the private environment variables
+
+If you want to deploy something directly from your TS files, you will have to import a private key and profile address. You can simply copy the example environment files within the folders to access private data.
+
+```bash
+cp .env.example .env
+```
+
+> **INFO** Make sure to add the private key of an EOA for deployment. Optionally, you can provide a private key of a controller and a Universal Profile address to deploy contracts using your smart contract account.
+
 ### Run locally
 
 Run the TypeScript code of one file within the terminal using `bun`.
