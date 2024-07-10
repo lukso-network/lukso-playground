@@ -2,7 +2,7 @@
 
 Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standards/standards-roadmap) standards on LUKSO. Code examples are taken from the [LUKSO Tech Docs](https://docs.lukso.tech/) and are working as standalone scripts.
 
-## Getting started
+## Getting started
 
 ### Installation
 
