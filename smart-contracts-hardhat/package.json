@@ -2,7 +2,8 @@
   "name": "hardhat-project",
   "scripts": {
     "build": "hardhat compile --show-stack-traces",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
