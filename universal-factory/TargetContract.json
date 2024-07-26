@@ -1,0 +1,42 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_number",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "number",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_number",
+          "type": "uint256"
+        }
+      ],
+      "name": "setNumber",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161010f38038061010f83398101604081905261002f91610037565b600055610050565b60006020828403121561004957600080fd5b5051919050565b60b18061005e6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c80633fb5c1cb1460375780638381f58a146049575b600080fd5b604760423660046063565b600055565b005b605160005481565b60405190815260200160405180910390f35b600060208284031215607457600080fd5b503591905056fea2646970667358221220958426080fb00e4b3e137866f9d1884559c2a31f2d3ee15cd4f2c8aee4a92e6764736f6c63430008110033"
+}
