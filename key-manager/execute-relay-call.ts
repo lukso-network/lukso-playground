@@ -98,7 +98,7 @@ const eip191Signer = new EIP191Signer();
 /**
  * Create signature of the transaction payload using:
  * - Key Manager Address
- * - Message (LSP6 version, chain ID, noce, timestamp, value, payload)
+ * - Message (LSP6 version, chain ID, nonce, timestamp, value, payload)
  * - private key of the controller
  */
 const { signature } = await eip191Signer.signDataWithIntendedValidator(

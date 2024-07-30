@@ -5,7 +5,7 @@ async function fetchJSONData() {
   // Instantiate erc725.js
   const erc725js = new ERC725(
     lsp4Schema,
-    '0x0514A829C832639Afcc02D257154A9DaAD8fa21B', // LSP7 Address
+    '0xbA712C92C6e10f22d7C737f9BC7dAa22B65548F7', // Asset address (LSP7 or LSP8)
     'https://4201.rpc.thirdweb.com',
     {
       ipfsGateway: 'https://api.universalprofile.cloud/ipfs',
@@ -47,7 +47,7 @@ async function fetchJSONData() {
     {
       keyName: 'LSP4CreatorsMap:<address>',
       // Sample creator address
-      dynamicKeyParts: '0x9139def55c73c12bcda9c44f12326686e3948634',
+      dynamicKeyParts: (assetCreatorsList.value as string[])[0],
     },
   ]);
   console.log(creatorInformation);

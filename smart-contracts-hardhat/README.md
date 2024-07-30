@@ -58,7 +58,7 @@ npx hardhat --network luksoTestnet run scripts/deployUP.ts
 Verify your contracts with the blockscout API and their constructor parameters:
 
 ```bash
-npx hardhat verify <myContractAddress> --constructor-args ./verify/myContractParameters.ts --network luksoTestnet
+npx hardhat verify <myContractAddress> --constructor-args ./verify/myCustomToken.ts --network luksoTestnet
 ```
 
 ## Packages

@@ -30,11 +30,11 @@ try {
     '0x', // Additional data
   ]);
 
-  // Call the execute function of the profile to send the LYX transaction
+  // Call the execute function of the profile to then call the token contract
   // Will forward to the LSP6 Key Manager to check permissions of the controller
   const transaction = await myUniversalProfile.execute(
     0, // Operation of type CALL
-    '0x...', // Recipient address including profiles and vaults
+    tokenAddress, // Target contract to call, on the behalf of this profile
     0, // Amount in LYX
     tokenCalldata, // Contract calldata, empty for regular transfer
     { gasLimit: 500000, from: controller }, // Gas limit of the transaction and sender address

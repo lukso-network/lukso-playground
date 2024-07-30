@@ -3,13 +3,13 @@ import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 import { FetchDataOutput } from '@erc725/erc725.js/build/main/src/types/decodeData.js';
 
 // https://docs.lukso.tech/networks/mainnet/parameters
-const RPC_ENDPOINT = 'https://42.rpc.thirdweb.com';
+const RPC_ENDPOINT = 'https://4201.rpc.thirdweb.com';
 const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
 
 // 💡 Note: You can debug any smart contract by using the ERC725 Tools
 // 👉 https://erc725-inspect.lukso.tech/inspector?address=0x61b083f1fb63ba2F064990f01B233B547ED4F5Cb&network=mainnet
 const SAMPLE_ASSET_CONTRACT_ADDRESS =
-  '0x61b083f1fb63ba2F064990f01B233B547ED4F5Cb';
+  '0x8b08eeb9183081De7e2D4ae49fAD4afb56E31Ab4';
 
 // Parameters for the ERC725 instance
 const config = { ipfsGateway: IPFS_GATEWAY };
