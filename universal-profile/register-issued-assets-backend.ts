@@ -10,7 +10,7 @@ import { INTERFACE_IDS } from '@lukso/lsp-smart-contracts';
 // - LSP12IssuedAssets[]
 // - LSP12IssuedAssetsMap:<asset-address>
 
-// add the type of asset (LSP7 or LSP8) and their address in the object list below
+// Add the type of asset (LSP7 or LSP8) and their address in the object list below
 const issuedAssets = [
   {
     interfaceId: INTERFACE_IDS.LSP7DigitalAsset,
@@ -26,16 +26,16 @@ const issuedAssets = [
   //   },
 ];
 
-// setup: get the private key of your main controller behind the Universal Profile extension
-// or any controller that has access to the Universal Profile
-const UNIVERSAL_PROFILE_ADDRESS = '0x9fc7e5095A054dfA3c6b237E0e5d686638394248';
-const PRIVATE_KEY = '0x...';
-const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
+// Get the private key of a Universal Profile controller
+const UNIVERSAL_PROFILE_ADDRESS = process.env.UP_ADDR || '';
+const PRIVATE_KEY = process.env.PRIVATE_KEY || '';
+
+const RPC_ENDPOINT = 'https://4201.rpc.thirdweb.com';
 
 const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 const myWallet = new ethers.Wallet(PRIVATE_KEY, provider);
 
-// 1. encode the data keys related to LSP12IssuedAssets[]
+// Encode the data keys related to LSP12IssuedAssets[]
 const erc725 = new ERC725(
   LSP12Schema,
   UNIVERSAL_PROFILE_ADDRESS,
@@ -60,12 +60,12 @@ const { keys: lsp12DataKeys, values: lsp12Values } = erc725.encodeData([
   ...issuedAssetsMap,
 ]);
 
-// 2. create an instance of your Universal Profile contract
+// Create an instance of your Universal Profile contract
 const myUPContract = new ethers.Contract(
   UNIVERSAL_PROFILE_ADDRESS,
   UniversalProfileArtifact.abi,
   myWallet,
 );
 
-// 3. set these data keys created at step 1. using `setDataBatch` on the UP address
+// Set these data keys on the Universal Profile using `setDataBatch`
 await myUPContract.setDataBatch(lsp12DataKeys, lsp12Values);

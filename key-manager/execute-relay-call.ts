@@ -7,9 +7,7 @@ import { EIP191Signer } from '@lukso/eip191-signer.js';
 // This is the version relative to the LSP25 standard, defined as the number 25.
 import { LSP25_VERSION } from '@lukso/lsp-smart-contracts/constants';
 
-const provider = new ethers.JsonRpcProvider(
-  'https://rpc.testnet.lukso.network',
-);
+const provider = new ethers.JsonRpcProvider('https://4201.rpc.thirdweb.com');
 const universalProfileAddress = '0x...';
 const recipientAddress = '0x...';
 

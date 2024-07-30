@@ -2,7 +2,7 @@ import { ERC725 } from '@erc725/erc725.js';
 import LSP4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 import { FetchDataOutput } from '@erc725/erc725.js/build/main/src/types/decodeData.js';
 
-// https://docs.lukso.tech/networks/network/parameters
+// https://docs.lukso.tech/networks/mainnet/parameters
 const RPC_ENDPOINT = 'https://4201.rpc.thirdweb.com';
 const IPFS_GATEWAY = 'https://api.universalprofile.cloud/ipfs';
 
