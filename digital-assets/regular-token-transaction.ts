@@ -1,6 +1,8 @@
 import { ethers } from 'ethers';
 import LSP7Mintable from '@lukso/lsp-smart-contracts/artifacts/LSP7Mintable.json';
 
+// should be in the smart contracts folder
+
 // Connect to LUKSO via Browser Extension
 // @ts-expect-error This is for the browser
 const provider = new ethers.BrowserProvider(window.lukso);

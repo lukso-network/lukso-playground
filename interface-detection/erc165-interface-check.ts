@@ -10,7 +10,7 @@ import { INTERFACE_IDS } from '@lukso/lsp-smart-contracts';
 // 💡 Note: You can debug any smart contract by using the ERC725 Tools
 // 👉 https://erc725-inspect.lukso.tech/inspector?address=0x61b083f1fb63ba2F064990f01B233B547ED4F5Cb&network=mainnet
 const SAMPLE_ASSET_CONTRACT_ADDRESS =
-  '0xbA712C92C6e10f22d7C737f9BC7dAa22B65548F7';
+  '0x43Ba7501F4EbB87B592EEC070ab0AB65347165E5'; // Provide an LSP7 or LSP8 contract address
 
 // https://docs.lukso.tech/networks/mainnet/parameters
 const RPC_URL = 'https://4201.rpc.thirdweb.com';
@@ -41,7 +41,7 @@ const provider = new ethers.JsonRpcProvider(RPC_URL);
 // 💡 Note: You can debug any smart contract by using the ERC725 Tools
 // 👉 https://erc725-inspect.lukso.tech/inspector?address=0xe65e927d0eccaaab6972170b489d3c1455955116&network=mainnet
 const universalProfileContractAddress =
-  '0xe65e927d0eccaaab6972170b489d3c1455955116';
+  '0x001a8B69b2bA0D990118C454f172cbA8EFEcA054'; // Provide an UP address
 
 // Create an instance of the Universal Profile
 const myProfileContract = new ethers.Contract(

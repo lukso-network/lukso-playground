@@ -5,9 +5,7 @@ import lsp8Artifact from '@lukso/lsp-smart-contracts/artifacts/LSP8IdentifiableD
 import lsp8Schema from '@erc725/erc725.js/schemas/LSP8IdentifiableDigitalAsset.json';
 import { INTERFACE_IDS, ERC725YDataKeys } from '@lukso/lsp-smart-contracts';
 
-const provider = new ethers.JsonRpcProvider(
-  'https://rpc.testnet.lukso.gateway.fm',
-);
+const provider = new ethers.JsonRpcProvider('https://4201.rpc.thirdweb.com');
 
 const SAMPLE_LSP8_ASSET = '0x8734600968c7e7193bb9b1b005677b4edbadcd18';
 
