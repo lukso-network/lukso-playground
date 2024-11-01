@@ -4,87 +4,84 @@ import LSP6Schema from '@erc725/erc725.js/schemas/LSP6KeyManager.json';
 import UniversalProfileArtifact from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
 
 const myUniversalProfileAddress = process.env.UP_ADDR || '';
-
 const RPC_ENDPOINT = 'https://4201.rpc.thirdweb.com';
-const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 
-// Initialize erc725.js with the permission data keys from LSP6 Key Manager
-const erc725 = new ERC725(
-  LSP6Schema,
-  myUniversalProfileAddress,
-  RPC_ENDPOINT,
-  {},
-);
+// Initialize erc725.js with the schemas of the permission data keys from LSP6 Key Manager
+const erc725 = new ERC725(LSP6Schema, myUniversalProfileAddress, RPC_ENDPOINT);
 
-// Create the permissions for the beneficiary address
-const beneficiaryPermissions = erc725.encodePermissions({
-  SETDATA: true,
+// Create the raw permissions value to allow an address
+// to set any data keys (except LSP17 extensions and LSP1 Universal Receiver Delegates)
+// on our Universal Profile
+const permissionSetAnyDataKey = erc725.encodePermissions({
+  SUPER_SETDATA: true,
 });
 
-// EOA address of the new controller
-const myBeneficiaryAddress = '0xcafecafecafecafecafecafecafecafecafecafe';
+// address to give permissions to (can be an EOA or a smart contract)
+const newControllerAddress = '0xcafecafecafecafecafecafecafecafecafecafe';
 
-// Retrieve the current controllers of the Universal Profile
-const addressPermissionsArray = await erc725.getData('AddressPermissions[]');
-let currentControllerAddresses = null;
-let currentControllerLength = 0;
+// Retrieve the list of addresses that have permissions on the Universal Profile (= controllers)
+const addressPermissionsArrayValue = await erc725.getData(
+  'AddressPermissions[]',
+);
+let numberOfControllers = 0;
 
-if (Array.isArray(addressPermissionsArray.value)) {
-  currentControllerAddresses = addressPermissionsArray.value;
-  currentControllerLength = currentControllerAddresses.length;
+if (Array.isArray(addressPermissionsArrayValue.value)) {
+  numberOfControllers = addressPermissionsArrayValue.value.length;
 }
 
-// Encode the key-value pairs of the controller permission
+// Encode the set of key-value pairs to set a new controller with permissions on the Universal Profile
 const permissionData = erc725.encodeData([
-  // the permission of the beneficiary address
+  // this sets the permission `SUPER_SETDATA` to the new controller address
   {
     keyName: 'AddressPermissions:Permissions:<address>',
-    dynamicKeyParts: myBeneficiaryAddress,
-    value: beneficiaryPermissions,
+    dynamicKeyParts: newControllerAddress,
+    value: permissionSetAnyDataKey,
   },
-  // The new incremented list of permissioned controllers addresses
+  // The `AddressPermissions[]` array contains the list of permissioned addresses (= controllers)
+  // This adds the `newControllerAddress` in this list at the end (at the last index) and increment the array length.
   {
     keyName: 'AddressPermissions[]',
-    value: [myBeneficiaryAddress],
-    startingIndex: currentControllerLength,
-    totalArrayLength: currentControllerLength + 1,
+    value: [newControllerAddress],
+    startingIndex: numberOfControllers,
+    totalArrayLength: numberOfControllers + 1,
   },
 ]);
 
-// Private key to sign the transaction
-const PRIVATE_KEY = process.env.PRIVATE_KEY || '';
+// Connect the UP Browser Extension and retrieve our UP Address
+const provider = new ethers.BrowserProvider(window.lukso);
+const accounts = await provider.send('eth_requestAccounts', []);
 
-// Existing UP controller
-const controller = new ethers.Wallet(PRIVATE_KEY).connect(provider);
-
-// instantiate the Universal Profile
+// Create an instance of the UniversalProfile contract
 const myUniversalProfile = new ethers.Contract(
-  myUniversalProfileAddress,
+  accounts[0],
   UniversalProfileArtifact.abi,
 );
 
 try {
-  // Execute the transaction
+  // Send the transaction
   await myUniversalProfile
-    .connect(controller)
+    .connect(accounts[0])
     // @ts-expect-error Ethers BaseContract does not pick dynamic types from ABIs
     .setData(permissionData.keys, permissionData.values);
 
   const updatedPermissions = await erc725.getData({
     keyName: 'AddressPermissions:Permissions:<address>',
-    dynamicKeyParts: myBeneficiaryAddress,
+    dynamicKeyParts: newControllerAddress,
   });
 
   if (updatedPermissions && typeof updatedPermissions.value === 'string') {
     console.log(
-      `The beneficiary address ${myBeneficiaryAddress} has the following permissions:`,
+      `✅ Successfully added the following permissions to address ${newControllerAddress}:`,
       erc725.decodePermissions(updatedPermissions.value),
     );
   } else {
     console.error(
-      `No permissions for beneficiary address ${myBeneficiaryAddress} found`,
+      `No permissions for beneficiary address ${newControllerAddress} found`,
     );
   }
 } catch (error) {
-  console.error('Could not execute the controller update:', error);
+  console.error(
+    `Could not execute transaction to add permissions to address ${newControllerAddress}. Error:`,
+    error,
+  );
 }
