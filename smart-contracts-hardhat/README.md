@@ -11,31 +11,29 @@ This project is used as a guide to show how to setup HardHat to interact with **
 
 **This Hardhat repository uses the [bun](https://bun.sh) package manager. Make sure to [install it](https://bun.sh/docs/installation) first.**
 
-Install the dependencies
+Follow the instructions below in your terminal to get started using the smart contracts and running the script examples.
+
+> **Requirement:** Make sure to add the private key of an EOA for deployment. Optionally, you can provide a private key of a controller and a Universal Profile address to deploy contracts using your smart contract account.
+> **Tips:** Add the `--verbose` and `--show-stack-traces` flags for further information.
 
 ```bash
+# 1. Install the dependencies
 bun install
-```
 
-Set the private environment variables
-
-```bash
+# 2. Set the private environment variables in your .env file
 cp .env.example .env
-```
 
-> **INFO** Make sure to add the private key of an EOA for deployment. Optionally, you can provide a private key of a controller and a Universal Profile address to deploy contracts using your smart contract account.
+# 3. Compile all smart contracts within `/contracts`:
+bun run build
+```
 
 ## Development
 
 ### Compile Contracts
 
-Compile all smart contracts within `/contracts`:
-
 ```bash
-npx hardhat compile
+bun run build
 ```
-
-> **INFO** Add the `--verbose` and `--show-stack-traces` flags for further information.
 
 ### Deploy Contracts
 
