@@ -23,7 +23,10 @@ Set the private environment variables
 cp .env.example .env
 ```
 
-> **INFO** Make sure to add the private key of an EOA for deployment. Optionally, you can provide a private key of a controller and a Universal Profile address to deploy contracts using your smart contract account.
+> **INFOS**
+>
+> - Make sure to add the private key of an EOA for deployment.
+> - If you are using the script `deployTokenAsUP` or `deployTokenWithMetadataAsUP` to deploy as a Universal Profile, you must provide the private key of a controller of your Universal Profile.
 
 ## Development
 
@@ -32,7 +35,7 @@ cp .env.example .env
 Compile all smart contracts within `/contracts`:
 
 ```bash
-npx hardhat compile
+bun hardhat compile
 ```
 
 > **INFO** Add the `--verbose` and `--show-stack-traces` flags for further information.
@@ -42,13 +45,13 @@ npx hardhat compile
 Deploy a sample LSP7 contract with an Externally Owned Account:
 
 ```bash
-npx hardhat --network luksoTestnet run scripts/deployEOA.ts
+bun hardhat --network luksoTestnet run scripts/deployEOA.ts
 ```
 
 Deploy a sample LSP7 contract with a Universal Profile:
 
 ```bash
-npx hardhat --network luksoTestnet run scripts/deployUP.ts
+bun hardhat --network luksoTestnet run scripts/deployUP.ts
 ```
 
 > **INFO** Adjust the network and token name within the command and script.
@@ -58,7 +61,7 @@ npx hardhat --network luksoTestnet run scripts/deployUP.ts
 Verify your contracts with the blockscout API and their constructor parameters:
 
 ```bash
-npx hardhat verify <myContractAddress> --constructor-args ./verify/myCustomToken.ts --network luksoTestnet
+bun hardhat verify <myContractAddress> --constructor-args ./verify/myCustomToken.ts --network luksoTestnet
 ```
 
 ## Packages
