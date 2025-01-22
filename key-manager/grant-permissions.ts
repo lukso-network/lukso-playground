@@ -4,7 +4,7 @@ import LSP6Schema from '@erc725/erc725.js/schemas/LSP6KeyManager.json';
 import UniversalProfileArtifact from '@lukso/lsp-smart-contracts/artifacts/UniversalProfile.json';
 
 const myUniversalProfileAddress = process.env.UP_ADDR || '';
-const RPC_ENDPOINT = 'https://4201.rpc.thirdweb.com';
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
 
 // Initialize erc725.js with the schemas of the permission data keys from LSP6 Key Manager
 const erc725 = new ERC725(LSP6Schema, myUniversalProfileAddress, RPC_ENDPOINT);

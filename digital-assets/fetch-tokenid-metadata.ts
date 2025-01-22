@@ -9,7 +9,7 @@ import {
 import lsp8Artifact from '@lukso/lsp-smart-contracts/artifacts/LSP8IdentifiableDigitalAsset.json';
 
 const SAMPLE_LSP8_ASSET = '0x8734600968c7e7193BB9B1b005677B4edBaDcD18';
-const RPC_URL = 'https://4201.rpc.thirdweb.com';
+const RPC_URL = 'https://rpc.testnet.lukso.network';
 
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 

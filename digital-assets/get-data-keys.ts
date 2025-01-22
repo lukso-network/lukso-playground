@@ -5,7 +5,7 @@ import lsp4Schema from '@erc725/erc725.js/schemas/LSP4DigitalAsset.json';
 const erc725js = new ERC725(
   lsp4Schema,
   '0x0514A829C832639Afcc02D257154A9DaAD8fa21B', // LSP7 Address
-  'https://4201.rpc.thirdweb.com',
+  'https://rpc.testnet.lukso.network',
   {
     ipfsGateway: 'https://api.universalprofile.cloud/ipfs',
   },

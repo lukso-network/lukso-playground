@@ -1,7 +1,7 @@
 import { ethers } from 'ethers';
 
 // Static variables
-const RPC_ENDPOINT = 'https://4201.rpc.thirdweb.com/';
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network/';
 
 // Setup ethers.js provider
 const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
