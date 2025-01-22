@@ -34,7 +34,11 @@ async function deployToken() {
     throw new Error('Network URL is not defined in the Hardhat configuration.');
   }
 
-  const erc725js = new ERC725(LSP4DigitalAssetSchema, customTokenAddress, networkUrl);
+  const erc725js = new ERC725(
+    LSP4DigitalAssetSchema,
+    customTokenAddress,
+    networkUrl,
+  );
 
   // Read the token metadata
   // https://docs.lukso.tech/tools/erc725js/classes/ERC725#getdata
@@ -43,11 +47,17 @@ async function deployToken() {
 
   // Encode the new LSP4 metadata as Verifiable URI
   // https://docs.lukso.tech/tools/erc725js/classes/ERC725#encodedata
-  const encodedLSP4Metadata = ERC725.encodeData(lsp4SampleMetadata, LSP4DigitalAssetSchema);
+  const encodedLSP4Metadata = ERC725.encodeData(
+    lsp4SampleMetadata,
+    LSP4DigitalAssetSchema,
+  );
 
   // Write the new metadata into the ERC725Y storage
   // https://docs.lukso.tech/contracts/contracts/ERC725/#setdatabatch
-  const tx = await token.setDataBatch(encodedLSP4Metadata.keys, encodedLSP4Metadata.values);
+  const tx = await token.setDataBatch(
+    encodedLSP4Metadata.keys,
+    encodedLSP4Metadata.values,
+  );
 
   // Wait for the transaction to be included in a block
   const receipt = await tx.wait();
