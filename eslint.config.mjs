@@ -1,42 +1,50 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import prettier from "eslint-plugin-prettier";
-import globals from "globals";
-import tsParser from "@typescript-eslint/parser";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import prettier from 'eslint-plugin-prettier';
+import globals from 'globals';
+import tsParser from '@typescript-eslint/parser';
+import js from '@eslint/js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
-});
+export default [
+  // Global ignores
+  {
+    ignores: ['**/smart-contracts-hardhat/', '**/node_modules/', '**/dist/'],
+  },
 
-export default defineConfig([globalIgnores(["**/smart-contracts-hardhat/"]), {
-    extends: compat.extends("eslint:recommended", "plugin:@typescript-eslint/recommended"),
+  // Base configuration
+  js.configs.recommended,
+
+  // TypeScript files configuration
+  {
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.mjs'],
 
     plugins: {
-        "@typescript-eslint": typescriptEslint,
-        prettier,
+      '@typescript-eslint': typescriptEslint,
+      prettier,
     },
 
     languageOptions: {
-        globals: {
-            ...globals.browser,
-            ...globals.node,
-        },
-
-        parser: tsParser,
-        ecmaVersion: 12,
-        sourceType: "module",
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+      parser: tsParser,
+      ecmaVersion: 2022,
+      sourceType: 'module',
     },
 
     rules: {
-        "prettier/prettier": "error",
-        "@typescript-eslint/no-explicit-any": "off",
+      // Prettier integration
+      'prettier/prettier': 'error',
+
+      // TypeScript recommended rules
+      ...typescriptEslint.configs.recommended.rules,
+
+      // Rule for any type usage - disabled to allow any types
+      '@typescript-eslint/no-explicit-any': 'off',
+
+      // Additional rules
+      'prefer-const': 'error',
+      'no-var': 'error',
     },
-}]);
+  },
+];
