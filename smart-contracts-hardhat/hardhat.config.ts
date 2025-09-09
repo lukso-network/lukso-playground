@@ -17,7 +17,7 @@ const config: HardhatUserConfig = {
   },
   networks: {
     luksoTestnet: {
-      url: 'https://4201.rpc.thirdweb.com',
+      url: 'https://rpc.testnet.lukso.network',
       chainId: 4201,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
     },

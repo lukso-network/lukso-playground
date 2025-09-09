@@ -9,7 +9,7 @@ const assetContractAddress = '0xbA712C92C6e10f22d7C737f9BC7dAa22B65548F7';
 const erc725js = new ERC725(
   lsp4Schema,
   assetContractAddress,
-  'https://4201.rpc.thirdweb.com',
+  'https://rpc.testnet.lukso.network',
   {},
 );
 

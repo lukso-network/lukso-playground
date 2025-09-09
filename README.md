@@ -59,7 +59,7 @@ async function fetchJSONData() {
   const erc725js = new ERC725(
     lsp4Schema,
     '0x<asset-address>', // <== Change this line with the asset address
-    'https://4201.rpc.thirdweb.com',
+    'https://rpc.testnet.lukso.network',
     {
       ipfsGateway: 'https://api.universalprofile.cloud/ipfs',
     },

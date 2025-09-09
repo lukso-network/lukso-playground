@@ -29,7 +29,7 @@ const issuedAssets = [
 // Get the private key of a Universal Profile controller
 const UNIVERSAL_PROFILE_ADDRESS = process.env.UP_ADDR || '';
 const PRIVATE_KEY = process.env.PRIVATE_KEY || '';
-const RPC_ENDPOINT = 'https://4201.rpc.thirdweb.com';
+const RPC_ENDPOINT = 'https://rpc.testnet.lukso.network';
 
 const provider = new ethers.JsonRpcProvider(RPC_ENDPOINT);
 const myWallet = new ethers.Wallet(PRIVATE_KEY, provider);
