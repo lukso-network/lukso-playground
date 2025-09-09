@@ -39,6 +39,16 @@ export default [
       // TypeScript recommended rules
       ...typescriptEslint.configs.recommended.rules,
 
+      // Rules for unused variables
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
+
       // Rule for any type usage - disabled to allow any types
       '@typescript-eslint/no-explicit-any': 'off',
 
