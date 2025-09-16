@@ -1,16 +1,16 @@
 # 🤹 LUKSO DApps Examples
 
-Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standards/standards-roadmap) standards on LUKSO. Code examples are taken from the [LUKSO Tech Docs](https://docs.lukso.tech/) and are working as standalone scripts.
+Convenient code snippets to interact with [LSP](https://docs.lukso.tech/standards/introduction/) standards on LUKSO. Code examples are taken from the [LUKSO Tech Docs](https://docs.lukso.tech/) and are working as standalone scripts.
 
 ## Getting started
 
 ### Installation
 
-> A lot of these scripts should run with `ts-node` in development environnements, but you might be encountering issues because of ESM dependencies.
+> A lot of these scripts should run with `ts-node` in development environments, but you might be encountering issues because of ESM dependencies.
 
 **This repository uses the [bun](https://bun.sh) toolkit to manage packages and run scripts.Make sure to [install it](https://bun.sh/docs/installation) first.**
 
-Make sure you've installed dependencies from the root directory:
+Make sure you've installed dependencies from the **root directory**:
 
 ```bash
 cd lukso-playground && bun install
