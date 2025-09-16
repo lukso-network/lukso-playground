@@ -10,7 +10,7 @@ const profileContractAddress = '0x9139def55c73c12bcda9c44f12326686e3948634';
 const erc725js = new ERC725(
   lsp3ProfileSchema,
   profileContractAddress,
-  'https://4201.rpc.thirdweb.com',
+  'https://rpc.testnet.lukso.network',
   {},
 );
 
