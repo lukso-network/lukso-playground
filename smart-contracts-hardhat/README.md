@@ -17,14 +17,6 @@ Install the dependencies
 bun install
 ```
 
-Set the private environment variables
-
-```bash
-cp .env.example .env
-```
-
-> **INFO** Make sure to add the private key of an EOA for deployment. Optionally, you can provide a private key of a controller and a Universal Profile address to deploy contracts using your smart contract account.
-
 ## Development
 
 ### Compile Contracts
@@ -32,33 +24,44 @@ cp .env.example .env
 Compile all smart contracts within `/contracts`:
 
 ```bash
-npx hardhat compile
+bun hardhat compile
 ```
 
 > **INFO** Add the `--verbose` and `--show-stack-traces` flags for further information.
 
 ### Deploy Contracts
 
-Deploy a sample LSP7 contract with an Externally Owned Account:
+Create a `.env` file and put the private key of your deployer address inside it.
 
 ```bash
-npx hardhat --network luksoTestnet run scripts/deployEOA.ts
+cp .env.example .env
 ```
 
-Deploy a sample LSP7 contract with a Universal Profile:
+Deploy a sample LSP7 token with an Externally Owned Account:
+
+> **Note:** make sure to add the private key of an EOA for deployment on the `.env` file.
 
 ```bash
-npx hardhat --network luksoTestnet run scripts/deployUP.ts
+bun hardhat --network luksoTestnet run scripts/deployTokenAsEOA.ts
+```
+
+Deploy a sample LSP7 token with a Universal Profile:
+
+> **Note:** if you are using the script `deployTokenAsUP` or `deployTokenWithMetadataAsUP` to deploy as a Universal Profile, you must provide the private key of a controller of your Universal Profile in the `.env` file.
+
+```bash
+bun hardhat --network luksoTestnet run scripts/deployTokenAsUP.ts
 ```
 
 > **INFO** Adjust the network and token name within the command and script.
 
 ### Verify Contracts
 
-Verify your contracts with the blockscout API and their constructor parameters:
+Verify your contracts with the blockscout API and their constructor parameters (you must fill the fields in the file [`./verify/myCustomToken.ts`](./verify/myCustomToken.ts) with the correct parameters used on
+deployment).
 
 ```bash
-npx hardhat verify <myContractAddress> --constructor-args ./verify/myCustomToken.ts --network luksoTestnet
+bun hardhat verify <myContractAddress> --constructor-args ./verify/myCustomToken.ts --network luksoTestnet
 ```
 
 ## Packages
