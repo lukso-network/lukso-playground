@@ -1,3 +1,3 @@
 # Transfer LYX
 
-- https://docs.lukso.tech/learn/dapp-developer/transfer-lyx
+- https://docs.lukso.tech/learn/universal-profile/interactions/transfer-lyx/

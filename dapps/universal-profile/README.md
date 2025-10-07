@@ -1,3 +1,3 @@
 # Universal Profile
 
-- https://docs.lukso.tech/standards/universal-profile/introduction
+- https://docs.lukso.tech/standards/accounts/introduction/

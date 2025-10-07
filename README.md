@@ -1,12 +1,14 @@
 # 🤹 LUKSO Playground
 
-A comprehensive development playground for building on the LUKSO blockchain. This repository contains both DApp examples and smart contract templates to help you get started with LUKSO's [LSP](https://docs.lukso.tech/standards/standards-roadmap) standards.
+A comprehensive set of code examples and development playground for building on the LUKSO blockchain with the LSP standards.
+
+This repository contains Typescript and Solidity code examples to help you get started building dApps and smart contracts with LUKSO's [LSP](https://docs.lukso.tech/standards/standards-roadmap) standards.
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-**This repository uses the [bun](https://bun.sh) toolkit to manage packages and run scripts. Make sure to [install it](https://bun.sh/docs/installation) first.**
+**This repository uses [bun](https://bun.sh) to manage packages and run scripts. Make sure to [install it](https://bun.sh/docs/installation) first.**
 
 ### Installation
 
@@ -24,7 +26,7 @@ cd lukso-playground && bun install
 Interactive examples and scripts demonstrating LUKSO standards integration:
 
 - **[`universal-profile`](./dapps/universal-profile)**: Universal Profile related scripts
-- **[`digital-assets`](./dapps/digital-assets)**: Digital assets (LSP7/8) scripts  
+- **[`digital-assets`](./dapps/digital-assets)**: Digital assets (LSP7/8) scripts
 - **[`interface-detection`](./dapps/interface-detection)**: Verify EIP165 Standard Compatibility
 - **[`key-manager`](./dapps/key-manager)**: Permission Management of Controller Keys
 - **[`metadata-detection`](./dapps/metadata-detection)**: Verify ERC725Y Storage Compatibility
@@ -43,12 +45,11 @@ See the [DApps README](./dapps/README.md) for detailed usage instructions.
 
 ### 🔨 Smart Contracts (`/smart-contracts`)
 
-Hardhat-based smart contract development environment with deployment scripts and examples:
+Hardhat-based smart contract development environment with example contracts and deployment scripts:
 
-- **Contract Templates**: Ready-to-use LSP smart contract implementations
-- **Deployment Scripts**: Automated deployment workflows
-- **Verification Tools**: Contract verification utilities
-- **Testing Suite**: Comprehensive test coverage
+- **Example Contracts**: LSP1 Universal Receivers, LSP25 Delegated Voting, NFT collections (basic & dynamic), digital tokens (LSP7/LSP8)
+- **Deployment Scripts**: Deploy tokens and collections as EOA or Universal Profile, attach metadata, mint tokens
+- **Verification Tools**: Blockscout contract verification setup
 
 #### Working with Smart Contracts
 
@@ -56,14 +57,12 @@ Navigate to the smart-contracts directory for contract development:
 
 ```bash
 cd smart-contracts
-# Install contract-specific dependencies
+# Install smart contract-specific dependencies
 bun install
 # Compile contracts
 bun run compile
-# Run tests
-bun run test
-# Deploy contracts
-bun run deploy
+# Deploy contracts by running one of the scripts
+bun hardhat --network luksoTestnet run <scripts/deployTokenAsEOA.ts>
 ```
 
 See the [Smart Contracts README](./smart-contracts/README.md) for detailed development instructions.
@@ -75,12 +74,6 @@ See the [Smart Contracts README](./smart-contracts/README.md) for detailed devel
 - **[`@erc725/erc725.js`](https://docs.lukso.tech/tools/erc725js/getting-started)**: Library for interacting with ERC725 contracts
 - **[`@lukso/lsp-smart-contracts`](https://docs.lukso.tech/tools/lsp-smart-contracts/getting-started)**: LUKSO Standard Proposals smart contract implementations
 
-### Development Tools
-
-- **[Bun](https://bun.sh)**: Fast all-in-one JavaScript runtime and toolkit
-- **[Hardhat](https://hardhat.org)**: Ethereum development environment
-- **[TypeScript](https://www.typescriptlang.org)**: Type-safe JavaScript development
-
 ## 🌍 Network Configuration
 
 ### LUKSO Networks
@@ -91,6 +84,7 @@ See the [Smart Contracts README](./smart-contracts/README.md) for detailed devel
 ### IPFS Gateway
 
 For development purposes, this repository uses:
+
 - **IPFS Gateway**: `https://api.universalprofile.cloud/ipfs`
 
 > ⚠️ **Production Recommendation**: We highly recommend that developers use their own IPFS gateway solutions like [Pinata](https://docs.pinata.cloud/docs/welcome-to-pinata) or [Infura](https://docs.metamask.io/services/how-to/use-ipfs/access-ipfs-content/) for production applications.
