@@ -7,6 +7,6 @@ Here you can find the scripts related to LUKSO [Digital Assets](https://docs.luk
 
 ## Related guides
 
-- [Transfer LSP7 Token - LUKSO Docs](https://docs.lukso.tech/learn/dapp-developer/transfer-lsp7-token)
-- [Set LSP8 NFT Metadata - LUKSO Docs](https://docs.lukso.tech/learn/dapp-developer/set-nft-metadata)
-- [Mint LSP7 Token - LUKSO Docs](https://docs.lukso.tech/learn/dapp-developer/mint-lsp7-token)
+- [Transfer LSP7 Token - LUKSO Docs](https://docs.lukso.tech/learn/universal-profile/interactions/transfer-tokens-and-nfts/)
+- [Set LSP8 NFT Metadata - LUKSO Docs](https://docs.lukso.tech/learn/digital-assets/nft/set-nft-metadata/)
+- [Mint LSP7 Token - LUKSO Docs](https://docs.lukso.tech/learn/digital-assets/token/create-lsp7-token/)

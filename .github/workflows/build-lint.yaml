@@ -1,5 +1,5 @@
 # This workflow will do a clean install of bun dependencies and lint the code
-# It will also compile the contracts under `smart-contracts-hardhat/` folder to make sure code examples are correct.
+# It will also compile the contracts under `smart-contracts` folder to make sure code examples are correct.
 name: Build + Lint
 
 on:
@@ -31,13 +31,13 @@ jobs:
 
       # Everything Hardhat related
       - name: 📦 Install Hardhat dependencies
-        working-directory: ./smart-contracts-hardhat
+        working-directory: ./smart-contracts
         run: bun install
 
       - name: 🎨 Lint Hardhat folder
-        working-directory: ./smart-contracts-hardhat
+        working-directory: ./smart-contracts
         run: bun run lint
 
       - name: 👷 Build contracts
-        working-directory: ./smart-contracts-hardhat
+        working-directory: ./smart-contracts
         run: bun run build

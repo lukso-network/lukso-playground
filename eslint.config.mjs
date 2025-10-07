@@ -7,7 +7,7 @@ import js from '@eslint/js';
 export default [
   // Global ignores
   {
-    ignores: ['**/smart-contracts-hardhat/', '**/node_modules/', '**/dist/'],
+    ignores: ['**/smart-contracts/', '**/node_modules/', '**/dist/'],
   },
 
   // Base configuration

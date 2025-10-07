@@ -4,8 +4,8 @@ This project is used as a guide to show how to setup HardHat to interact with **
 
 ## Guides
 
-- [Getting started with HardHat on LUKSO](https://docs.lukso.tech/learn/smart-contract-developers/getting-started)
-- [Create, deploy, and verify an LSP7 token](https://docs.lukso.tech/learn/smart-contract-developers/create-lsp7-token)
+- [Getting started with HardHat on LUKSO](https://docs.lukso.tech/tools/lsp-smart-contracts/getting-started/)
+- [Create, deploy, and verify an LSP7 token](https://docs.lukso.tech/learn/digital-assets/token/create-lsp7-token/)
 
 ## Setup
 
